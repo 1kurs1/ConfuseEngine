@@ -1,0 +1,37 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/ConfuseEngine.dir/src/core/_ce_Device.cpp.o"
+  "CMakeFiles/ConfuseEngine.dir/src/core/_ce_Device.cpp.o.d"
+  "CMakeFiles/ConfuseEngine.dir/src/core/ce_Buffer.cpp.o"
+  "CMakeFiles/ConfuseEngine.dir/src/core/ce_Buffer.cpp.o.d"
+  "CMakeFiles/ConfuseEngine.dir/src/core/ce_Camera.cpp.o"
+  "CMakeFiles/ConfuseEngine.dir/src/core/ce_Camera.cpp.o.d"
+  "CMakeFiles/ConfuseEngine.dir/src/core/ce_Descriptors.cpp.o"
+  "CMakeFiles/ConfuseEngine.dir/src/core/ce_Descriptors.cpp.o.d"
+  "CMakeFiles/ConfuseEngine.dir/src/editor/confuseEditor.cpp.o"
+  "CMakeFiles/ConfuseEngine.dir/src/editor/confuseEditor.cpp.o.d"
+  "CMakeFiles/ConfuseEngine.dir/src/input/keyboardMovementController.cpp.o"
+  "CMakeFiles/ConfuseEngine.dir/src/input/keyboardMovementController.cpp.o.d"
+  "CMakeFiles/ConfuseEngine.dir/src/main.cpp.o"
+  "CMakeFiles/ConfuseEngine.dir/src/main.cpp.o.d"
+  "CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/DefaultRenderSystem.cpp.o"
+  "CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/DefaultRenderSystem.cpp.o.d"
+  "CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.o"
+  "CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.o.d"
+  "CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.o"
+  "CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.o.d"
+  "CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.o"
+  "CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.o.d"
+  "CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o"
+  "CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o.d"
+  "CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o"
+  "CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o.d"
+  "CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o"
+  "CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o.d"
+  "ConfuseEngine"
+  "ConfuseEngine.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/ConfuseEngine.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
