@@ -15,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ConfuseEngine.dir/src/main.cpp.o.d"
   "CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/DefaultRenderSystem.cpp.o"
   "CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/DefaultRenderSystem.cpp.o.d"
+  "CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/PointLightSystem.cpp.o"
+  "CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/PointLightSystem.cpp.o.d"
   "CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.o"
   "CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.o.d"
   "CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.o"

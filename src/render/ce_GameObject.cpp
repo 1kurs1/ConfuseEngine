@@ -57,4 +57,13 @@ namespace ConfuseEngineRenderer{
                 }
             };
     }
+
+    CE_GameObject CE_GameObject::makePointLight(float intensity, float radius, glm::vec3 color){
+        CE_GameObject gameObj = CE_GameObject::createGameObject();
+        gameObj.color = color;
+        gameObj.transform.scale.x = radius;
+        gameObj.pointLight = std::make_unique<PointLightComponent>();
+        gameObj.pointLight->lightIntensity = intensity;
+        return gameObj;
+    }
 }

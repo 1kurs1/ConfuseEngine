@@ -66,8 +66,8 @@ namespace ConfuseEngineRenderer{
         shaderStages[1].pNext = nullptr;
         shaderStages[1].pSpecializationInfo = nullptr;
 
-        auto bindingDescriptions = CE_Model::Vertex::getBindingDescriptions();
-        auto attributeDescriptions = CE_Model::Vertex::getAttributeDescriptions();
+        auto& bindingDescriptions = configInfo.bindingDescriptions;
+        auto& attributeDescriptions = configInfo.attributeDescriptions;
 
         VkPipelineVertexInputStateCreateInfo vertexInputInfo{};
         vertexInputInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
@@ -146,7 +146,7 @@ namespace ConfuseEngineRenderer{
         configInfo.multisampleInfo.alphaToCoverageEnable = VK_FALSE;
         configInfo.multisampleInfo.alphaToOneEnable = VK_FALSE;
 
-         configInfo.colorBlendAttachment.colorWriteMask = VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT | VK_COLOR_COMPONENT_B_BIT | VK_COLOR_COMPONENT_A_BIT;
+        configInfo.colorBlendAttachment.colorWriteMask = VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT | VK_COLOR_COMPONENT_B_BIT | VK_COLOR_COMPONENT_A_BIT;
         configInfo.colorBlendAttachment.blendEnable = VK_FALSE;
         configInfo.colorBlendAttachment.srcColorBlendFactor = VK_BLEND_FACTOR_ONE;   
         configInfo.colorBlendAttachment.dstColorBlendFactor = VK_BLEND_FACTOR_ZERO;  
@@ -181,5 +181,8 @@ namespace ConfuseEngineRenderer{
         configInfo.dynamicStateInfo.pDynamicStates = configInfo.dynamicStateEnables.data();
         configInfo.dynamicStateInfo.dynamicStateCount = static_cast<uint32_t>(configInfo.dynamicStateEnables.size());
         configInfo.dynamicStateInfo.flags = 0;
+
+        configInfo.bindingDescriptions = CE_Model::Vertex::getBindingDescriptions();
+        configInfo.attributeDescriptions = CE_Model::Vertex::getAttributeDescriptions();
     }
 }

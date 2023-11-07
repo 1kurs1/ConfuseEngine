@@ -67,18 +67,30 @@ include CMakeFiles/Shaders.dir/compiler_depend.make
 include CMakeFiles/Shaders.dir/progress.make
 
 CMakeFiles/Shaders: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/fragmentShader.frag.spv
+CMakeFiles/Shaders: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/pointLight.frag.spv
+CMakeFiles/Shaders: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/pointLight.vert.spv
 CMakeFiles/Shaders: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/vertexShader.vert.spv
 
 /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/fragmentShader.frag.spv: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/fragmentShader.frag
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/fragmentShader.frag.spv"
-	GLSL_VALIDATOR-NOTFOUND -V /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/fragmentShader.frag -o /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/fragmentShader.frag.spv
+	/usr/local/bin/glslc /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/fragmentShader.frag -o /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/fragmentShader.frag.spv
+
+/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/pointLight.frag.spv: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/pointLight.frag
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/pointLight.frag.spv"
+	/usr/local/bin/glslc /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/pointLight.frag -o /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/pointLight.frag.spv
+
+/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/pointLight.vert.spv: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/pointLight.vert
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/pointLight.vert.spv"
+	/usr/local/bin/glslc /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/pointLight.vert -o /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/pointLight.vert.spv
 
 /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/vertexShader.vert.spv: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/vertexShader.vert
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/vertexShader.vert.spv"
-	GLSL_VALIDATOR-NOTFOUND -V /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/vertexShader.vert -o /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/vertexShader.vert.spv
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/vertexShader.vert.spv"
+	/usr/local/bin/glslc /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/vertexShader.vert -o /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/vertexShader.vert.spv
 
 Shaders: CMakeFiles/Shaders
 Shaders: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/fragmentShader.frag.spv
+Shaders: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/pointLight.frag.spv
+Shaders: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/pointLight.vert.spv
 Shaders: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/vertexShader.vert.spv
 Shaders: CMakeFiles/Shaders.dir/build.make
 .PHONY : Shaders

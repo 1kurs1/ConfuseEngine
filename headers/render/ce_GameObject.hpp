@@ -12,6 +12,10 @@ namespace ConfuseEngineRenderer{
         glm::mat3 normalMatrix();
     };
 
+    struct PointLightComponent{
+        float lightIntensity = 1.0f;
+    };
+
     class CE_GameObject{
     public:
         using id_t = unsigned int;
@@ -22,6 +26,8 @@ namespace ConfuseEngineRenderer{
             return CE_GameObject{currentID++};
         }
 
+        static CE_GameObject makePointLight(float intensity = 10.f, float radius = 0.1f, glm::vec3 color = glm::vec3(1.f));
+
         CE_GameObject(const CE_GameObject&) = delete;
         CE_GameObject& operator=(const CE_GameObject&) = delete;
         CE_GameObject(CE_GameObject&&) = default;
@@ -29,9 +35,11 @@ namespace ConfuseEngineRenderer{
 
         id_t getId(){return id;}
 
-        std::shared_ptr<CE_Model> model{};
         glm::vec3 color{};
         TransformComponent transform{};
+
+        std::shared_ptr<CE_Model> model{};
+        std::unique_ptr<PointLightComponent> pointLight = nullptr; 
 
     private:
         CE_GameObject(id_t objID) : id{objID}{}

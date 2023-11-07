@@ -1,7 +1,7 @@
-CMakeFiles/ConfuseEngine.dir/src/editor/confuseEditor.cpp.o: \
- /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/editor/confuseEditor.cpp \
+CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/PointLightSystem.cpp.o: \
+ /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/RenderSystems/PointLightSystem.cpp \
  /usr/include/stdc-predef.h \
- /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers/editor/confuseEditor.hpp \
+ /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers/render/RenderSystems/PointLightSystem.hpp \
  /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers/core/ce_Camera.hpp \
  /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers/core/stdinclude.hpp \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
@@ -355,16 +355,10 @@ CMakeFiles/ConfuseEngine.dir/src/editor/confuseEditor.cpp.o: \
  /usr/include/glm/ext/matrix_transform.hpp \
  /usr/include/glm/ext/matrix_transform.inl \
  /usr/include/glm/gtc/matrix_transform.inl \
- /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers/core/ce_Descriptors.hpp \
  /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers/core/ce_Device.hpp \
  /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers/window/ce_Window.hpp \
- /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers/render/ce_Renderer.hpp \
- /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers/render/ce_SwapChain.hpp \
+ /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers/render/ce_Pipeline.hpp \
  /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers/render/ce_GameObject.hpp \
  /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers/render/ce_Model.hpp \
  /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers/core/ce_Buffer.hpp \
- /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers/input/keyboardMovementController.hpp \
- /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers/render/RenderSystems/DefaultRenderSystem.hpp \
- /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers/render/ce_Pipeline.hpp \
- /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers/render/ce_FrameInfo.hpp \
- /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers/render/RenderSystems/PointLightSystem.hpp
+ /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers/render/ce_FrameInfo.hpp

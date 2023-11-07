@@ -1,15 +1,9 @@
 #include "editor/confuseEditor.hpp"
 #include "render/RenderSystems/DefaultRenderSystem.hpp"
+#include "render/RenderSystems/PointLightSystem.hpp"
 #include "core/ce_Buffer.hpp"
 
 namespace ConfuseGraphicsCore{
-    struct GlobalUBO{
-        glm::mat4 projectionView{1.f};
-        glm::vec4 ambientLightColor{1.f, 1.f, 1.f, .02f};   // color and intensity
-        glm::vec3 lightPosition{-1.f};
-        alignas(16)glm::vec4 lightColor{1.f};          // color and intesity
-    };
-
     Editor::Editor(){
         m_pGlobalPool = CE_DescriptorPool::Builder(m_device).setMaxSets(CE_SwapChain::MAX_FRAMES_IN_FLIGHT).addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, CE_SwapChain::MAX_FRAMES_IN_FLIGHT).build();
         loadGameObjects();
@@ -33,6 +27,7 @@ namespace ConfuseGraphicsCore{
         }
 
         DefaultRenderSystem defaultRenderSystem{m_device, m_renderer.getSwapChainRenderPass(), globalSetLayout->getDescriptorSetLayout()};
+        PointLightSystem pointLightSystem{m_device, m_renderer.getSwapChainRenderPass(), globalSetLayout->getDescriptorSetLayout()};
         CE_Camera camera{};
 
         auto viewerObject = CE_GameObject::createGameObject();
@@ -59,13 +54,17 @@ namespace ConfuseGraphicsCore{
 
                 // update:
                 GlobalUBO ubo{};
-                ubo.projectionView = camera.getProjection() * camera.getView();
+                ubo.projection = camera.getProjection();
+                ubo.view = camera.getView();
+                ubo.inverseView = camera.getInverseView();
+                pointLightSystem.update(frameInfo, ubo);
                 uboBuffers[frameIndex]->writeToBuffer(&ubo);
                 uboBuffers[frameIndex]->flush();
 
                 // render:
                 m_renderer.beginSwapChainRenderPass(commandBuffer);
                 defaultRenderSystem.renderGameObjects(frameInfo);
+                pointLightSystem.render(frameInfo);
                 m_renderer.endSwapChainRenderPass(commandBuffer);
                 m_renderer.endFrame();
             }
@@ -148,5 +147,18 @@ namespace ConfuseGraphicsCore{
         floor.transform.translation = {0.f, 0.f, 0.f};
         floor.transform.scale = {10.f, 1.f, 10.f};
         m_gameObjects.emplace(floor.getId(), std::move(floor));
+
+        std::vector<glm::vec3> lightColors{
+            {.1f, .1f, 1.f},
+            {1.f, 1.f, 1.f} 
+        };
+
+        for(int i = 0; i < lightColors.size(); i++){
+            auto pointLight = CE_GameObject::makePointLight(.5f);
+            pointLight.color = lightColors[i];
+            auto rotateLights = glm::rotate(glm::mat4(1.2f), (i * glm::two_pi<float>())/lightColors.size(), {0.f, -1.f, 0.f});
+            pointLight.transform.translation = glm::vec3(rotateLights * glm::vec4(-1.f, - 1.f, -1.f, 1.f));
+            m_gameObjects.emplace(pointLight.getId(), std::move(pointLight));
+        }
     }
 }

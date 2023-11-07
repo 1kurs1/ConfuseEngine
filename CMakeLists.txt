@@ -15,7 +15,7 @@ if (CMAKE_GENERATOR STREQUAL "MinGW Makefiles")
     set(CMAKE_CXX_COMPILER  ${MINGW_PATH}/bin/g++.exe)
 endif()
  
-project(${NAME} VERSION 0.1.0)
+project(${NAME} VERSION 0.1.1)
  
 if (DEFINED VULKAN_SDK_PATH)
   set(Vulkan_INCLUDE_DIRS "${VULKAN_SDK_PATH}/Include")
@@ -106,10 +106,11 @@ endif()
  
 # Build shaders
 
-find_program(GLSL_VALIDATOR glslangValidator HINTS 
+find_program(GLSL_VALIDATOR glslc HINTS 
   ${Vulkan_GLSLANG_VALIDATOR_EXECUTABLE} 
   /usr/bin 
   /usr/local/bin 
+  /usr/local/bin/glslc
   ${VULKAN_SDK_PATH}/Bin
   ${VULKAN_SDK_PATH}/Bin32
   $ENV{VULKAN_SDK}/Bin/ 
@@ -126,7 +127,7 @@ foreach(GLSL ${GLSL_SOURCE_FILES})
   set(SPIRV "${PROJECT_SOURCE_DIR}/shaders/${FILE_NAME}.spv")
   add_custom_command(
     OUTPUT ${SPIRV}
-    COMMAND ${GLSL_VALIDATOR} -V ${GLSL} -o ${SPIRV}
+    COMMAND ${GLSL_VALIDATOR} ${GLSL} -o ${SPIRV}
     DEPENDS ${GLSL})
   list(APPEND SPIRV_BINARY_FILES ${SPIRV})
 endforeach(GLSL)

@@ -334,6 +334,30 @@ src/render/RenderSystems/DefaultRenderSystem.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/DefaultRenderSystem.cpp.s
 .PHONY : src/render/RenderSystems/DefaultRenderSystem.cpp.s
 
+src/render/RenderSystems/PointLightSystem.o: src/render/RenderSystems/PointLightSystem.cpp.o
+.PHONY : src/render/RenderSystems/PointLightSystem.o
+
+# target to build an object file
+src/render/RenderSystems/PointLightSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/PointLightSystem.cpp.o
+.PHONY : src/render/RenderSystems/PointLightSystem.cpp.o
+
+src/render/RenderSystems/PointLightSystem.i: src/render/RenderSystems/PointLightSystem.cpp.i
+.PHONY : src/render/RenderSystems/PointLightSystem.i
+
+# target to preprocess a source file
+src/render/RenderSystems/PointLightSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/PointLightSystem.cpp.i
+.PHONY : src/render/RenderSystems/PointLightSystem.cpp.i
+
+src/render/RenderSystems/PointLightSystem.s: src/render/RenderSystems/PointLightSystem.cpp.s
+.PHONY : src/render/RenderSystems/PointLightSystem.s
+
+# target to generate assembly for a file
+src/render/RenderSystems/PointLightSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/PointLightSystem.cpp.s
+.PHONY : src/render/RenderSystems/PointLightSystem.cpp.s
+
 src/render/ce_GameObject.o: src/render/ce_GameObject.cpp.o
 .PHONY : src/render/ce_GameObject.o
 
@@ -512,6 +536,9 @@ help:
 	@echo "... src/render/RenderSystems/DefaultRenderSystem.o"
 	@echo "... src/render/RenderSystems/DefaultRenderSystem.i"
 	@echo "... src/render/RenderSystems/DefaultRenderSystem.s"
+	@echo "... src/render/RenderSystems/PointLightSystem.o"
+	@echo "... src/render/RenderSystems/PointLightSystem.i"
+	@echo "... src/render/RenderSystems/PointLightSystem.s"
 	@echo "... src/render/ce_GameObject.o"
 	@echo "... src/render/ce_GameObject.i"
 	@echo "... src/render/ce_GameObject.s"

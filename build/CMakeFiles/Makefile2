@@ -82,12 +82,12 @@ clean: CMakeFiles/Shaders.dir/clean
 CMakeFiles/ConfuseEngine.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 "Built target ConfuseEngine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 "Built target ConfuseEngine"
 .PHONY : CMakeFiles/ConfuseEngine.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ConfuseEngine.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ConfuseEngine.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles 0
 .PHONY : CMakeFiles/ConfuseEngine.dir/rule
@@ -108,12 +108,12 @@ CMakeFiles/ConfuseEngine.dir/clean:
 CMakeFiles/Shaders.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=16,17 "Built target Shaders"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=17,18,19,20 "Built target Shaders"
 .PHONY : CMakeFiles/Shaders.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Shaders.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Shaders.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles 0
 .PHONY : CMakeFiles/Shaders.dir/rule
