@@ -4,7 +4,8 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/headers/",
-                "${workspaceFolder}/libs/tinyobjectloader"
+                "${workspaceFolder}/libs/tinyobjectloader",
+                "${workspaceFolder}/libs/stbimage"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",

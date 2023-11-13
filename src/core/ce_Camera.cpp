@@ -1,7 +1,7 @@
 #include "core/ce_Camera.hpp"
 
-namespace ConfuseEngine{
-    void CE_Camera::setOrthographicProjection(float left, float right, float top, float bottom, float near, float far){
+namespace ConfuseEngine {
+    void CE_Camera::setOrthographicProjection(float left, float right, float top, float bottom, float near, float far) {
         m_projectionMatrix = glm::mat4{1.0f};
         m_projectionMatrix[0][0] = 2.f / (right - left);
         m_projectionMatrix[1][1] = 2.f / (bottom - top);
@@ -11,7 +11,7 @@ namespace ConfuseEngine{
         m_projectionMatrix[3][2] = -near / (far - near);
     }
 
-    void CE_Camera::setPerspectiveProjection(float fovy, float aspect, float near, float far){
+    void CE_Camera::setPerspectiveProjection(float fovy, float aspect, float near, float far) {
         assert(glm::abs(aspect - std::numeric_limits<float>::epsilon()) > 0.0f);
         const float tanHalfFovy = tan(fovy / 2.f);
         m_projectionMatrix = glm::mat4{0.0f};
@@ -83,5 +83,19 @@ namespace ConfuseEngine{
         m_viewMatrix[3][0] = -glm::dot(u, position);
         m_viewMatrix[3][1] = -glm::dot(v, position);
         m_viewMatrix[3][2] = -glm::dot(w, position);
+
+        m_inverseViewMatrix = glm::mat4{1.f};
+        m_inverseViewMatrix[0][0] = u.x;
+        m_inverseViewMatrix[0][1] = u.y;
+        m_inverseViewMatrix[0][2] = u.z;
+        m_inverseViewMatrix[1][0] = v.x;
+        m_inverseViewMatrix[1][1] = v.y;
+        m_inverseViewMatrix[1][2] = v.z;
+        m_inverseViewMatrix[2][0] = w.x;
+        m_inverseViewMatrix[2][1] = w.y;
+        m_inverseViewMatrix[2][2] = w.z;
+        m_inverseViewMatrix[3][0] = position.x;
+        m_inverseViewMatrix[3][1] = position.y;
+        m_inverseViewMatrix[3][2] = position.z;
     }
 }

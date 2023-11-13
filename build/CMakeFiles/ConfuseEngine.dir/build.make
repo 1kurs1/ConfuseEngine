@@ -195,10 +195,24 @@ CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/PointLightSystem.cpp.s: cm
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/PointLightSystem.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/RenderSystems/PointLightSystem.cpp -o CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/PointLightSystem.cpp.s
 
+CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
+CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/RenderSystems/TextureRenderSystem.cpp
+CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/RenderSystems/TextureRenderSystem.cpp
+
+CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/RenderSystems/TextureRenderSystem.cpp > CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.i
+
+CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/RenderSystems/TextureRenderSystem.cpp -o CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.s
+
 CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
 CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_GameObject.cpp
 CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_GameObject.cpp
 
 CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.i: cmake_force
@@ -212,7 +226,7 @@ CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.s: cmake_force
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_Model.cpp
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_Model.cpp
 
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.i: cmake_force
@@ -226,7 +240,7 @@ CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.s: cmake_force
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_Pipeline.cpp
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_Pipeline.cpp
 
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.i: cmake_force
@@ -240,7 +254,7 @@ CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.s: cmake_force
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_Renderer.cpp
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_Renderer.cpp
 
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.i: cmake_force
@@ -254,7 +268,7 @@ CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.s: cmake_force
 CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
 CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_SwapChain.cpp
 CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_SwapChain.cpp
 
 CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.i: cmake_force
@@ -265,10 +279,24 @@ CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_SwapChain.cpp -o CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.s
 
+CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
+CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_Texture.cpp
+CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_Texture.cpp
+
+CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_Texture.cpp > CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.i
+
+CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_Texture.cpp -o CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.s
+
 CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
 CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/window/ce_Window.cpp
 CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/window/ce_Window.cpp
 
 CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.i: cmake_force
@@ -290,11 +318,13 @@ ConfuseEngine_OBJECTS = \
 "CMakeFiles/ConfuseEngine.dir/src/main.cpp.o" \
 "CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/DefaultRenderSystem.cpp.o" \
 "CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/PointLightSystem.cpp.o" \
+"CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.o" \
 "CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.o" \
 "CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.o" \
 "CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.o" \
 "CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o" \
 "CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o" \
+"CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.o" \
 "CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o"
 
 # External object files for target ConfuseEngine
@@ -309,17 +339,19 @@ ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/input/keyboardMovementController
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/main.cpp.o
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/DefaultRenderSystem.cpp.o
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/PointLightSystem.cpp.o
+ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.o
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.o
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.o
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.o
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o
+ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.o
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/build.make
 ConfuseEngine: /usr/lib/x86_64-linux-gnu/libglfw.so.3.3
 ConfuseEngine: /usr/lib/x86_64-linux-gnu/libvulkan.so
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable ConfuseEngine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable ConfuseEngine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ConfuseEngine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

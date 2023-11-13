@@ -14,6 +14,9 @@
 #include <memory>
 #include <chrono>
 #include <unordered_map>
+#include <map>
+#include <cmath>
+#include <numeric>
 
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>

@@ -2,8 +2,10 @@
 
 #include "core/ce_Device.hpp"
 
-namespace ConfuseEngineRenderer{
+using namespace ConfuseEngine;
+namespace ConfuseEngineRenderer {
     struct PipelineConfigInfo {
+        PipelineConfigInfo() = default;
         PipelineConfigInfo(const PipelineConfigInfo&) = delete;
         PipelineConfigInfo& operator=(const PipelineConfigInfo&) = delete;
 
@@ -23,11 +25,9 @@ namespace ConfuseEngineRenderer{
         uint32_t subpass = 0;
     };
 
-    class CE_Pipeline{
+    class CE_Pipeline {
     public:
-        static constexpr int MAX_FRAMES_IN_FLIGHT = 2;
-
-        CE_Pipeline(ConfuseEngine::CE_Device& device, const std::string& vertShaderPath, const std::string& fragShaderPath, const PipelineConfigInfo& configInfo);
+        CE_Pipeline(CE_Device& device, const std::string& vertFilepath, const std::string& fragFilepath, const PipelineConfigInfo& configInfo);
         ~CE_Pipeline();
 
         CE_Pipeline(const CE_Pipeline&) = delete;
@@ -36,14 +36,15 @@ namespace ConfuseEngineRenderer{
         void bind(VkCommandBuffer commandBuffer);
 
         static void defaultPipelineConfigInfo(PipelineConfigInfo& configInfo);
+        static void enableAlphaBlending(PipelineConfigInfo& configInfo);
 
     private:
-        static std::vector<char> readFile(const std::string& filePath);
+        static std::vector<char> readFile(const std::string& filepath);
 
-        void createGraphicsPipeline(const std::string& vertShaderPath, const std::string& fragShaderPath, const PipelineConfigInfo& configInfo);
+        void createGraphicsPipeline(const std::string& vertFilepath, const std::string& fragFilepath, const PipelineConfigInfo& configInfo);
         void createShaderModule(const std::vector<char>& code, VkShaderModule* shaderModule);
 
-        ConfuseEngine::CE_Device& m_rDevice;
+        CE_Device& m_rDevice;
         VkPipeline m_graphicsPipeline;
         VkShaderModule m_vertShaderModule;
         VkShaderModule m_fragShaderModule;

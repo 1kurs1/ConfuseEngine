@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/external -I/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src -I/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers -I/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/libs/tinyobjectloader
+CXX_INCLUDES = -I/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/external -I/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src -I/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers -I/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/libs/tinyobjectloader -I/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/libs/stbimage
 
 CXX_FLAGS = 
 

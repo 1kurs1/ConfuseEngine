@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/fragmentShader.frag.spv"
   "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/pointLight.frag.spv"
   "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/pointLight.vert.spv"
+  "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/textureShader.frag.spv"
+  "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/textureShader.vert.spv"
   "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/shaders/vertexShader.vert.spv"
   "CMakeFiles/Shaders"
 )

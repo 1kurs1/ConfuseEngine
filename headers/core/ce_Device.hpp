@@ -2,58 +2,60 @@
 
 #include "window/ce_Window.hpp"
 
-namespace ConfuseEngine{
-    struct SwapChainSupportDetails{
+using namespace ConfuseGraphicsCore;
+namespace ConfuseEngine {
+    struct SwapChainSupportDetails {
         VkSurfaceCapabilitiesKHR capabilities;
         std::vector<VkSurfaceFormatKHR> formats;
         std::vector<VkPresentModeKHR> presentModes;
     };
 
-    struct QueueFamilyIndices{
+    struct QueueFamilyIndices {
         uint32_t graphicsFamily;
         uint32_t presentFamily;
         bool graphicsFamilyHasValue = false;
         bool presentFamilyHasValue = false;
-        bool isComplete(){return graphicsFamilyHasValue && presentFamilyHasValue;}
+        bool isComplete() { return graphicsFamilyHasValue && presentFamilyHasValue; }
     };
 
-    class CE_Device{
+    class CE_Device {
     public:
-    #ifdef NDEBUG
+        #ifdef NDEBUG
         const bool enableValidationLayers = false;
-    #else
+        #else
         const bool enableValidationLayers = true;
-    #endif
+        #endif
 
-        CE_Device(ConfuseGraphicsCore::CE_Window& window);
+        CE_Device(CE_Window &window);
         ~CE_Device();
 
-        // Copy and Move protection:
         CE_Device(const CE_Device&) = delete;
-        CE_Device& operator=(const CE_Device&) = delete;
+        CE_Device &operator=(const CE_Device&) = delete;
         CE_Device(CE_Device&&) = delete;
-        CE_Device& operator=(CE_Device&&) = delete;
+        CE_Device &operator=(CE_Device&&) = delete;
 
-        VkCommandPool getCommandPool(){return m_commandPool;}
-        VkDevice device() {return m_device;}
-        VkSurfaceKHR surface(){return m_surface;}
-        VkQueue graphicsQueue(){return m_graphicsQueue;}
-        VkQueue presentQueue(){return m_presentQueue;}
+        VkCommandPool getCommandPool() { return m_commandPool; }
+        VkDevice device() { return m_device; }
+        VkSurfaceKHR surface() { return m_surface; }
+        VkQueue graphicsQueue() { return m_graphicsQueue; }
+        VkQueue presentQueue() { return m_presentQueue; }
 
-        SwapChainSupportDetails getSwapChainSupport(){return querySwapChainSupport(m_physicalDevice);}
+        SwapChainSupportDetails getSwapChainSupport() { return querySwapChainSupport(m_physicalDevice); }
         uint32_t findMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties);
-        QueueFamilyIndices findPhysicalQueueFamilies(){return findQueueFamilies(m_physicalDevice);}
-        VkFormat findSupportedFormat(const std::vector<VkFormat>& candidates, VkImageTiling tiling, VkFormatFeatureFlags features);
+        QueueFamilyIndices findPhysicalQueueFamilies() { return findQueueFamilies(m_physicalDevice); }
+        VkFormat findSupportedFormat(const std::vector<VkFormat> &candidates, VkImageTiling tiling, VkFormatFeatureFlags features);
 
-        void createBuffer(VkDeviceSize size, VkBufferUsageFlags usage, VkMemoryPropertyFlags properties, VkBuffer& buffer, VkDeviceMemory& bufferMemory);
+        void createBuffer(VkDeviceSize size, VkBufferUsageFlags usage, VkMemoryPropertyFlags properties, VkBuffer &buffer, VkDeviceMemory &bufferMemory);
         VkCommandBuffer beginSingleTimeCommands();
         void endSingleTimeCommands(VkCommandBuffer commandBuffer);
         void copyBuffer(VkBuffer srcBuffer, VkBuffer dstBuffer, VkDeviceSize size);
         void copyBufferToImage(VkBuffer buffer, VkImage image, uint32_t width, uint32_t height, uint32_t layerCount);
 
-        void createImageWithInfo(const VkImageCreateInfo& imageInfo, VkMemoryPropertyFlags properties, VkImage& image, VkDeviceMemory& imageMemory);
+        void createImageWithInfo(const VkImageCreateInfo &imageInfo, VkMemoryPropertyFlags properties,VkImage &image, VkDeviceMemory &imageMemory);
+        void transitionImageLayout( VkImage image, VkFormat format, VkImageLayout oldLayout, VkImageLayout newLayout, uint32_t mipLevels = 1, uint32_t layerCount = 1);
 
         VkPhysicalDeviceProperties properties;
+
     private:
         void createInstance();
         void setupDebugMessenger();
@@ -63,18 +65,18 @@ namespace ConfuseEngine{
         void createCommandPool();
 
         bool isDeviceSuitable(VkPhysicalDevice device);
-        std::vector<const char*> getRequiredExtensions();
+        std::vector<const char *> getRequiredExtensions();
         bool checkValidationLayerSupport();
         QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device);
-        void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT& createInfo);
-        void hasGlfwRequiredInstanceExtensions();
+        void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT &createInfo);
+        void hasGflwRequiredInstanceExtensions();
         bool checkDeviceExtensionSupport(VkPhysicalDevice device);
         SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device);
 
         VkInstance m_instance;
         VkDebugUtilsMessengerEXT m_debugMessenger;
         VkPhysicalDevice m_physicalDevice = VK_NULL_HANDLE;
-        ConfuseGraphicsCore::CE_Window& m_window;
+        CE_Window &m_rWindow;
         VkCommandPool m_commandPool;
 
         VkDevice m_device;
@@ -82,7 +84,7 @@ namespace ConfuseEngine{
         VkQueue m_graphicsQueue;
         VkQueue m_presentQueue;
 
-        const std::vector<const char *> validationLayers = {"VK_LAYER_KHRONOS_validation"};
-        const std::vector<const char *> deviceExtensions = {VK_KHR_SWAPCHAIN_EXTENSION_NAME};
+        const std::vector<const char *> m_validationLayers = {"VK_LAYER_KHRONOS_validation"};
+        const std::vector<const char *> m_deviceExtensions = {VK_KHR_SWAPCHAIN_EXTENSION_NAME};
     };
 }

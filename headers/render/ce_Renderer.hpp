@@ -1,35 +1,34 @@
 #pragma once
 
-#include "window/ce_Window.hpp"
 #include "core/ce_Device.hpp"
 #include "render/ce_SwapChain.hpp"
+#include "window/ce_Window.hpp"
 
-using namespace ConfuseEngine;
-
-namespace ConfuseEngineRenderer{
-    class CE_Renderer{
+namespace ConfuseEngineRenderer {
+    class CE_Renderer {
     public:
-        CE_Renderer(ConfuseGraphicsCore::CE_Window& window, CE_Device& device);
+        CE_Renderer(CE_Window &window, ConfuseEngine::CE_Device &device);
         ~CE_Renderer();
 
         CE_Renderer(const CE_Renderer&) = delete;
         CE_Renderer &operator=(const CE_Renderer&) = delete;
 
-        VkRenderPass getSwapChainRenderPass() const {return m_pSwapChain->getRenderPass();}
-        float getAspectRatio() const {return m_pSwapChain->extentAspectRatio();}
-        bool isFrameInProgress() const {return m_isFrameStarted;}
+        VkRenderPass getSwapChainRenderPass() const { return m_pSwapChain->getRenderPass(); }
+        float getAspectRatio() const { return m_pSwapChain->extentAspectRatio(); }
+        bool isFrameInProgress() const { return m_isFrameStarted; }
+
         VkCommandBuffer getCurrentCommandBuffer() const {
-            assert(m_isFrameStarted && "cannot get command buffer when frame not is grogress!");
+            assert(m_isFrameStarted && "cannot get command buffer when frame not in progress");
             return m_commandBuffers[m_currentFrameIndex];
         }
 
-        int getFrameIndex() const{
-            assert(m_isFrameStarted && "cannot get frame index when frame not is grogress!");
+        int getFrameIndex() const {
+            assert(m_isFrameStarted && "cannot get frame index when frame not in progress");
             return m_currentFrameIndex;
         }
 
         VkCommandBuffer beginFrame();
-        void endFrame();    
+        void endFrame();
         void beginSwapChainRenderPass(VkCommandBuffer commandBuffer);
         void endSwapChainRenderPass(VkCommandBuffer commandBuffer);
 
@@ -38,8 +37,8 @@ namespace ConfuseEngineRenderer{
         void freeCommandBuffers();
         void recreateSwapChain();
 
-        ConfuseGraphicsCore::CE_Window& m_rWindow;
-        CE_Device& m_rDevice;
+        CE_Window &m_rWindow;
+        ConfuseEngine::CE_Device &m_rDevice;
         std::unique_ptr<CE_SwapChain> m_pSwapChain;
         std::vector<VkCommandBuffer> m_commandBuffers;
 

@@ -1,17 +1,16 @@
 #include "render/ce_SwapChain.hpp"
 
 namespace ConfuseEngineRenderer {
-    CE_SwapChain::CE_SwapChain(ConfuseEngine::CE_Device &deviceRef, VkExtent2D extent) : m_rDevice{deviceRef}, m_windowExtent{extent} {
+    CE_SwapChain::CE_SwapChain(CE_Device &deviceRef, VkExtent2D extent) : m_rDevice{deviceRef}, m_windowExtent{extent} {
         init();
     }
 
-    CE_SwapChain::CE_SwapChain(ConfuseEngine::CE_Device &deviceRef, VkExtent2D extent, std::shared_ptr<CE_SwapChain> previous) : m_rDevice{deviceRef}, m_windowExtent{extent}, m_oldSwapChain{previous} {
+    CE_SwapChain::CE_SwapChain(CE_Device &deviceRef, VkExtent2D extent, std::shared_ptr<CE_SwapChain> previous) : m_rDevice{deviceRef}, m_windowExtent{extent}, m_pOldSwapChain{previous} {
         init();
-        
-        m_oldSwapChain = nullptr;
+        m_pOldSwapChain = nullptr;
     }
 
-    void CE_SwapChain::init(){
+    void CE_SwapChain::init() {
         createSwapChain();
         createImageViews();
         createRenderPass();
@@ -51,9 +50,9 @@ namespace ConfuseEngineRenderer {
     }
 
     VkResult CE_SwapChain::acquireNextImage(uint32_t *imageIndex) {
-        vkWaitForFences(m_rDevice.device(), 1, &m_inFlightFences[m_currentFrame], VK_TRUE, std::numeric_limits<uint64_t>::max());
+        vkWaitForFences(m_rDevice.device(), 1,&m_inFlightFences[m_currentFrame], VK_TRUE, std::numeric_limits<uint64_t>::max());
 
-        VkResult result = vkAcquireNextImageKHR(m_rDevice.device(), m_swapChain, std::numeric_limits<uint64_t>::max(), m_imageAvailableSemaphores[m_currentFrame], VK_NULL_HANDLE, imageIndex);
+        VkResult result = vkAcquireNextImageKHR(m_rDevice.device(),m_swapChain, std::numeric_limits<uint64_t>::max(), m_imageAvailableSemaphores[m_currentFrame], VK_NULL_HANDLE, imageIndex);
 
         return result;
     }
@@ -81,8 +80,7 @@ namespace ConfuseEngineRenderer {
         submitInfo.pSignalSemaphores = signalSemaphores;
 
         vkResetFences(m_rDevice.device(), 1, &m_inFlightFences[m_currentFrame]);
-        if (vkQueueSubmit(m_rDevice.graphicsQueue(), 1, &submitInfo, m_inFlightFences[m_currentFrame]) !=
-            VK_SUCCESS) {
+        if (vkQueueSubmit(m_rDevice.graphicsQueue(), 1, &submitInfo, m_inFlightFences[m_currentFrame]) != VK_SUCCESS) {
             throw std::runtime_error("failed to submit draw command buffer!");
         }
 
@@ -99,13 +97,14 @@ namespace ConfuseEngineRenderer {
         presentInfo.pImageIndices = imageIndex;
 
         auto result = vkQueuePresentKHR(m_rDevice.presentQueue(), &presentInfo);
+
         m_currentFrame = (m_currentFrame + 1) % MAX_FRAMES_IN_FLIGHT;
 
         return result;
     }
 
     void CE_SwapChain::createSwapChain() {
-        ConfuseEngine::SwapChainSupportDetails swapChainSupport = m_rDevice.getSwapChainSupport();
+        SwapChainSupportDetails swapChainSupport = m_rDevice.getSwapChainSupport();
 
         VkSurfaceFormatKHR surfaceFormat = chooseSwapSurfaceFormat(swapChainSupport.formats);
         VkPresentModeKHR presentMode = chooseSwapPresentMode(swapChainSupport.presentModes);
@@ -128,7 +127,7 @@ namespace ConfuseEngineRenderer {
         createInfo.imageArrayLayers = 1;
         createInfo.imageUsage = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT;
 
-        ConfuseEngine::QueueFamilyIndices indices = m_rDevice.findPhysicalQueueFamilies();
+        QueueFamilyIndices indices = m_rDevice.findPhysicalQueueFamilies();
         uint32_t queueFamilyIndices[] = {indices.graphicsFamily, indices.presentFamily};
 
         if (indices.graphicsFamily != indices.presentFamily) {
@@ -137,8 +136,8 @@ namespace ConfuseEngineRenderer {
             createInfo.pQueueFamilyIndices = queueFamilyIndices;
         } else {
             createInfo.imageSharingMode = VK_SHARING_MODE_EXCLUSIVE;
-            createInfo.queueFamilyIndexCount = 0;     
-            createInfo.pQueueFamilyIndices = nullptr;
+            createInfo.queueFamilyIndexCount = 0;      
+            createInfo.pQueueFamilyIndices = nullptr; 
         }
 
         createInfo.preTransform = swapChainSupport.capabilities.currentTransform;
@@ -147,11 +146,12 @@ namespace ConfuseEngineRenderer {
         createInfo.presentMode = presentMode;
         createInfo.clipped = VK_TRUE;
 
-        createInfo.oldSwapchain = m_oldSwapChain == nullptr ?  VK_NULL_HANDLE : m_oldSwapChain->m_swapChain;
+        createInfo.oldSwapchain = m_pOldSwapChain == nullptr ? VK_NULL_HANDLE : m_pOldSwapChain->m_swapChain;
 
         if (vkCreateSwapchainKHR(m_rDevice.device(), &createInfo, nullptr, &m_swapChain) != VK_SUCCESS) {
             throw std::runtime_error("failed to create swap chain!");
         }
+
         vkGetSwapchainImagesKHR(m_rDevice.device(), m_swapChain, &imageCount, nullptr);
         m_swapChainImages.resize(imageCount);
         vkGetSwapchainImagesKHR(m_rDevice.device(), m_swapChain, &imageCount, m_swapChainImages.data());
@@ -174,9 +174,8 @@ namespace ConfuseEngineRenderer {
             viewInfo.subresourceRange.baseArrayLayer = 0;
             viewInfo.subresourceRange.layerCount = 1;
 
-            if (vkCreateImageView(m_rDevice.device(), &viewInfo, nullptr, &m_swapChainImageViews[i]) !=
-                VK_SUCCESS) {
-            throw std::runtime_error("failed to create texture image view!");
+            if (vkCreateImageView(m_rDevice.device(), &viewInfo, nullptr, &m_swapChainImageViews[i]) != VK_SUCCESS) {
+                throw std::runtime_error("failed to create texture image view!");
             }
         }
     }
@@ -217,15 +216,12 @@ namespace ConfuseEngineRenderer {
         subpass.pDepthStencilAttachment = &depthAttachmentRef;
 
         VkSubpassDependency dependency = {};
+        dependency.dstSubpass = 0;
+        dependency.dstAccessMask = VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT | VK_ACCESS_DEPTH_STENCIL_ATTACHMENT_WRITE_BIT;
+        dependency.dstStageMask =  VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT | VK_PIPELINE_STAGE_EARLY_FRAGMENT_TESTS_BIT;
         dependency.srcSubpass = VK_SUBPASS_EXTERNAL;
         dependency.srcAccessMask = 0;
-        dependency.srcStageMask =
-            VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT | VK_PIPELINE_STAGE_EARLY_FRAGMENT_TESTS_BIT;
-        dependency.dstSubpass = 0;
-        dependency.dstStageMask =
-            VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT | VK_PIPELINE_STAGE_EARLY_FRAGMENT_TESTS_BIT;
-        dependency.dstAccessMask =
-            VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT | VK_ACCESS_DEPTH_STENCIL_ATTACHMENT_WRITE_BIT;
+        dependency.srcStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT | VK_PIPELINE_STAGE_EARLY_FRAGMENT_TESTS_BIT;
 
         std::array<VkAttachmentDescription, 2> attachments = {colorAttachment, depthAttachment};
         VkRenderPassCreateInfo renderPassInfo = {};
@@ -322,18 +318,15 @@ namespace ConfuseEngineRenderer {
         fenceInfo.flags = VK_FENCE_CREATE_SIGNALED_BIT;
 
         for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
-            if (vkCreateSemaphore(m_rDevice.device(), &semaphoreInfo, nullptr, &m_imageAvailableSemaphores[i]) !=
-                    VK_SUCCESS ||
-                vkCreateSemaphore(m_rDevice.device(), &semaphoreInfo, nullptr, &m_renderFinishedSemaphores[i]) !=
-                    VK_SUCCESS ||
+            if (vkCreateSemaphore(m_rDevice.device(), &semaphoreInfo, nullptr, &m_imageAvailableSemaphores[i]) != VK_SUCCESS ||
+                vkCreateSemaphore(m_rDevice.device(), &semaphoreInfo, nullptr, &m_renderFinishedSemaphores[i]) != VK_SUCCESS ||
                 vkCreateFence(m_rDevice.device(), &fenceInfo, nullptr, &m_inFlightFences[i]) != VK_SUCCESS) {
                 throw std::runtime_error("failed to create synchronization objects for a frame!");
             }
         }
     }
 
-    VkSurfaceFormatKHR CE_SwapChain::chooseSwapSurfaceFormat(
-            const std::vector<VkSurfaceFormatKHR> &availableFormats) {
+    VkSurfaceFormatKHR CE_SwapChain::chooseSwapSurfaceFormat(const std::vector<VkSurfaceFormatKHR> &availableFormats) {
         for (const auto &availableFormat : availableFormats) {
             if (availableFormat.format == VK_FORMAT_B8G8R8A8_SRGB &&
                 availableFormat.colorSpace == VK_COLOR_SPACE_SRGB_NONLINEAR_KHR) {
@@ -347,33 +340,22 @@ namespace ConfuseEngineRenderer {
     VkPresentModeKHR CE_SwapChain::chooseSwapPresentMode(const std::vector<VkPresentModeKHR> &availablePresentModes) {
         for (const auto &availablePresentMode : availablePresentModes) {
             if (availablePresentMode == VK_PRESENT_MODE_MAILBOX_KHR) {
-                std::cout << "Present mode: Mailbox" << '\n';
-                return availablePresentMode;
+            std::cout << "Present mode: Mailbox" << std::endl;
+            return availablePresentMode;
             }
         }
 
-        // for(const auto& availablePresentMode : availablePresentModes){
-        //     if(availablePresentMode == VK_PRESENT_MODE_IMMEDIATE_KHR){
-        //         std::cout << "Present mode: Immediate" << '\n';
-        //         return availablePresentMode;
-        //     }
-        // }
-
-        std::cout << "Present mode: V-Sync" << '\n';
-            return VK_PRESENT_MODE_FIFO_KHR;
-    }
+        std::cout << "Present mode: V-Sync" << std::endl;
+        return VK_PRESENT_MODE_FIFO_KHR;
+        }
 
     VkExtent2D CE_SwapChain::chooseSwapExtent(const VkSurfaceCapabilitiesKHR &capabilities) {
         if (capabilities.currentExtent.width != std::numeric_limits<uint32_t>::max()) {
             return capabilities.currentExtent;
         } else {
             VkExtent2D actualExtent = m_windowExtent;
-            actualExtent.width = std::max(
-                capabilities.minImageExtent.width,
-                std::min(capabilities.maxImageExtent.width, actualExtent.width));
-            actualExtent.height = std::max(
-                capabilities.minImageExtent.height,
-                std::min(capabilities.maxImageExtent.height, actualExtent.height));
+            actualExtent.width = std::max(capabilities.minImageExtent.width, std::min(capabilities.maxImageExtent.width, actualExtent.width));
+            actualExtent.height = std::max(capabilities.minImageExtent.height, std::min(capabilities.maxImageExtent.height, actualExtent.height));
 
             return actualExtent;
         }
@@ -385,5 +367,4 @@ namespace ConfuseEngineRenderer {
         VK_IMAGE_TILING_OPTIMAL,
         VK_FORMAT_FEATURE_DEPTH_STENCIL_ATTACHMENT_BIT);
     }
-
 }

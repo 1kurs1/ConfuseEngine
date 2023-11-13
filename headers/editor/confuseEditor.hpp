@@ -25,14 +25,16 @@ namespace ConfuseGraphicsCore{
         Editor &operator=(const Editor&) = delete;
 
         void startEditor();
+
     private:
         void loadGameObjects();
 
-        CE_Window m_window{WIDTH, HEIGHT, "ConfuseEditor"};
+        CE_Window m_window{WIDTH, HEIGHT, "Confuse Editor"};
         CE_Device m_device{m_window};
         CE_Renderer m_renderer{m_window, m_device};
 
         std::unique_ptr<CE_DescriptorPool> m_pGlobalPool{};
+        std::vector<std::unique_ptr<CE_DescriptorPool>> m_framePools;
         CE_GameObject::Map m_gameObjects;
     };
 }

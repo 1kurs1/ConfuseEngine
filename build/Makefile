@@ -358,6 +358,30 @@ src/render/RenderSystems/PointLightSystem.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/PointLightSystem.cpp.s
 .PHONY : src/render/RenderSystems/PointLightSystem.cpp.s
 
+src/render/RenderSystems/TextureRenderSystem.o: src/render/RenderSystems/TextureRenderSystem.cpp.o
+.PHONY : src/render/RenderSystems/TextureRenderSystem.o
+
+# target to build an object file
+src/render/RenderSystems/TextureRenderSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.o
+.PHONY : src/render/RenderSystems/TextureRenderSystem.cpp.o
+
+src/render/RenderSystems/TextureRenderSystem.i: src/render/RenderSystems/TextureRenderSystem.cpp.i
+.PHONY : src/render/RenderSystems/TextureRenderSystem.i
+
+# target to preprocess a source file
+src/render/RenderSystems/TextureRenderSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.i
+.PHONY : src/render/RenderSystems/TextureRenderSystem.cpp.i
+
+src/render/RenderSystems/TextureRenderSystem.s: src/render/RenderSystems/TextureRenderSystem.cpp.s
+.PHONY : src/render/RenderSystems/TextureRenderSystem.s
+
+# target to generate assembly for a file
+src/render/RenderSystems/TextureRenderSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.s
+.PHONY : src/render/RenderSystems/TextureRenderSystem.cpp.s
+
 src/render/ce_GameObject.o: src/render/ce_GameObject.cpp.o
 .PHONY : src/render/ce_GameObject.o
 
@@ -478,6 +502,30 @@ src/render/ce_SwapChain.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.s
 .PHONY : src/render/ce_SwapChain.cpp.s
 
+src/render/ce_Texture.o: src/render/ce_Texture.cpp.o
+.PHONY : src/render/ce_Texture.o
+
+# target to build an object file
+src/render/ce_Texture.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.o
+.PHONY : src/render/ce_Texture.cpp.o
+
+src/render/ce_Texture.i: src/render/ce_Texture.cpp.i
+.PHONY : src/render/ce_Texture.i
+
+# target to preprocess a source file
+src/render/ce_Texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.i
+.PHONY : src/render/ce_Texture.cpp.i
+
+src/render/ce_Texture.s: src/render/ce_Texture.cpp.s
+.PHONY : src/render/ce_Texture.s
+
+# target to generate assembly for a file
+src/render/ce_Texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.s
+.PHONY : src/render/ce_Texture.cpp.s
+
 src/window/ce_Window.o: src/window/ce_Window.cpp.o
 .PHONY : src/window/ce_Window.o
 
@@ -539,6 +587,9 @@ help:
 	@echo "... src/render/RenderSystems/PointLightSystem.o"
 	@echo "... src/render/RenderSystems/PointLightSystem.i"
 	@echo "... src/render/RenderSystems/PointLightSystem.s"
+	@echo "... src/render/RenderSystems/TextureRenderSystem.o"
+	@echo "... src/render/RenderSystems/TextureRenderSystem.i"
+	@echo "... src/render/RenderSystems/TextureRenderSystem.s"
 	@echo "... src/render/ce_GameObject.o"
 	@echo "... src/render/ce_GameObject.i"
 	@echo "... src/render/ce_GameObject.s"
@@ -554,6 +605,9 @@ help:
 	@echo "... src/render/ce_SwapChain.o"
 	@echo "... src/render/ce_SwapChain.i"
 	@echo "... src/render/ce_SwapChain.s"
+	@echo "... src/render/ce_Texture.o"
+	@echo "... src/render/ce_Texture.i"
+	@echo "... src/render/ce_Texture.s"
 	@echo "... src/window/ce_Window.o"
 	@echo "... src/window/ce_Window.i"
 	@echo "... src/window/ce_Window.s"
