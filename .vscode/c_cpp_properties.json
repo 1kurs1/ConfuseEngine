@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/headers/",
                 "${workspaceFolder}/libs/tinyobjectloader",
-                "${workspaceFolder}/libs/stbimage"
+                "${workspaceFolder}/libs/stbimage",
+                "${workspaceFolder}/libs/imgui"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",

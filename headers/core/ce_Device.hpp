@@ -39,6 +39,9 @@ namespace ConfuseEngine {
         VkSurfaceKHR surface() { return m_surface; }
         VkQueue graphicsQueue() { return m_graphicsQueue; }
         VkQueue presentQueue() { return m_presentQueue; }
+        VkInstance getInstance(){return m_instance;}
+        VkPhysicalDevice getPhysicalDevice(){return m_physicalDevice;}
+        uint32_t getGraphicsQueueFamily(){return findPhysicalQueueFamilies().graphicsFamily;}
 
         SwapChainSupportDetails getSwapChainSupport() { return querySwapChainSupport(m_physicalDevice); }
         uint32_t findMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties);
@@ -64,7 +67,8 @@ namespace ConfuseEngine {
         void createLogicalDevice();
         void createCommandPool();
 
-        bool isDeviceSuitable(VkPhysicalDevice device);
+        bool isSuitableDevice(VkPhysicalDevice device);
+        bool isPreferredDevice(VkPhysicalDevice device);
         std::vector<const char *> getRequiredExtensions();
         bool checkValidationLayerSupport();
         QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device);

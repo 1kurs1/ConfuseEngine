@@ -4,6 +4,8 @@
 #include "render/RenderSystems/TextureRenderSystem.hpp"
 #include "core/ce_Buffer.hpp"
 
+#include "window/ce_Imgui.hpp"
+
 namespace ConfuseGraphicsCore{
     Editor::Editor(){
         m_pGlobalPool = CE_DescriptorPool::Builder(m_device).setMaxSets(CE_SwapChain::MAX_FRAMES_IN_FLIGHT).addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, CE_SwapChain::MAX_FRAMES_IN_FLIGHT).build();
@@ -20,6 +22,7 @@ namespace ConfuseGraphicsCore{
     Editor::~Editor(){}
 
     void Editor::startEditor(){
+        CE_Imgui imgui{m_window, m_device, m_renderer.getSwapChainRenderPass(), m_renderer.getImageCount()};
         std::vector<std::unique_ptr<CE_Buffer>> uboBuffers(CE_SwapChain::MAX_FRAMES_IN_FLIGHT);
         for (int i = 0; i < uboBuffers.size(); i++) {
             uboBuffers[i] = std::make_unique<CE_Buffer>(m_device, sizeof(GlobalUBO), 1, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT);
@@ -58,6 +61,8 @@ namespace ConfuseGraphicsCore{
             camera.setPerspectiveProjection(glm::radians(50.f), aspect, 0.1f, 100.f);
 
             if (auto commandBuffer = m_renderer.beginFrame()) {
+                //imgui.newFrame();
+
                 int frameIndex = m_renderer.getFrameIndex();
                 m_framePools[frameIndex]->resetPool();
                 FrameInfo frameInfo{frameIndex, frameTime, commandBuffer, camera, globalDescriptorSets[frameIndex], *m_framePools[frameIndex],m_gameObjects};
@@ -73,6 +78,9 @@ namespace ConfuseGraphicsCore{
 
                 // render:
                 m_renderer.beginSwapChainRenderPass(commandBuffer);
+
+                //imgui.runExample();
+                //imgui.render(commandBuffer);
 
                 textureRenderSystem.renderGameObjects(frameInfo);
                 defaultRenderSystem.renderGameObjects(frameInfo);
@@ -137,8 +145,11 @@ namespace ConfuseGraphicsCore{
 
     void Editor::loadGameObjects(){
         std::shared_ptr<CE_Model> model = CE_Model::createModelFromFile(m_device, "models/rifle2.obj");
+        std::shared_ptr<CE_Texture> marbleTexture = CE_Texture::createTextureFromFile(m_device, "../textures/gsmg_diffuse.tga");
+        
         auto rifle = CE_GameObject::createGameObject();
         rifle.model = model;
+        rifle.diffuseMap = marbleTexture;
         rifle.transform.translation = {-3.f, .0f, 0.f};
         rifle.transform.scale = {-1.f, -1.f, -1.f};
         m_gameObjects.emplace(rifle.getId(), std::move(rifle));
@@ -151,10 +162,9 @@ namespace ConfuseGraphicsCore{
         m_gameObjects.emplace(cube.getId(), std::move(cube));
 
         model = CE_Model::createModelFromFile(m_device, "models/quad.obj");
-        std::shared_ptr<CE_Texture> marbleTexture = CE_Texture::createTextureFromFile(m_device, "../textures/grass.jpg");
+        marbleTexture = CE_Texture::createTextureFromFile(m_device, "../textures/grass.jpg");
         auto floor = CE_GameObject::createGameObject();
         floor.model = model;
-        floor.diffuseMap = marbleTexture;
         floor.transform.translation = {0.f, 1.f, 0.f};
         floor.transform.scale = {10.f, 1.f, 10.f};
         m_gameObjects.emplace(floor.getId(), std::move(floor));

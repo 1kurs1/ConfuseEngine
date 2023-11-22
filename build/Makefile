@@ -262,6 +262,174 @@ src/editor/confuseEditor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/editor/confuseEditor.cpp.s
 .PHONY : src/editor/confuseEditor.cpp.s
 
+src/imgui/imgui.o: src/imgui/imgui.cpp.o
+.PHONY : src/imgui/imgui.o
+
+# target to build an object file
+src/imgui/imgui.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/imgui/imgui.cpp.o
+.PHONY : src/imgui/imgui.cpp.o
+
+src/imgui/imgui.i: src/imgui/imgui.cpp.i
+.PHONY : src/imgui/imgui.i
+
+# target to preprocess a source file
+src/imgui/imgui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/imgui/imgui.cpp.i
+.PHONY : src/imgui/imgui.cpp.i
+
+src/imgui/imgui.s: src/imgui/imgui.cpp.s
+.PHONY : src/imgui/imgui.s
+
+# target to generate assembly for a file
+src/imgui/imgui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/imgui/imgui.cpp.s
+.PHONY : src/imgui/imgui.cpp.s
+
+src/imgui/imgui_demo.o: src/imgui/imgui_demo.cpp.o
+.PHONY : src/imgui/imgui_demo.o
+
+# target to build an object file
+src/imgui/imgui_demo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_demo.cpp.o
+.PHONY : src/imgui/imgui_demo.cpp.o
+
+src/imgui/imgui_demo.i: src/imgui/imgui_demo.cpp.i
+.PHONY : src/imgui/imgui_demo.i
+
+# target to preprocess a source file
+src/imgui/imgui_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_demo.cpp.i
+.PHONY : src/imgui/imgui_demo.cpp.i
+
+src/imgui/imgui_demo.s: src/imgui/imgui_demo.cpp.s
+.PHONY : src/imgui/imgui_demo.s
+
+# target to generate assembly for a file
+src/imgui/imgui_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_demo.cpp.s
+.PHONY : src/imgui/imgui_demo.cpp.s
+
+src/imgui/imgui_draw.o: src/imgui/imgui_draw.cpp.o
+.PHONY : src/imgui/imgui_draw.o
+
+# target to build an object file
+src/imgui/imgui_draw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_draw.cpp.o
+.PHONY : src/imgui/imgui_draw.cpp.o
+
+src/imgui/imgui_draw.i: src/imgui/imgui_draw.cpp.i
+.PHONY : src/imgui/imgui_draw.i
+
+# target to preprocess a source file
+src/imgui/imgui_draw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_draw.cpp.i
+.PHONY : src/imgui/imgui_draw.cpp.i
+
+src/imgui/imgui_draw.s: src/imgui/imgui_draw.cpp.s
+.PHONY : src/imgui/imgui_draw.s
+
+# target to generate assembly for a file
+src/imgui/imgui_draw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_draw.cpp.s
+.PHONY : src/imgui/imgui_draw.cpp.s
+
+src/imgui/imgui_impl_glfw.o: src/imgui/imgui_impl_glfw.cpp.o
+.PHONY : src/imgui/imgui_impl_glfw.o
+
+# target to build an object file
+src/imgui/imgui_impl_glfw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_glfw.cpp.o
+.PHONY : src/imgui/imgui_impl_glfw.cpp.o
+
+src/imgui/imgui_impl_glfw.i: src/imgui/imgui_impl_glfw.cpp.i
+.PHONY : src/imgui/imgui_impl_glfw.i
+
+# target to preprocess a source file
+src/imgui/imgui_impl_glfw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_glfw.cpp.i
+.PHONY : src/imgui/imgui_impl_glfw.cpp.i
+
+src/imgui/imgui_impl_glfw.s: src/imgui/imgui_impl_glfw.cpp.s
+.PHONY : src/imgui/imgui_impl_glfw.s
+
+# target to generate assembly for a file
+src/imgui/imgui_impl_glfw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_glfw.cpp.s
+.PHONY : src/imgui/imgui_impl_glfw.cpp.s
+
+src/imgui/imgui_impl_vulkan.o: src/imgui/imgui_impl_vulkan.cpp.o
+.PHONY : src/imgui/imgui_impl_vulkan.o
+
+# target to build an object file
+src/imgui/imgui_impl_vulkan.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_vulkan.cpp.o
+.PHONY : src/imgui/imgui_impl_vulkan.cpp.o
+
+src/imgui/imgui_impl_vulkan.i: src/imgui/imgui_impl_vulkan.cpp.i
+.PHONY : src/imgui/imgui_impl_vulkan.i
+
+# target to preprocess a source file
+src/imgui/imgui_impl_vulkan.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_vulkan.cpp.i
+.PHONY : src/imgui/imgui_impl_vulkan.cpp.i
+
+src/imgui/imgui_impl_vulkan.s: src/imgui/imgui_impl_vulkan.cpp.s
+.PHONY : src/imgui/imgui_impl_vulkan.s
+
+# target to generate assembly for a file
+src/imgui/imgui_impl_vulkan.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_vulkan.cpp.s
+.PHONY : src/imgui/imgui_impl_vulkan.cpp.s
+
+src/imgui/imgui_tables.o: src/imgui/imgui_tables.cpp.o
+.PHONY : src/imgui/imgui_tables.o
+
+# target to build an object file
+src/imgui/imgui_tables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_tables.cpp.o
+.PHONY : src/imgui/imgui_tables.cpp.o
+
+src/imgui/imgui_tables.i: src/imgui/imgui_tables.cpp.i
+.PHONY : src/imgui/imgui_tables.i
+
+# target to preprocess a source file
+src/imgui/imgui_tables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_tables.cpp.i
+.PHONY : src/imgui/imgui_tables.cpp.i
+
+src/imgui/imgui_tables.s: src/imgui/imgui_tables.cpp.s
+.PHONY : src/imgui/imgui_tables.s
+
+# target to generate assembly for a file
+src/imgui/imgui_tables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_tables.cpp.s
+.PHONY : src/imgui/imgui_tables.cpp.s
+
+src/imgui/imgui_widgets.o: src/imgui/imgui_widgets.cpp.o
+.PHONY : src/imgui/imgui_widgets.o
+
+# target to build an object file
+src/imgui/imgui_widgets.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_widgets.cpp.o
+.PHONY : src/imgui/imgui_widgets.cpp.o
+
+src/imgui/imgui_widgets.i: src/imgui/imgui_widgets.cpp.i
+.PHONY : src/imgui/imgui_widgets.i
+
+# target to preprocess a source file
+src/imgui/imgui_widgets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_widgets.cpp.i
+.PHONY : src/imgui/imgui_widgets.cpp.i
+
+src/imgui/imgui_widgets.s: src/imgui/imgui_widgets.cpp.s
+.PHONY : src/imgui/imgui_widgets.s
+
+# target to generate assembly for a file
+src/imgui/imgui_widgets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_widgets.cpp.s
+.PHONY : src/imgui/imgui_widgets.cpp.s
+
 src/input/keyboardMovementController.o: src/input/keyboardMovementController.cpp.o
 .PHONY : src/input/keyboardMovementController.o
 
@@ -526,6 +694,30 @@ src/render/ce_Texture.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.s
 .PHONY : src/render/ce_Texture.cpp.s
 
+src/window/ce_Imgui.o: src/window/ce_Imgui.cpp.o
+.PHONY : src/window/ce_Imgui.o
+
+# target to build an object file
+src/window/ce_Imgui.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/window/ce_Imgui.cpp.o
+.PHONY : src/window/ce_Imgui.cpp.o
+
+src/window/ce_Imgui.i: src/window/ce_Imgui.cpp.i
+.PHONY : src/window/ce_Imgui.i
+
+# target to preprocess a source file
+src/window/ce_Imgui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/window/ce_Imgui.cpp.i
+.PHONY : src/window/ce_Imgui.cpp.i
+
+src/window/ce_Imgui.s: src/window/ce_Imgui.cpp.s
+.PHONY : src/window/ce_Imgui.s
+
+# target to generate assembly for a file
+src/window/ce_Imgui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConfuseEngine.dir/build.make CMakeFiles/ConfuseEngine.dir/src/window/ce_Imgui.cpp.s
+.PHONY : src/window/ce_Imgui.cpp.s
+
 src/window/ce_Window.o: src/window/ce_Window.cpp.o
 .PHONY : src/window/ce_Window.o
 
@@ -575,6 +767,27 @@ help:
 	@echo "... src/editor/confuseEditor.o"
 	@echo "... src/editor/confuseEditor.i"
 	@echo "... src/editor/confuseEditor.s"
+	@echo "... src/imgui/imgui.o"
+	@echo "... src/imgui/imgui.i"
+	@echo "... src/imgui/imgui.s"
+	@echo "... src/imgui/imgui_demo.o"
+	@echo "... src/imgui/imgui_demo.i"
+	@echo "... src/imgui/imgui_demo.s"
+	@echo "... src/imgui/imgui_draw.o"
+	@echo "... src/imgui/imgui_draw.i"
+	@echo "... src/imgui/imgui_draw.s"
+	@echo "... src/imgui/imgui_impl_glfw.o"
+	@echo "... src/imgui/imgui_impl_glfw.i"
+	@echo "... src/imgui/imgui_impl_glfw.s"
+	@echo "... src/imgui/imgui_impl_vulkan.o"
+	@echo "... src/imgui/imgui_impl_vulkan.i"
+	@echo "... src/imgui/imgui_impl_vulkan.s"
+	@echo "... src/imgui/imgui_tables.o"
+	@echo "... src/imgui/imgui_tables.i"
+	@echo "... src/imgui/imgui_tables.s"
+	@echo "... src/imgui/imgui_widgets.o"
+	@echo "... src/imgui/imgui_widgets.i"
+	@echo "... src/imgui/imgui_widgets.s"
 	@echo "... src/input/keyboardMovementController.o"
 	@echo "... src/input/keyboardMovementController.i"
 	@echo "... src/input/keyboardMovementController.s"
@@ -608,6 +821,9 @@ help:
 	@echo "... src/render/ce_Texture.o"
 	@echo "... src/render/ce_Texture.i"
 	@echo "... src/render/ce_Texture.s"
+	@echo "... src/window/ce_Imgui.o"
+	@echo "... src/window/ce_Imgui.i"
+	@echo "... src/window/ce_Imgui.s"
 	@echo "... src/window/ce_Window.o"
 	@echo "... src/window/ce_Window.i"
 	@echo "... src/window/ce_Window.s"

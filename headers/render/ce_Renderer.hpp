@@ -17,6 +17,8 @@ namespace ConfuseEngineRenderer {
         float getAspectRatio() const { return m_pSwapChain->extentAspectRatio(); }
         bool isFrameInProgress() const { return m_isFrameStarted; }
 
+        uint32_t getImageCount() const{return m_pSwapChain->imageCount();}
+
         VkCommandBuffer getCurrentCommandBuffer() const {
             assert(m_isFrameStarted && "cannot get command buffer when frame not in progress");
             return m_commandBuffers[m_currentFrameIndex];

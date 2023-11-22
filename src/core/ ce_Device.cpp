@@ -94,7 +94,14 @@ namespace ConfuseEngine {
       vkEnumeratePhysicalDevices(m_instance, &deviceCount, devices.data());
 
       for (const auto &device : devices) {
-        if (isDeviceSuitable(device)) {
+        if (isPreferredDevice(device)) {
+          m_physicalDevice = device;
+          return;
+        }
+      }
+
+      for(const auto& device: devices){
+        if(isSuitableDevice(device)){
           m_physicalDevice = device;
           break;
         }
@@ -168,7 +175,18 @@ namespace ConfuseEngine {
 
     void CE_Device::createSurface() { m_rWindow.createWindowSurface(m_instance, &m_surface); }
 
-    bool CE_Device::isDeviceSuitable(VkPhysicalDevice device) {
+
+    bool CE_Device::isPreferredDevice(VkPhysicalDevice device) {
+      if(!isSuitableDevice(device))
+        return false;
+
+      auto props = VkPhysicalDeviceProperties{};
+      vkGetPhysicalDeviceProperties(device, &props);
+
+      return props.deviceType == VkPhysicalDeviceType::VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU;
+    }
+
+    bool CE_Device::isSuitableDevice(VkPhysicalDevice device){
       QueueFamilyIndices indices = findQueueFamilies(device);
 
       bool extensionsSupported = checkDeviceExtensionSupport(device);

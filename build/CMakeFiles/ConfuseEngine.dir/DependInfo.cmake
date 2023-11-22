@@ -13,6 +13,13 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/core/ce_Camera.cpp" "CMakeFiles/ConfuseEngine.dir/src/core/ce_Camera.cpp.o" "gcc" "CMakeFiles/ConfuseEngine.dir/src/core/ce_Camera.cpp.o.d"
   "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/core/ce_Descriptors.cpp" "CMakeFiles/ConfuseEngine.dir/src/core/ce_Descriptors.cpp.o" "gcc" "CMakeFiles/ConfuseEngine.dir/src/core/ce_Descriptors.cpp.o.d"
   "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/editor/confuseEditor.cpp" "CMakeFiles/ConfuseEngine.dir/src/editor/confuseEditor.cpp.o" "gcc" "CMakeFiles/ConfuseEngine.dir/src/editor/confuseEditor.cpp.o.d"
+  "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui.cpp" "CMakeFiles/ConfuseEngine.dir/src/imgui/imgui.cpp.o" "gcc" "CMakeFiles/ConfuseEngine.dir/src/imgui/imgui.cpp.o.d"
+  "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_demo.cpp" "CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_demo.cpp.o" "gcc" "CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_demo.cpp.o.d"
+  "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_draw.cpp" "CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_draw.cpp.o" "gcc" "CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_draw.cpp.o.d"
+  "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_impl_glfw.cpp" "CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_glfw.cpp.o" "gcc" "CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_glfw.cpp.o.d"
+  "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_impl_vulkan.cpp" "CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_vulkan.cpp.o" "gcc" "CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_vulkan.cpp.o.d"
+  "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_tables.cpp" "CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_tables.cpp.o" "gcc" "CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_tables.cpp.o.d"
+  "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_widgets.cpp" "CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_widgets.cpp.o" "gcc" "CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_widgets.cpp.o.d"
   "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/input/keyboardMovementController.cpp" "CMakeFiles/ConfuseEngine.dir/src/input/keyboardMovementController.cpp.o" "gcc" "CMakeFiles/ConfuseEngine.dir/src/input/keyboardMovementController.cpp.o.d"
   "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/main.cpp" "CMakeFiles/ConfuseEngine.dir/src/main.cpp.o" "gcc" "CMakeFiles/ConfuseEngine.dir/src/main.cpp.o.d"
   "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/RenderSystems/DefaultRenderSystem.cpp" "CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/DefaultRenderSystem.cpp.o" "gcc" "CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/DefaultRenderSystem.cpp.o.d"
@@ -24,6 +31,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_Renderer.cpp" "CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o" "gcc" "CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o.d"
   "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_SwapChain.cpp" "CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o" "gcc" "CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o.d"
   "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_Texture.cpp" "CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.o" "gcc" "CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.o.d"
+  "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/window/ce_Imgui.cpp" "CMakeFiles/ConfuseEngine.dir/src/window/ce_Imgui.cpp.o" "gcc" "CMakeFiles/ConfuseEngine.dir/src/window/ce_Imgui.cpp.o.d"
   "/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/window/ce_Window.cpp" "CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o" "gcc" "CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o.d"
   )
 

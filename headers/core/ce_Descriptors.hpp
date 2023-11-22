@@ -59,6 +59,8 @@ namespace ConfuseEngine {
         void freeDescriptors(std::vector<VkDescriptorSet> &descriptors) const;
         void resetPool();
 
+        VkDescriptorPool& getDescriptorPool(){return m_descriptorPool;}
+
     private:
         CE_Device &m_rDevice;
         VkDescriptorPool m_descriptorPool;

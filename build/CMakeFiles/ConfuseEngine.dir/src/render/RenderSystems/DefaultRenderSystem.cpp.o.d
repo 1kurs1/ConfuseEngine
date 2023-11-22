@@ -362,6 +362,10 @@ CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/DefaultRenderSystem.cpp.o:
  /usr/include/glm/ext/matrix_transform.hpp \
  /usr/include/glm/ext/matrix_transform.inl \
  /usr/include/glm/gtc/matrix_transform.inl \
+ /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/libs/imgui/imgui.h \
+ /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/libs/imgui/imconfig.h \
+ /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/libs/imgui/imgui_impl_glfw.h \
+ /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/libs/imgui/imgui_impl_vulkan.h \
  /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers/render/ce_FrameInfo.hpp \
  /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers/core/ce_Descriptors.hpp \
  /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/headers/render/ce_GameObject.hpp \

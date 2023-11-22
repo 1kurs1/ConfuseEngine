@@ -62,6 +62,11 @@ if(NOT STB_PATH)
   message(STATUS "STB_IMAGE not specified in .env.cmake, libs/stb_image")
   set(STB_PATH libs/stbimage)
 endif()
+
+if(NOT IMGUI_INCLUDE_PATH)
+  message(STATUS "ImGui not specified in .env.cmake, libs/imgui")
+  set(IMGUI_INCLUDE_PATH libs/imgui)
+endif()
  
 file(GLOB_RECURSE SOURCES ${PROJECT_SOURCE_DIR}/src/*.cpp)
  
@@ -89,6 +94,7 @@ if (WIN32)
     ${Vulkan_INCLUDE_DIRS}
     ${TINYOBJ_PATH}
     ${STB_PATH}
+    ${IMGUI_INCLUDE_PATH}
     ${GLFW_INCLUDE_DIRS}
     ${GLM_PATH}
     )
@@ -97,7 +103,7 @@ if (WIN32)
     ${Vulkan_LIBRARIES}
     ${GLFW_LIB}
   )
- 
+
   target_link_libraries(${PROJECT_NAME} glfw3 vulkan-1)
 elseif (UNIX)
     message(STATUS "CREATING BUILD FOR UNIX")
@@ -106,6 +112,7 @@ elseif (UNIX)
       ${PROJECT_SOURCE_DIR}/headers
       ${TINYOBJ_PATH}
       ${STB_PATH}
+      ${IMGUI_INCLUDE_PATH}
     )
     target_link_libraries(${PROJECT_NAME} glfw ${Vulkan_LIBRARIES})
 endif()

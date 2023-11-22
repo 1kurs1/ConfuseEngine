@@ -139,10 +139,108 @@ CMakeFiles/ConfuseEngine.dir/src/editor/confuseEditor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ConfuseEngine.dir/src/editor/confuseEditor.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/editor/confuseEditor.cpp -o CMakeFiles/ConfuseEngine.dir/src/editor/confuseEditor.cpp.s
 
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui.cpp
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/imgui/imgui.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/imgui/imgui.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/imgui/imgui.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/imgui/imgui.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui.cpp
+
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ConfuseEngine.dir/src/imgui/imgui.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui.cpp > CMakeFiles/ConfuseEngine.dir/src/imgui/imgui.cpp.i
+
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ConfuseEngine.dir/src/imgui/imgui.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui.cpp -o CMakeFiles/ConfuseEngine.dir/src/imgui/imgui.cpp.s
+
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_demo.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_demo.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_demo.cpp
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_demo.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_demo.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_demo.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_demo.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_demo.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_demo.cpp
+
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_demo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_demo.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_demo.cpp > CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_demo.cpp.i
+
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_demo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_demo.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_demo.cpp -o CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_demo.cpp.s
+
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_draw.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_draw.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_draw.cpp
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_draw.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_draw.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_draw.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_draw.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_draw.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_draw.cpp
+
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_draw.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_draw.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_draw.cpp > CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_draw.cpp.i
+
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_draw.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_draw.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_draw.cpp -o CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_draw.cpp.s
+
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_glfw.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_glfw.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_impl_glfw.cpp
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_glfw.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_glfw.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_glfw.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_glfw.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_glfw.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_impl_glfw.cpp
+
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_glfw.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_glfw.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_impl_glfw.cpp > CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_glfw.cpp.i
+
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_glfw.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_glfw.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_impl_glfw.cpp -o CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_glfw.cpp.s
+
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_vulkan.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_vulkan.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_impl_vulkan.cpp
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_vulkan.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_vulkan.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_vulkan.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_vulkan.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_vulkan.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_impl_vulkan.cpp
+
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_vulkan.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_vulkan.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_impl_vulkan.cpp > CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_vulkan.cpp.i
+
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_vulkan.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_vulkan.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_impl_vulkan.cpp -o CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_vulkan.cpp.s
+
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_tables.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_tables.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_tables.cpp
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_tables.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_tables.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_tables.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_tables.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_tables.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_tables.cpp
+
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_tables.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_tables.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_tables.cpp > CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_tables.cpp.i
+
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_tables.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_tables.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_tables.cpp -o CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_tables.cpp.s
+
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_widgets.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_widgets.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_widgets.cpp
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_widgets.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_widgets.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_widgets.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_widgets.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_widgets.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_widgets.cpp
+
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_widgets.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_widgets.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_widgets.cpp > CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_widgets.cpp.i
+
+CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_widgets.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_widgets.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/imgui/imgui_widgets.cpp -o CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_widgets.cpp.s
+
 CMakeFiles/ConfuseEngine.dir/src/input/keyboardMovementController.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
 CMakeFiles/ConfuseEngine.dir/src/input/keyboardMovementController.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/input/keyboardMovementController.cpp
 CMakeFiles/ConfuseEngine.dir/src/input/keyboardMovementController.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/input/keyboardMovementController.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/input/keyboardMovementController.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/input/keyboardMovementController.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/input/keyboardMovementController.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/input/keyboardMovementController.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/input/keyboardMovementController.cpp
 
 CMakeFiles/ConfuseEngine.dir/src/input/keyboardMovementController.cpp.i: cmake_force
@@ -156,7 +254,7 @@ CMakeFiles/ConfuseEngine.dir/src/input/keyboardMovementController.cpp.s: cmake_f
 CMakeFiles/ConfuseEngine.dir/src/main.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
 CMakeFiles/ConfuseEngine.dir/src/main.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/main.cpp
 CMakeFiles/ConfuseEngine.dir/src/main.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/main.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/main.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/main.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/main.cpp
 
 CMakeFiles/ConfuseEngine.dir/src/main.cpp.i: cmake_force
@@ -170,7 +268,7 @@ CMakeFiles/ConfuseEngine.dir/src/main.cpp.s: cmake_force
 CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/DefaultRenderSystem.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
 CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/DefaultRenderSystem.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/RenderSystems/DefaultRenderSystem.cpp
 CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/DefaultRenderSystem.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/DefaultRenderSystem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/DefaultRenderSystem.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/DefaultRenderSystem.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/DefaultRenderSystem.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/DefaultRenderSystem.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/RenderSystems/DefaultRenderSystem.cpp
 
 CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/DefaultRenderSystem.cpp.i: cmake_force
@@ -184,7 +282,7 @@ CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/DefaultRenderSystem.cpp.s:
 CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/PointLightSystem.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
 CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/PointLightSystem.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/RenderSystems/PointLightSystem.cpp
 CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/PointLightSystem.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/PointLightSystem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/PointLightSystem.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/PointLightSystem.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/PointLightSystem.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/PointLightSystem.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/RenderSystems/PointLightSystem.cpp
 
 CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/PointLightSystem.cpp.i: cmake_force
@@ -198,7 +296,7 @@ CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/PointLightSystem.cpp.s: cm
 CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
 CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/RenderSystems/TextureRenderSystem.cpp
 CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/RenderSystems/TextureRenderSystem.cpp
 
 CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.i: cmake_force
@@ -212,7 +310,7 @@ CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/TextureRenderSystem.cpp.s:
 CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
 CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_GameObject.cpp
 CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_GameObject.cpp
 
 CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.i: cmake_force
@@ -226,7 +324,7 @@ CMakeFiles/ConfuseEngine.dir/src/render/ce_GameObject.cpp.s: cmake_force
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_Model.cpp
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_Model.cpp
 
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.i: cmake_force
@@ -240,7 +338,7 @@ CMakeFiles/ConfuseEngine.dir/src/render/ce_Model.cpp.s: cmake_force
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_Pipeline.cpp
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_Pipeline.cpp
 
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.i: cmake_force
@@ -254,7 +352,7 @@ CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.s: cmake_force
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_Renderer.cpp
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_Renderer.cpp
 
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.i: cmake_force
@@ -268,7 +366,7 @@ CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.s: cmake_force
 CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
 CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_SwapChain.cpp
 CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_SwapChain.cpp
 
 CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.i: cmake_force
@@ -282,7 +380,7 @@ CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.s: cmake_force
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_Texture.cpp
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_Texture.cpp
 
 CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.i: cmake_force
@@ -293,10 +391,24 @@ CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/render/ce_Texture.cpp -o CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.s
 
+CMakeFiles/ConfuseEngine.dir/src/window/ce_Imgui.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
+CMakeFiles/ConfuseEngine.dir/src/window/ce_Imgui.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/window/ce_Imgui.cpp
+CMakeFiles/ConfuseEngine.dir/src/window/ce_Imgui.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/window/ce_Imgui.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/window/ce_Imgui.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/window/ce_Imgui.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/window/ce_Imgui.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/window/ce_Imgui.cpp
+
+CMakeFiles/ConfuseEngine.dir/src/window/ce_Imgui.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ConfuseEngine.dir/src/window/ce_Imgui.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/window/ce_Imgui.cpp > CMakeFiles/ConfuseEngine.dir/src/window/ce_Imgui.cpp.i
+
+CMakeFiles/ConfuseEngine.dir/src/window/ce_Imgui.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ConfuseEngine.dir/src/window/ce_Imgui.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/window/ce_Imgui.cpp -o CMakeFiles/ConfuseEngine.dir/src/window/ce_Imgui.cpp.s
+
 CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o: CMakeFiles/ConfuseEngine.dir/flags.make
 CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o: /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/window/ce_Window.cpp
 CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o: CMakeFiles/ConfuseEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o -MF CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o.d -o CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o -c /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/src/window/ce_Window.cpp
 
 CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.i: cmake_force
@@ -314,6 +426,13 @@ ConfuseEngine_OBJECTS = \
 "CMakeFiles/ConfuseEngine.dir/src/core/ce_Camera.cpp.o" \
 "CMakeFiles/ConfuseEngine.dir/src/core/ce_Descriptors.cpp.o" \
 "CMakeFiles/ConfuseEngine.dir/src/editor/confuseEditor.cpp.o" \
+"CMakeFiles/ConfuseEngine.dir/src/imgui/imgui.cpp.o" \
+"CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_demo.cpp.o" \
+"CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_draw.cpp.o" \
+"CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_glfw.cpp.o" \
+"CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_vulkan.cpp.o" \
+"CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_tables.cpp.o" \
+"CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_widgets.cpp.o" \
 "CMakeFiles/ConfuseEngine.dir/src/input/keyboardMovementController.cpp.o" \
 "CMakeFiles/ConfuseEngine.dir/src/main.cpp.o" \
 "CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/DefaultRenderSystem.cpp.o" \
@@ -325,6 +444,7 @@ ConfuseEngine_OBJECTS = \
 "CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o" \
 "CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o" \
 "CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.o" \
+"CMakeFiles/ConfuseEngine.dir/src/window/ce_Imgui.cpp.o" \
 "CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o"
 
 # External object files for target ConfuseEngine
@@ -335,6 +455,13 @@ ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/core/ce_Buffer.cpp.o
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/core/ce_Camera.cpp.o
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/core/ce_Descriptors.cpp.o
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/editor/confuseEditor.cpp.o
+ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/imgui/imgui.cpp.o
+ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_demo.cpp.o
+ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_draw.cpp.o
+ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_glfw.cpp.o
+ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_impl_vulkan.cpp.o
+ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_tables.cpp.o
+ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/imgui/imgui_widgets.cpp.o
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/input/keyboardMovementController.cpp.o
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/main.cpp.o
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/render/RenderSystems/DefaultRenderSystem.cpp.o
@@ -346,12 +473,13 @@ ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/render/ce_Pipeline.cpp.o
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/render/ce_Renderer.cpp.o
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/render/ce_SwapChain.cpp.o
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/render/ce_Texture.cpp.o
+ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/window/ce_Imgui.cpp.o
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/build.make
 ConfuseEngine: /usr/lib/x86_64-linux-gnu/libglfw.so.3.3
 ConfuseEngine: /usr/lib/x86_64-linux-gnu/libvulkan.so
 ConfuseEngine: CMakeFiles/ConfuseEngine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable ConfuseEngine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/9A4E79B34E798931/Projects/OtherProjects/Window/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable ConfuseEngine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ConfuseEngine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

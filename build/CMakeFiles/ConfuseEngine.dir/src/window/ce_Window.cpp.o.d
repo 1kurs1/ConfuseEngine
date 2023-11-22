@@ -356,4 +356,8 @@ CMakeFiles/ConfuseEngine.dir/src/window/ce_Window.cpp.o: \
  /usr/include/glm/ext/matrix_clip_space.inl \
  /usr/include/glm/ext/matrix_transform.hpp \
  /usr/include/glm/ext/matrix_transform.inl \
- /usr/include/glm/gtc/matrix_transform.inl
+ /usr/include/glm/gtc/matrix_transform.inl \
+ /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/libs/imgui/imgui.h \
+ /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/libs/imgui/imconfig.h \
+ /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/libs/imgui/imgui_impl_glfw.h \
+ /mnt/9A4E79B34E798931/Projects/OtherProjects/Window/libs/imgui/imgui_impl_vulkan.h
