@@ -3,7 +3,8 @@
         {
             "name": "Linux",
             "includePath": [
-                "${default}"
+                "${default}",
+                "${workspaceFolder}/Confuse/src"
             ],
             "defines": [],
             "cStandard": "c17",
