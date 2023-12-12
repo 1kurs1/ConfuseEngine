@@ -1,5 +1,8 @@
 CFLAGS = -std=c++17 -O2
 
+DEFINITIONS = -D CE_PLATFORM_LINUX -D CE_BUILD_LIB
+INCLUDE = -I Confuse/src/
+
 WORKSPACE_ENGINE_DIR = Confuse
 WORKSPACE_SANDBOX_DIR = Sandbox
 
@@ -12,15 +15,19 @@ BIN = bin/$(CONFIGURATION)/$(PLATFORM)/$(PROJECT_NAME)
 #build sandbox
 SANDBOX = Sandbox
 $(SANDBOX): $(WORKSPACE_SANDBOX_DIR)/src/*.cpp
-	clang++ $(CFLAGS) -o $(BIN)/$(SANDBOX).o $(WORKSPACE_SANDBOX_DIR)/src/*.cpp $(BIN)/Confuse.o
+	clang++ $(CFLAGS) $(DEFINITIONS) $(INCLUDE) -o $(BIN)/$(SANDBOX).o $(WORKSPACE_SANDBOX_DIR)/src/*.cpp $(BIN)/ConfuseEngine.lib
 	./$(BIN)/$(SANDBOX).o
 
 #build engine
-TARGET = Confuse
-$(TARGET): $(WORKSPACE_ENGINE_DIR)/src/*.cpp 
-	clang++ -shared $(CFLAGS) -o $(BIN)/$(TARGET).o $(WORKSPACE_ENGINE_DIR)/src/*.cpp
-	llvm-ar rc $(BIN)/$(TARGET).o $(BIN)/Confuse.so
+TARGET = ConfuseEngine
+$(TARGET): $(WORKSPACE_ENGINE_DIR)/src/Confuse/*.cpp
+	clang++ --shared -fPIC $(CFLAGS) $(DEFINITIONS) -o $(BIN)/$(TARGET).lib $(WORKSPACE_ENGINE_DIR)/src/Confuse/*.cpp
 
+
+.PHONY: run
+
+run: ConfuseEngine
+	echo "build"
 
 # .PHONY: run clean
 
