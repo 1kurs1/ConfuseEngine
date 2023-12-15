@@ -1,0 +1,3 @@
+[submodule "Confuse/vendor/spdlog"]
+	path = Confuse/vendor/spdlog
+	url = https://github.com/gabime/spdlog.git

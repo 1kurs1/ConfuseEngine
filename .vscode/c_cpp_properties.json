@@ -4,9 +4,14 @@
             "name": "Linux",
             "includePath": [
                 "${default}",
-                "${workspaceFolder}/Confuse/src"
+                "${workspaceFolder}/Confuse/src",
+                "${workspaceFolder}/Confuse/vendor/spdlog/include/",
+                "${workspaceFolder}/Confuse/vendor/"
             ],
-            "defines": [],
+            "defines": [
+                "CE_PLATFORM_LINUX",
+                "CE_BUILD_LIB"
+            ],
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "linux-clang-x64",
