@@ -16,7 +16,7 @@ ifeq ($(config),debug)
   TARGET = $(TARGETDIR)/libConfuse.so
   OBJDIR = ../bin_int/Debug-linux-x86_64/Confuse
   DEFINES += -DCE_PLATFORM_LINUX -DCE_BUILD_LIB -DCE_DEBUG
-  INCLUDES += -Ivendor/spdlog/include
+  INCLUDES += -Isrc -Ivendor/spdlog/include
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -fPIC -g
@@ -45,7 +45,7 @@ ifeq ($(config),release)
   TARGET = $(TARGETDIR)/libConfuse.so
   OBJDIR = ../bin_int/Release-linux-x86_64/Confuse
   DEFINES += -DCE_PLATFORM_LINUX -DCE_BUILD_LIB -DCE_RELEASE
-  INCLUDES += -Ivendor/spdlog/include
+  INCLUDES += -Isrc -Ivendor/spdlog/include
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC
@@ -74,7 +74,7 @@ ifeq ($(config),dist)
   TARGET = $(TARGETDIR)/libConfuse.so
   OBJDIR = ../bin_int/Dist-linux-x86_64/Confuse
   DEFINES += -DCE_PLATFORM_LINUX -DCE_BUILD_LIB -DCE_DIST
-  INCLUDES += -Ivendor/spdlog/include
+  INCLUDES += -Isrc -Ivendor/spdlog/include
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC

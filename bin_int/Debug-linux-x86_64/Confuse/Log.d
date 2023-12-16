@@ -293,7 +293,17 @@
  vendor/spdlog/include/spdlog/sinks/ansicolor_sink-inl.h \
  vendor/spdlog/include/spdlog/details/synchronous_factory.h \
  vendor/spdlog/include/spdlog/version.h \
- vendor/spdlog/include/spdlog/spdlog-inl.h src/Confuse/Core.h \
+ vendor/spdlog/include/spdlog/spdlog-inl.h \
+ vendor/spdlog/include/spdlog/fmt/ostr.h \
+ vendor/spdlog/include/spdlog/fmt/bundled/ostream.h \
+ /usr/include/c++/13/fstream /usr/include/c++/13/istream \
+ /usr/include/c++/13/ios /usr/include/c++/13/bits/basic_ios.h \
+ /usr/include/c++/13/bits/basic_ios.tcc /usr/include/c++/13/ostream \
+ /usr/include/c++/13/bits/ostream.tcc \
+ /usr/include/c++/13/bits/istream.tcc \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
+ /usr/include/c++/13/bits/fstream.tcc src/Confuse/Core.h \
  vendor/spdlog/include/spdlog/sinks/stdout_color_sinks.h \
  vendor/spdlog/include/spdlog/sinks/stdout_color_sinks-inl.h
 /usr/include/stdc-predef.h:
@@ -657,6 +667,19 @@ vendor/spdlog/include/spdlog/sinks/ansicolor_sink-inl.h:
 vendor/spdlog/include/spdlog/details/synchronous_factory.h:
 vendor/spdlog/include/spdlog/version.h:
 vendor/spdlog/include/spdlog/spdlog-inl.h:
+vendor/spdlog/include/spdlog/fmt/ostr.h:
+vendor/spdlog/include/spdlog/fmt/bundled/ostream.h:
+/usr/include/c++/13/fstream:
+/usr/include/c++/13/istream:
+/usr/include/c++/13/ios:
+/usr/include/c++/13/bits/basic_ios.h:
+/usr/include/c++/13/bits/basic_ios.tcc:
+/usr/include/c++/13/ostream:
+/usr/include/c++/13/bits/ostream.tcc:
+/usr/include/c++/13/bits/istream.tcc:
+/usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h:
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h:
+/usr/include/c++/13/bits/fstream.tcc:
 src/Confuse/Core.h:
 vendor/spdlog/include/spdlog/sinks/stdout_color_sinks.h:
 vendor/spdlog/include/spdlog/sinks/stdout_color_sinks-inl.h:

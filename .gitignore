@@ -1,7 +1,8 @@
 #dirs
 
-#.vscode/
+.vscode/
 bin/
+bin_int/
 
 #files
 

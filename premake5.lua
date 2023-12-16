@@ -23,6 +23,7 @@ project "Confuse"
     }
 
     includedirs{
+        "%{prj.name}/src/",
         "%{prj.name}/vendor/spdlog/include/"
     }
 

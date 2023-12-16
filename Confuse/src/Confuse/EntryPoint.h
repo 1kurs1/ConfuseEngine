@@ -5,8 +5,8 @@ extern Confuse::Application* Confuse::createApplication();
 
 int main(int argc, char** argv){
     Confuse::Log::init();
-    Confuse::Log::getCoreLogger()->info("initialization core");
-    Confuse::Log::getClientLogger()->info("init application");
+    CE_CORE_INFO("initialization core");
+    CE_INFO("init application");
 
     auto app = Confuse::createApplication();
     app->run();
