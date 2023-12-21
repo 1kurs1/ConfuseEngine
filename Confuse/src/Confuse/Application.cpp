@@ -1,20 +1,53 @@
+#include "CEpch.h"
 #include "Application.h"
 
-#include "Confuse/Events/ApplicationEvent.h"
+#include <GLFW/glfw3.h>
+
 #include "Confuse/Log.h"
 
 namespace Confuse{
-    Application::Application(){}
+
+    #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
+
+    Application::Application(){
+        m_window = std::unique_ptr<Window>(Window::create());
+        m_window->setEventCallback(BIND_EVENT_FN(onEvent));
+    }
+
     Application::~Application(){}
 
+    void Application::pushLayer(Layer* layer){
+        m_layerStack.pushLayer(layer);
+    }
+
+    void Application::pushOverlay(Layer* overlay){
+        m_layerStack.pushOverlay(overlay);
+    }
+
+    void Application::onEvent(Event& e){
+        EventDispatcher dispatcher(e);
+        dispatcher.dispatch<WindowCloseEvent>(BIND_EVENT_FN(onWindowClose));
+        
+        for(auto it = m_layerStack.end(); it != m_layerStack.begin();){
+            (*--it)->onEvent(e);
+            if(e.handled) break;
+        }
+    }
+
     void Application::run(){
-        WindowResizeEvent e(1600, 900);
+        while(m_running){
+            glClearColor(0.06, 0.06, 0.06, 1);
+            glClear(GL_COLOR_BUFFER_BIT);
 
-        if(e.isInCategory(EventCategoryApplication))
-            CE_TRACE(e);
-        if(e.isInCategory(EventCategoryInput))
-            CE_TRACE(e);
+            for(Layer* layer: m_layerStack)
+                layer->onUpdate();
 
-        while(true){}
+            m_window->onUpdate();
+        }
+    }
+
+    bool Application::onWindowClose(WindowCloseEvent& e){
+        m_running = false;
+        return true;
     }
 }

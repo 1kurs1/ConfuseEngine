@@ -9,6 +9,11 @@ workspace "Confuse Engine"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "Confuse/vendor/GLFW/include"
+
+include "Confuse/vendor/GLFW"
+
 project "Confuse"
     location "Confuse"
     kind "SharedLib"
@@ -17,6 +22,8 @@ project "Confuse"
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin_int/" .. outputdir .. "/%{prj.name}")
 
+    pchheader "CEpch.h"
+
     files{
         "%{prj.name}/src/**.h",
         "%{prj.name}/src/**.cpp"
@@ -24,7 +31,13 @@ project "Confuse"
 
     includedirs{
         "%{prj.name}/src/",
-        "%{prj.name}/vendor/spdlog/include/"
+        "%{prj.name}/vendor/spdlog/include/",
+        "%{IncludeDir.GLFW}"
+    }
+
+    links{
+        "GLFW",
+        "GL"
     }
 
     filter "system:linux"
@@ -43,14 +56,17 @@ project "Confuse"
 
     filter "configurations:Debug"
         defines "CE_DEBUG"
+        buildoptions "-pipe"
         symbols "On"
     
     filter "configurations:Release"
         defines "CE_RELEASE"
+        buildoptions "-pipe"
         optimize "On"
     
     filter "configurations:Dist"
         defines "CE_DIST"
+        buildoptions "-pipe"
         optimize "On"
 
 project "Sandbox"
@@ -86,12 +102,15 @@ project "Sandbox"
 
     filter "configurations:Debug"
         defines "CE_DEBUG"
+        buildoptions "-pipe"
         symbols "On"
     
     filter "configurations:Release"
         defines "CE_RELEASE"
+        buildoptions "-pipe"
         optimize "On"
     
     filter "configurations:Dist"
         defines "CE_DIST"
+        buildoptions "-pipe"
         optimize "On"

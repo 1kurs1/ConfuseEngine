@@ -15,15 +15,17 @@ ifeq ($(config),debug)
   TARGETDIR = ../bin/Debug-linux-x86_64/Confuse
   TARGET = $(TARGETDIR)/libConfuse.so
   OBJDIR = ../bin_int/Debug-linux-x86_64/Confuse
+  PCH = src/CEpch.h
+  GCH = $(OBJDIR)/$(notdir $(PCH)).gch
   DEFINES += -DCE_PLATFORM_LINUX -DCE_BUILD_LIB -DCE_DEBUG
-  INCLUDES += -Isrc -Ivendor/spdlog/include
-  FORCE_INCLUDE +=
+  INCLUDES += -Isrc -Ivendor/spdlog/include -Ivendor/GLFW/include
+  FORCE_INCLUDE += -include $(OBJDIR)/$(notdir $(PCH))
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
-  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -fPIC -g
-  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -fPIC -g -std=c++17
+  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -fPIC -g -pipe
+  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -fPIC -g -std=c++17 -pipe
   ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  LIBS +=
-  LDDEPS +=
+  LIBS += vendor/GLFW/bin/Debug-linux-x86_64/GLFW/libGLFW.a -lGL
+  LDDEPS += vendor/GLFW/bin/Debug-linux-x86_64/GLFW/libGLFW.a
   ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -shared -Wl,-soname=libConfuse.so
   LINKCMD = $(CXX) -o "$@" $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
   define PREBUILDCMDS
@@ -44,15 +46,17 @@ ifeq ($(config),release)
   TARGETDIR = ../bin/Release-linux-x86_64/Confuse
   TARGET = $(TARGETDIR)/libConfuse.so
   OBJDIR = ../bin_int/Release-linux-x86_64/Confuse
+  PCH = src/CEpch.h
+  GCH = $(OBJDIR)/$(notdir $(PCH)).gch
   DEFINES += -DCE_PLATFORM_LINUX -DCE_BUILD_LIB -DCE_RELEASE
-  INCLUDES += -Isrc -Ivendor/spdlog/include
-  FORCE_INCLUDE +=
+  INCLUDES += -Isrc -Ivendor/spdlog/include -Ivendor/GLFW/include
+  FORCE_INCLUDE += -include $(OBJDIR)/$(notdir $(PCH))
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
-  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC
-  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -std=c++17
+  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -pipe
+  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -std=c++17 -pipe
   ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  LIBS +=
-  LDDEPS +=
+  LIBS += vendor/GLFW/bin/Release-linux-x86_64/GLFW/libGLFW.a -lGL
+  LDDEPS += vendor/GLFW/bin/Release-linux-x86_64/GLFW/libGLFW.a
   ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -shared -Wl,-soname=libConfuse.so -s
   LINKCMD = $(CXX) -o "$@" $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
   define PREBUILDCMDS
@@ -73,15 +77,17 @@ ifeq ($(config),dist)
   TARGETDIR = ../bin/Dist-linux-x86_64/Confuse
   TARGET = $(TARGETDIR)/libConfuse.so
   OBJDIR = ../bin_int/Dist-linux-x86_64/Confuse
+  PCH = src/CEpch.h
+  GCH = $(OBJDIR)/$(notdir $(PCH)).gch
   DEFINES += -DCE_PLATFORM_LINUX -DCE_BUILD_LIB -DCE_DIST
-  INCLUDES += -Isrc -Ivendor/spdlog/include
-  FORCE_INCLUDE +=
+  INCLUDES += -Isrc -Ivendor/spdlog/include -Ivendor/GLFW/include
+  FORCE_INCLUDE += -include $(OBJDIR)/$(notdir $(PCH))
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
-  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC
-  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -std=c++17
+  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -pipe
+  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -std=c++17 -pipe
   ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  LIBS +=
-  LDDEPS +=
+  LIBS += vendor/GLFW/bin/Dist-linux-x86_64/GLFW/libGLFW.a -lGL
+  LDDEPS += vendor/GLFW/bin/Dist-linux-x86_64/GLFW/libGLFW.a
   ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -shared -Wl,-soname=libConfuse.so -s
   LINKCMD = $(CXX) -o "$@" $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
   define PREBUILDCMDS
@@ -99,7 +105,10 @@ endif
 
 OBJECTS := \
 	$(OBJDIR)/Application.o \
+	$(OBJDIR)/Layer.o \
+	$(OBJDIR)/LayerStack.o \
 	$(OBJDIR)/Log.o \
+	$(OBJDIR)/LinuxWindow.o \
 
 RESOURCES := \
 
@@ -161,7 +170,16 @@ endif
 $(OBJDIR)/Application.o: src/Confuse/Application.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/Layer.o: src/Confuse/Layer.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/LayerStack.o: src/Confuse/LayerStack.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/Log.o: src/Confuse/Log.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/LinuxWindow.o: src/Platform/linux/LinuxWindow.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 

@@ -19,8 +19,8 @@ ifeq ($(config),debug)
   INCLUDES += -I../Confuse/vendor/spdlog/include -I../Confuse/src
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
-  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -g
-  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -g -std=c++17
+  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -g -pipe
+  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -g -std=c++17 -pipe
   ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   LIBS += ../bin/Debug-linux-x86_64/Confuse/libConfuse.so
   LDDEPS += ../bin/Debug-linux-x86_64/Confuse/libConfuse.so
@@ -46,8 +46,8 @@ ifeq ($(config),release)
   INCLUDES += -I../Confuse/vendor/spdlog/include -I../Confuse/src
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
-  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2
-  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -std=c++17
+  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -pipe
+  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -std=c++17 -pipe
   ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   LIBS += ../bin/Release-linux-x86_64/Confuse/libConfuse.so
   LDDEPS += ../bin/Release-linux-x86_64/Confuse/libConfuse.so
@@ -73,8 +73,8 @@ ifeq ($(config),dist)
   INCLUDES += -I../Confuse/vendor/spdlog/include -I../Confuse/src
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
-  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2
-  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -std=c++17
+  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -pipe
+  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -std=c++17 -pipe
   ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   LIBS += ../bin/Dist-linux-x86_64/Confuse/libConfuse.so
   LDDEPS += ../bin/Dist-linux-x86_64/Confuse/libConfuse.so
