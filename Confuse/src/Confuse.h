@@ -5,6 +5,8 @@
 #include "Confuse/Layer.h"
 #include "Confuse/Log.h"
 
+#include "Confuse/ImGui/ImGuiLayer.h"
+
 //-----------Entry point-------------
 #include "Confuse/EntryPoint.h"
 //-----------------------------------

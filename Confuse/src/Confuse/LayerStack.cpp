@@ -29,7 +29,7 @@ namespace Confuse{
 
     void LayerStack::popOverlay(Layer* overlay){
         auto it = std::find(m_layers.begin(), m_layers.end(), overlay);
-        if(it != m_layers.end())
-            m_layers.erase(it);
+		if (it != m_layers.end())
+			m_layers.erase(it);
     }
 }

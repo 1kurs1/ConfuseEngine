@@ -1,6 +1,8 @@
 #include "CEpch.h"
 #include "LinuxWindow.h"
 
+#include <glad/glad.h>
+
 #include "Confuse/Events/ApplicationEvent.h"
 #include "Confuse/Events/MouseEvent.h"
 #include "Confuse/Events/KeyEvent.h"
@@ -40,6 +42,8 @@ namespace Confuse{
 
         m_window = glfwCreateWindow((int)props.Width, (int)props.Height, m_data.Title.c_str(), nullptr, nullptr);
         glfwMakeContextCurrent(m_window);
+        int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+        CE_CORE_ASSERT(status, "failed to initialize glad!");
         glfwSetWindowUserPointer(m_window, &m_data);
         setVSync(true);
 
@@ -82,6 +86,12 @@ namespace Confuse{
                     break;
                 }
             }
+        });
+
+        glfwSetCharCallback(m_window, [](GLFWwindow* window, unsigned int keycode){
+            WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+            KeyTypedEvent event(keycode);
+            data.EventCallback(event);
         });
 
         glfwSetMouseButtonCallback(m_window, [](GLFWwindow* window, int button, int action, int mods){

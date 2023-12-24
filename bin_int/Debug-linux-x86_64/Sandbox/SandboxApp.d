@@ -339,6 +339,9 @@
  ../Confuse/src/Confuse/Events/Event.h \
  ../Confuse/src/Confuse/LayerStack.h ../Confuse/src/Confuse/Layer.h \
  ../Confuse/src/Confuse/Events/ApplicationEvent.h \
+ ../Confuse/src/Confuse/ImGui/ImGuiLayer.h \
+ ../Confuse/src/Confuse/Events/KeyEvent.h \
+ ../Confuse/src/Confuse/Events/MouseEvent.h \
  ../Confuse/src/Confuse/EntryPoint.h
 /usr/include/stdc-predef.h:
 ../Confuse/src/Confuse.h:
@@ -749,4 +752,7 @@
 ../Confuse/src/Confuse/LayerStack.h:
 ../Confuse/src/Confuse/Layer.h:
 ../Confuse/src/Confuse/Events/ApplicationEvent.h:
+../Confuse/src/Confuse/ImGui/ImGuiLayer.h:
+../Confuse/src/Confuse/Events/KeyEvent.h:
+../Confuse/src/Confuse/Events/MouseEvent.h:
 ../Confuse/src/Confuse/EntryPoint.h:

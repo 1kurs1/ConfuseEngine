@@ -3,10 +3,9 @@
  src/Confuse/Application.h src/Confuse/Window.h \
  src/Confuse/Events/Event.h src/Confuse/LayerStack.h \
  /usr/include/c++/13/vector src/Confuse/Layer.h \
- src/Confuse/Events/ApplicationEvent.h vendor/GLFW/include/GLFW/glfw3.h \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/GL/gl.h \
- /usr/include/GL/glext.h /usr/include/KHR/khrplatform.h
+ src/Confuse/Events/ApplicationEvent.h vendor/Glad/include/glad/glad.h \
+ vendor/Glad/include/KHR/khrplatform.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
 /usr/include/stdc-predef.h:
 src/Confuse/Application.h:
 src/Confuse/Window.h:
@@ -15,9 +14,6 @@ src/Confuse/LayerStack.h:
 /usr/include/c++/13/vector:
 src/Confuse/Layer.h:
 src/Confuse/Events/ApplicationEvent.h:
-vendor/GLFW/include/GLFW/glfw3.h:
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
+vendor/Glad/include/glad/glad.h:
+vendor/Glad/include/KHR/khrplatform.h:
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h:
-/usr/include/GL/gl.h:
-/usr/include/GL/glext.h:
-/usr/include/KHR/khrplatform.h:

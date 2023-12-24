@@ -17,6 +17,7 @@ class Sandbox : public Confuse::Application{
 public:
     Sandbox(){
         pushLayer(new ExampleLayer());
+        pushOverlay(new Confuse::ImGuiLayer());
     }
 
     ~Sandbox(){}

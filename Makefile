@@ -12,21 +12,27 @@ endif
 
 ifeq ($(config),debug)
   GLFW_config = debug
+  Glad_config = debug
+  ImGui_config = debug
   Confuse_config = debug
   Sandbox_config = debug
 endif
 ifeq ($(config),release)
   GLFW_config = release
+  Glad_config = release
+  ImGui_config = release
   Confuse_config = release
   Sandbox_config = release
 endif
 ifeq ($(config),dist)
   GLFW_config = dist
+  Glad_config = dist
+  ImGui_config = dist
   Confuse_config = dist
   Sandbox_config = dist
 endif
 
-PROJECTS := GLFW Confuse Sandbox
+PROJECTS := GLFW Glad ImGui Confuse Sandbox
 
 .PHONY: all clean help $(PROJECTS) 
 
@@ -38,7 +44,19 @@ ifneq (,$(GLFW_config))
 	@${MAKE} --no-print-directory -C Confuse/vendor/GLFW -f Makefile config=$(GLFW_config)
 endif
 
-Confuse: GLFW
+Glad:
+ifneq (,$(Glad_config))
+	@echo "==== Building Glad ($(Glad_config)) ===="
+	@${MAKE} --no-print-directory -C Confuse/vendor/Glad -f Makefile config=$(Glad_config)
+endif
+
+ImGui:
+ifneq (,$(ImGui_config))
+	@echo "==== Building ImGui ($(ImGui_config)) ===="
+	@${MAKE} --no-print-directory -C Confuse/vendor/imgui -f Makefile config=$(ImGui_config)
+endif
+
+Confuse: GLFW Glad ImGui
 ifneq (,$(Confuse_config))
 	@echo "==== Building Confuse ($(Confuse_config)) ===="
 	@${MAKE} --no-print-directory -C Confuse -f Makefile config=$(Confuse_config)
@@ -52,6 +70,8 @@ endif
 
 clean:
 	@${MAKE} --no-print-directory -C Confuse/vendor/GLFW -f Makefile clean
+	@${MAKE} --no-print-directory -C Confuse/vendor/Glad -f Makefile clean
+	@${MAKE} --no-print-directory -C Confuse/vendor/imgui -f Makefile clean
 	@${MAKE} --no-print-directory -C Confuse -f Makefile clean
 	@${MAKE} --no-print-directory -C Sandbox -f Makefile clean
 
@@ -67,6 +87,8 @@ help:
 	@echo "   all (default)"
 	@echo "   clean"
 	@echo "   GLFW"
+	@echo "   Glad"
+	@echo "   ImGui"
 	@echo "   Confuse"
 	@echo "   Sandbox"
 	@echo ""

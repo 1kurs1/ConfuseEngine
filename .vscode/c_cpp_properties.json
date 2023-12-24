@@ -6,7 +6,9 @@
                 "${default}",
                 "${workspaceFolder}/Confuse/src",
                 "${workspaceFolder}/Confuse/vendor/spdlog/include/",
-                "${workspaceFolder}/Confuse/vendor/"
+                "${workspaceFolder}/Confuse/vendor/",
+                "${workspaceFolder}/Confuse/vendor/Glad/include",
+                "${workspaceFolder}/Confuse/vendor/imgui"
             ],
             "defines": [
                 "CE_PLATFORM_LINUX",

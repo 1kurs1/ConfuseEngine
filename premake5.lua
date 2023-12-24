@@ -11,8 +11,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Confuse/vendor/GLFW/include"
+IncludeDir["Glad"] = "Confuse/vendor/Glad/include"
+IncludeDir["ImGui"] = "Confuse/vendor/imgui"
 
 include "Confuse/vendor/GLFW"
+include "Confuse/vendor/Glad"
+include "Confuse/vendor/imgui"
 
 project "Confuse"
     location "Confuse"
@@ -32,11 +36,15 @@ project "Confuse"
     includedirs{
         "%{prj.name}/src/",
         "%{prj.name}/vendor/spdlog/include/",
-        "%{IncludeDir.GLFW}"
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.Glad}",
+        "%{IncludeDir.ImGui}"
     }
 
     links{
         "GLFW",
+        "Glad",
+        "ImGui",
         "GL"
     }
 
@@ -47,7 +55,8 @@ project "Confuse"
 
         defines{
             "CE_PLATFORM_LINUX",
-            "CE_BUILD_LIB"
+            "CE_BUILD_LIB",
+            "GLFW_INCLUDE_NONE"
         }
 
     postbuildcommands{
