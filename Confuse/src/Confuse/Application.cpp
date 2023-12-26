@@ -4,6 +4,7 @@
 #include <glad/glad.h>
 
 #include "Confuse/Log.h"
+#include "Confuse/Input.h"
 
 namespace Confuse{
 

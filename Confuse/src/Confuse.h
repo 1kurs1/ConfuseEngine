@@ -5,6 +5,10 @@
 #include "Confuse/Layer.h"
 #include "Confuse/Log.h"
 
+#include "Confuse/Input.h"
+#include "Confuse/MouseButtonCode.h"
+#include "Confuse/KeyCode.h"
+
 #include "Confuse/ImGui/ImGuiLayer.h"
 
 //-----------Entry point-------------

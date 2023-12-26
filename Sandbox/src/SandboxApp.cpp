@@ -5,11 +5,17 @@ public:
     ExampleLayer() : Layer("example"){}
 
     void onUpdate() override{
-        CE_INFO("ExampleLayer::Update");
+        if(Confuse::Input::isKeyPressed(CE_KEY_TAB))
+            CE_TRACE("tab key is pressed (poll)");
     }
 
     void onEvent(Confuse::Event& event) override{
-        CE_TRACE("{0}", event);
+        if(event.getEventType() == Confuse::EventType::KeyPressed){
+            Confuse::KeyPressedEvent& e = (Confuse::KeyPressedEvent&)event;
+            if(e.getKeyCode() == CE_KEY_TAB)
+                CE_TRACE("tab key is pressed (event)");
+            CE_TRACE("{0}", (char)e.getKeyCode());
+        }
     }
 };
 
