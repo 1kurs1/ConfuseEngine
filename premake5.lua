@@ -13,6 +13,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Confuse/vendor/GLFW/include"
 IncludeDir["Glad"] = "Confuse/vendor/Glad/include"
 IncludeDir["ImGui"] = "Confuse/vendor/imgui"
+IncludeDir["glm"] = "Confuse/vendor/glm"
 
 include "Confuse/vendor/GLFW"
 include "Confuse/vendor/Glad"
@@ -30,7 +31,9 @@ project "Confuse"
 
     files{
         "%{prj.name}/src/**.h",
-        "%{prj.name}/src/**.cpp"
+        "%{prj.name}/src/**.cpp",
+        "%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl",
     }
 
     includedirs{
@@ -38,7 +41,8 @@ project "Confuse"
         "%{prj.name}/vendor/spdlog/include/",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
-        "%{IncludeDir.ImGui}"
+        "%{IncludeDir.ImGui}",
+        "%{IncludeDir.glm}",
     }
 
     links{
@@ -93,7 +97,9 @@ project "Sandbox"
 
     includedirs{
         "Confuse/vendor/spdlog/include/",
-        "Confuse/src"
+        "Confuse/src",
+        "Confuse/vendor/",
+        "%{IncludeDir.glm}"
     }
     
     links{
@@ -102,7 +108,7 @@ project "Sandbox"
 
     filter "system:linux"
         cppdialect "C++17"
-        staticruntime "On"
+        pic "On"
         systemversion "latest"
 
         defines{

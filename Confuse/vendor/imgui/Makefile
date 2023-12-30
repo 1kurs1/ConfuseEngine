@@ -13,7 +13,7 @@ endif
 ifeq ($(config),debug)
   RESCOMP = windres
   TARGETDIR = bin/Debug-linux-x86_64/ImGui
-  TARGET = $(TARGETDIR)/libImGui.so
+  TARGET = $(TARGETDIR)/libImGui.a
   OBJDIR = bin-int/Debug-linux-x86_64/ImGui
   DEFINES +=
   INCLUDES +=
@@ -24,8 +24,8 @@ ifeq ($(config),debug)
   ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   LIBS +=
   LDDEPS +=
-  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -shared -Wl,-soname=libImGui.so
-  LINKCMD = $(CXX) -o "$@" $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
+  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64
+  LINKCMD = $(AR) -rcs "$@" $(OBJECTS)
   define PREBUILDCMDS
   endef
   define PRELINKCMDS
@@ -40,7 +40,7 @@ endif
 ifeq ($(config),release)
   RESCOMP = windres
   TARGETDIR = bin/Release-linux-x86_64/ImGui
-  TARGET = $(TARGETDIR)/libImGui.so
+  TARGET = $(TARGETDIR)/libImGui.a
   OBJDIR = bin-int/Release-linux-x86_64/ImGui
   DEFINES +=
   INCLUDES +=
@@ -51,8 +51,8 @@ ifeq ($(config),release)
   ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   LIBS +=
   LDDEPS +=
-  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -shared -Wl,-soname=libImGui.so -s
-  LINKCMD = $(CXX) -o "$@" $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
+  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -s
+  LINKCMD = $(AR) -rcs "$@" $(OBJECTS)
   define PREBUILDCMDS
   endef
   define PRELINKCMDS
@@ -67,7 +67,7 @@ endif
 ifeq ($(config),dist)
   RESCOMP = windres
   TARGETDIR = bin/Dist-linux-x86_64/ImGui
-  TARGET = $(TARGETDIR)/libImGui.so
+  TARGET = $(TARGETDIR)/libImGui.a
   OBJDIR = bin-int/Dist-linux-x86_64/ImGui
   DEFINES +=
   INCLUDES +=
@@ -78,8 +78,8 @@ ifeq ($(config),dist)
   ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   LIBS +=
   LDDEPS +=
-  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -shared -Wl,-soname=libImGui.so -s
-  LINKCMD = $(CXX) -o "$@" $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
+  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -s
+  LINKCMD = $(AR) -rcs "$@" $(OBJECTS)
   define PREBUILDCMDS
   endef
   define PRELINKCMDS
@@ -95,8 +95,6 @@ OBJECTS := \
 	$(OBJDIR)/imgui.o \
 	$(OBJDIR)/imgui_demo.o \
 	$(OBJDIR)/imgui_draw.o \
-	$(OBJDIR)/imgui_impl_glfw.o \
-	$(OBJDIR)/imgui_impl_opengl3.o \
 	$(OBJDIR)/imgui_tables.o \
 	$(OBJDIR)/imgui_widgets.o \
 
@@ -164,12 +162,6 @@ $(OBJDIR)/imgui_demo.o: imgui_demo.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/imgui_draw.o: imgui_draw.cpp
-	@echo $(notdir $<)
-	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
-$(OBJDIR)/imgui_impl_glfw.o: imgui_impl_glfw.cpp
-	@echo $(notdir $<)
-	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
-$(OBJDIR)/imgui_impl_opengl3.o: imgui_impl_opengl3.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/imgui_tables.o: imgui_tables.cpp

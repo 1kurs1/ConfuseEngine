@@ -18,15 +18,15 @@ ifeq ($(config),debug)
   PCH = src/CEpch.h
   GCH = $(OBJDIR)/$(notdir $(PCH)).gch
   DEFINES += -DCE_PLATFORM_LINUX -DCE_BUILD_LIB -DGLFW_INCLUDE_NONE -DCE_DEBUG
-  INCLUDES += -Isrc -Ivendor/spdlog/include -Ivendor/GLFW/include -Ivendor/Glad/include -Ivendor/imgui
+  INCLUDES += -Isrc -Ivendor/spdlog/include -Ivendor/GLFW/include -Ivendor/Glad/include -Ivendor/imgui -Ivendor/glm
   FORCE_INCLUDE += -include $(OBJDIR)/$(notdir $(PCH))
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -fPIC -g -pipe
   ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -fPIC -g -std=c++17 -pipe
   ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  LIBS += vendor/GLFW/bin/Debug-linux-x86_64/GLFW/libGLFW.a vendor/Glad/bin/Debug-linux-x86_64/Glad/libGlad.a vendor/imgui/bin/Debug-linux-x86_64/ImGui/libImGui.so -lGL
-  LDDEPS += vendor/GLFW/bin/Debug-linux-x86_64/GLFW/libGLFW.a vendor/Glad/bin/Debug-linux-x86_64/Glad/libGlad.a vendor/imgui/bin/Debug-linux-x86_64/ImGui/libImGui.so
-  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -Wl,-rpath,'$$ORIGIN/../../../Confuse/vendor/imgui/bin/Debug-linux-x86_64/ImGui' -m64 -shared -Wl,-soname=libConfuse.so
+  LIBS += vendor/GLFW/bin/Debug-linux-x86_64/GLFW/libGLFW.a vendor/Glad/bin/Debug-linux-x86_64/Glad/libGlad.a vendor/imgui/bin/Debug-linux-x86_64/ImGui/libImGui.a -lGL
+  LDDEPS += vendor/GLFW/bin/Debug-linux-x86_64/GLFW/libGLFW.a vendor/Glad/bin/Debug-linux-x86_64/Glad/libGlad.a vendor/imgui/bin/Debug-linux-x86_64/ImGui/libImGui.a
+  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -shared -Wl,-soname=libConfuse.so
   LINKCMD = $(CXX) -o "$@" $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
   define PREBUILDCMDS
   endef
@@ -49,15 +49,15 @@ ifeq ($(config),release)
   PCH = src/CEpch.h
   GCH = $(OBJDIR)/$(notdir $(PCH)).gch
   DEFINES += -DCE_PLATFORM_LINUX -DCE_BUILD_LIB -DGLFW_INCLUDE_NONE -DCE_RELEASE
-  INCLUDES += -Isrc -Ivendor/spdlog/include -Ivendor/GLFW/include -Ivendor/Glad/include -Ivendor/imgui
+  INCLUDES += -Isrc -Ivendor/spdlog/include -Ivendor/GLFW/include -Ivendor/Glad/include -Ivendor/imgui -Ivendor/glm
   FORCE_INCLUDE += -include $(OBJDIR)/$(notdir $(PCH))
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -pipe
   ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -std=c++17 -pipe
   ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  LIBS += vendor/GLFW/bin/Release-linux-x86_64/GLFW/libGLFW.a vendor/Glad/bin/Release-linux-x86_64/Glad/libGlad.a vendor/imgui/bin/Release-linux-x86_64/ImGui/libImGui.so -lGL
-  LDDEPS += vendor/GLFW/bin/Release-linux-x86_64/GLFW/libGLFW.a vendor/Glad/bin/Release-linux-x86_64/Glad/libGlad.a vendor/imgui/bin/Release-linux-x86_64/ImGui/libImGui.so
-  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -Wl,-rpath,'$$ORIGIN/../../../Confuse/vendor/imgui/bin/Release-linux-x86_64/ImGui' -m64 -shared -Wl,-soname=libConfuse.so -s
+  LIBS += vendor/GLFW/bin/Release-linux-x86_64/GLFW/libGLFW.a vendor/Glad/bin/Release-linux-x86_64/Glad/libGlad.a vendor/imgui/bin/Release-linux-x86_64/ImGui/libImGui.a -lGL
+  LDDEPS += vendor/GLFW/bin/Release-linux-x86_64/GLFW/libGLFW.a vendor/Glad/bin/Release-linux-x86_64/Glad/libGlad.a vendor/imgui/bin/Release-linux-x86_64/ImGui/libImGui.a
+  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -shared -Wl,-soname=libConfuse.so -s
   LINKCMD = $(CXX) -o "$@" $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
   define PREBUILDCMDS
   endef
@@ -80,15 +80,15 @@ ifeq ($(config),dist)
   PCH = src/CEpch.h
   GCH = $(OBJDIR)/$(notdir $(PCH)).gch
   DEFINES += -DCE_PLATFORM_LINUX -DCE_BUILD_LIB -DGLFW_INCLUDE_NONE -DCE_DIST
-  INCLUDES += -Isrc -Ivendor/spdlog/include -Ivendor/GLFW/include -Ivendor/Glad/include -Ivendor/imgui
+  INCLUDES += -Isrc -Ivendor/spdlog/include -Ivendor/GLFW/include -Ivendor/Glad/include -Ivendor/imgui -Ivendor/glm
   FORCE_INCLUDE += -include $(OBJDIR)/$(notdir $(PCH))
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -pipe
   ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -std=c++17 -pipe
   ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  LIBS += vendor/GLFW/bin/Dist-linux-x86_64/GLFW/libGLFW.a vendor/Glad/bin/Dist-linux-x86_64/Glad/libGlad.a vendor/imgui/bin/Dist-linux-x86_64/ImGui/libImGui.so -lGL
-  LDDEPS += vendor/GLFW/bin/Dist-linux-x86_64/GLFW/libGLFW.a vendor/Glad/bin/Dist-linux-x86_64/Glad/libGlad.a vendor/imgui/bin/Dist-linux-x86_64/ImGui/libImGui.so
-  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -Wl,-rpath,'$$ORIGIN/../../../Confuse/vendor/imgui/bin/Dist-linux-x86_64/ImGui' -m64 -shared -Wl,-soname=libConfuse.so -s
+  LIBS += vendor/GLFW/bin/Dist-linux-x86_64/GLFW/libGLFW.a vendor/Glad/bin/Dist-linux-x86_64/Glad/libGlad.a vendor/imgui/bin/Dist-linux-x86_64/ImGui/libImGui.a -lGL
+  LDDEPS += vendor/GLFW/bin/Dist-linux-x86_64/GLFW/libGLFW.a vendor/Glad/bin/Dist-linux-x86_64/Glad/libGlad.a vendor/imgui/bin/Dist-linux-x86_64/ImGui/libImGui.a
+  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -shared -Wl,-soname=libConfuse.so -s
   LINKCMD = $(CXX) -o "$@" $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
   define PREBUILDCMDS
   endef
@@ -105,6 +105,7 @@ endif
 
 OBJECTS := \
 	$(OBJDIR)/Application.o \
+	$(OBJDIR)/ImGuiBuild.o \
 	$(OBJDIR)/ImGuiLayer.o \
 	$(OBJDIR)/Layer.o \
 	$(OBJDIR)/LayerStack.o \
@@ -170,6 +171,9 @@ $(OBJECTS): | $(OBJDIR)
 endif
 
 $(OBJDIR)/Application.o: src/Confuse/Application.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/ImGuiBuild.o: src/Confuse/ImGui/ImGuiBuild.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/ImGuiLayer.o: src/Confuse/ImGui/ImGuiLayer.cpp

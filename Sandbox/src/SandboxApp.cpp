@@ -1,5 +1,7 @@
 #include <Confuse.h>
 
+#include "imgui/imgui.h"
+
 class ExampleLayer : public Confuse::Layer{
 public:
     ExampleLayer() : Layer("example"){}
@@ -7,6 +9,12 @@ public:
     void onUpdate() override{
         if(Confuse::Input::isKeyPressed(CE_KEY_TAB))
             CE_TRACE("tab key is pressed (poll)");
+    }
+
+    virtual void onImGuiRender() override{
+        ImGui::Begin("Test");
+        ImGui::Text("Confuse Engine");
+        ImGui::End();
     }
 
     void onEvent(Confuse::Event& event) override{
@@ -23,7 +31,6 @@ class Sandbox : public Confuse::Application{
 public:
     Sandbox(){
         pushLayer(new ExampleLayer());
-        pushOverlay(new Confuse::ImGuiLayer());
     }
 
     ~Sandbox(){}

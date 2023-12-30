@@ -18,6 +18,9 @@ namespace Confuse{
 
         m_window = std::unique_ptr<Window>(Window::create());
         m_window->setEventCallback(BIND_EVENT_FN(onEvent));
+
+        m_imGuiLayer = new ImGuiLayer();
+        pushOverlay(m_imGuiLayer);
     }
 
     Application::~Application(){}
@@ -49,6 +52,11 @@ namespace Confuse{
 
             for(Layer* layer: m_layerStack)
                 layer->onUpdate();
+
+            m_imGuiLayer->begin();
+            for(Layer* layer: m_layerStack)
+                layer->onImGuiRender();
+            m_imGuiLayer->end();
 
             m_window->onUpdate();
         }
