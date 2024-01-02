@@ -17,7 +17,7 @@ ifeq ($(config),debug)
   OBJDIR = ../bin_int/Debug-linux-x86_64/Confuse
   PCH = src/CEpch.h
   GCH = $(OBJDIR)/$(notdir $(PCH)).gch
-  DEFINES += -DCE_PLATFORM_LINUX -DCE_BUILD_LIB -DGLFW_INCLUDE_NONE -DCE_DEBUG
+  DEFINES += -D_CRT_SECURE_NO_WARNINGS -DCE_PLATFORM_LINUX -DCE_BUILD_LIB -DGLFW_INCLUDE_NONE -DCE_DEBUG
   INCLUDES += -Isrc -Ivendor/spdlog/include -Ivendor/GLFW/include -Ivendor/Glad/include -Ivendor/imgui -Ivendor/glm
   FORCE_INCLUDE += -include $(OBJDIR)/$(notdir $(PCH))
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
@@ -48,7 +48,7 @@ ifeq ($(config),release)
   OBJDIR = ../bin_int/Release-linux-x86_64/Confuse
   PCH = src/CEpch.h
   GCH = $(OBJDIR)/$(notdir $(PCH)).gch
-  DEFINES += -DCE_PLATFORM_LINUX -DCE_BUILD_LIB -DGLFW_INCLUDE_NONE -DCE_RELEASE
+  DEFINES += -D_CRT_SECURE_NO_WARNINGS -DCE_PLATFORM_LINUX -DCE_BUILD_LIB -DGLFW_INCLUDE_NONE -DCE_RELEASE
   INCLUDES += -Isrc -Ivendor/spdlog/include -Ivendor/GLFW/include -Ivendor/Glad/include -Ivendor/imgui -Ivendor/glm
   FORCE_INCLUDE += -include $(OBJDIR)/$(notdir $(PCH))
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
@@ -79,7 +79,7 @@ ifeq ($(config),dist)
   OBJDIR = ../bin_int/Dist-linux-x86_64/Confuse
   PCH = src/CEpch.h
   GCH = $(OBJDIR)/$(notdir $(PCH)).gch
-  DEFINES += -DCE_PLATFORM_LINUX -DCE_BUILD_LIB -DGLFW_INCLUDE_NONE -DCE_DIST
+  DEFINES += -D_CRT_SECURE_NO_WARNINGS -DCE_PLATFORM_LINUX -DCE_BUILD_LIB -DGLFW_INCLUDE_NONE -DCE_DIST
   INCLUDES += -Isrc -Ivendor/spdlog/include -Ivendor/GLFW/include -Ivendor/Glad/include -Ivendor/imgui -Ivendor/glm
   FORCE_INCLUDE += -include $(OBJDIR)/$(notdir $(PCH))
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
@@ -110,6 +110,11 @@ OBJECTS := \
 	$(OBJDIR)/Layer.o \
 	$(OBJDIR)/LayerStack.o \
 	$(OBJDIR)/Log.o \
+	$(OBJDIR)/Buffer.o \
+	$(OBJDIR)/Renderer.o \
+	$(OBJDIR)/Shader.o \
+	$(OBJDIR)/OpenGLBuffer.o \
+	$(OBJDIR)/OpenGLContext.o \
 	$(OBJDIR)/LinuxInput.o \
 	$(OBJDIR)/LinuxWindow.o \
 
@@ -186,6 +191,21 @@ $(OBJDIR)/LayerStack.o: src/Confuse/LayerStack.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/Log.o: src/Confuse/Log.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/Buffer.o: src/Confuse/Renderer/Buffer.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/Renderer.o: src/Confuse/Renderer/Renderer.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/Shader.o: src/Confuse/Renderer/Shader.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/OpenGLBuffer.o: src/Platform/OpenGL/OpenGLBuffer.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/OpenGLContext.o: src/Platform/OpenGL/OpenGLContext.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/LinuxInput.o: src/Platform/linux/LinuxInput.cpp

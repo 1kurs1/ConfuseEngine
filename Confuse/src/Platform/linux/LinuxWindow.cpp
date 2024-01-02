@@ -3,6 +3,8 @@
 
 #include <glad/glad.h>
 
+#include "Platform/OpenGL/OpenGLContext.h"
+
 #include "Confuse/Events/ApplicationEvent.h"
 #include "Confuse/Events/MouseEvent.h"
 #include "Confuse/Events/KeyEvent.h"
@@ -41,9 +43,10 @@ namespace Confuse{
         }
 
         m_window = glfwCreateWindow((int)props.Width, (int)props.Height, m_data.Title.c_str(), nullptr, nullptr);
-        glfwMakeContextCurrent(m_window);
-        int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-        CE_CORE_ASSERT(status, "failed to initialize glad!");
+        
+        m_context = new OpenGLContext(m_window);
+        m_context->init();
+
         glfwSetWindowUserPointer(m_window, &m_data);
         setVSync(true);
 
@@ -134,7 +137,7 @@ namespace Confuse{
 
     void LinuxWindow::onUpdate(){
         glfwPollEvents();
-        glfwSwapBuffers(m_window);
+        m_context->swapBuffers();
     }
 
     void LinuxWindow::setVSync(bool enabled){

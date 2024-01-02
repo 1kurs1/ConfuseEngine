@@ -8,10 +8,10 @@ namespace Confuse{
 
     void Log::init(){
         spdlog::set_pattern("%^[%T] %n: %v%$");
-        s_coreLogger = spdlog::stdout_color_mt("Confuse Engine");
+        s_coreLogger = spdlog::stdout_color_mt("CONFUSE ENGINE");
         s_coreLogger->set_level(spdlog::level::trace);
 
-        s_clientLogger = spdlog::stdout_color_mt("Application");
+        s_clientLogger = spdlog::stdout_color_mt("APP");
         s_clientLogger->set_level(spdlog::level::trace);
     }
 }

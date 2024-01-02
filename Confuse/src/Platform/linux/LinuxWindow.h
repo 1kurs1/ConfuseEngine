@@ -3,6 +3,7 @@
 #include <GLFW/glfw3.h>
 
 #include "Confuse/Window.h"
+#include "Confuse/Renderer/GraphicsContext.h"
 
 namespace Confuse{
     class LinuxWindow : public Window{
@@ -27,6 +28,8 @@ namespace Confuse{
 
     private:
         GLFWwindow* m_window;
+        GraphicsContext* m_context;
+
         struct WindowData{
             std::string Title;
             unsigned int Width, Height;

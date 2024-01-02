@@ -5,6 +5,8 @@
  /usr/include/c++/13/vector src/Confuse/Layer.h \
  src/Confuse/Events/ApplicationEvent.h src/Confuse/ImGui/ImGuiLayer.h \
  src/Confuse/Events/KeyEvent.h src/Confuse/Events/MouseEvent.h \
+ src/Confuse/Renderer/Shader.h /usr/include/c++/13/string \
+ /usr/include/c++/13/cstdint src/Confuse/Renderer/Buffer.h \
  vendor/Glad/include/glad/glad.h vendor/Glad/include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h src/Confuse/Input.h
 /usr/include/stdc-predef.h:
@@ -18,6 +20,10 @@ src/Confuse/Events/ApplicationEvent.h:
 src/Confuse/ImGui/ImGuiLayer.h:
 src/Confuse/Events/KeyEvent.h:
 src/Confuse/Events/MouseEvent.h:
+src/Confuse/Renderer/Shader.h:
+/usr/include/c++/13/string:
+/usr/include/c++/13/cstdint:
+src/Confuse/Renderer/Buffer.h:
 vendor/Glad/include/glad/glad.h:
 vendor/Glad/include/KHR/khrplatform.h:
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h:

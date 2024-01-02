@@ -13,7 +13,7 @@ public:
 
     virtual void onImGuiRender() override{
         ImGui::Begin("Test");
-        ImGui::Text("Confuse Engine");
+        ImGui::Text("Hello from Confuse Engine!");
         ImGui::End();
     }
 
