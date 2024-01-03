@@ -22,31 +22,63 @@ namespace Confuse{
         m_imGuiLayer = new ImGuiLayer();
         pushOverlay(m_imGuiLayer);
 
-        glGenVertexArrays(1, &m_vertexArray);
-        glBindVertexArray(m_vertexArray);
+        m_vertexArray.reset(VertexArray::create());
 
-        float vertices[3 * 3] = {
-            -0.5f, -0.5f, 0.0f,
-            0.5f, -0.5f, 0.0f,
-            0.0f, 0.5f, 0.0f
+        float vertices[3 * 7] = {
+            -0.5f, -0.5f, 0.0f, 1.0f, 0.1f, 0.1f, 1.0f,
+            0.5f, -0.5f, 0.0f, 0.1f, 1.0f, 0.1f, 1.0f,
+            0.0f, 0.5f, 0.0f, 0.1f, 0.1f, 1.0f, 1.0f,
         };
 
-        m_vertexBuffer.reset(VertexBuffer::create(vertices, sizeof(vertices)));
+        std::shared_ptr<VertexBuffer> vertexBuffer;
+        vertexBuffer.reset((VertexBuffer::create(vertices, sizeof(vertices))));
 
-        glEnableVertexAttribArray(0);
-        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), nullptr);
+        BufferLayout layout = {
+            {ShaderDataType::Float3, "a_Position"},
+            {ShaderDataType::Float4, "a_Color"},
+        };
+
+        vertexBuffer->setLayout(layout);
+        m_vertexArray->addVertexBuffer(vertexBuffer);
 
         uint32_t indices[3] = {0, 1, 2};
-        m_indexBuffer.reset(IndexBuffer::create(indices, sizeof(indices) / sizeof(uint32_t)));
+        std::shared_ptr<IndexBuffer> indexBuffer;
+        indexBuffer.reset(IndexBuffer::create(indices, sizeof(indices) / sizeof(uint32_t)));
+        m_vertexArray->setIndexBuffer(indexBuffer);
+
+        m_squareVA.reset(VertexArray::create());
+
+        float squareVertices[3 * 4] = {
+            -0.75f, -0.75f, 0.0f,
+            0.75f, -0.75f, 0.0f,
+            0.75f, 0.75f, 0.0f,
+            -0.75f, 0.75f, 0.0f
+        };
+
+        std::shared_ptr<VertexBuffer> squareVB;
+        squareVB.reset((VertexBuffer::create(squareVertices, sizeof(squareVertices))));
+        squareVB->setLayout({
+            {ShaderDataType::Float3, "a_Position"}
+        });
+        m_squareVA->addVertexBuffer(squareVB);
+
+        uint32_t squareIndices[6] = {0, 1, 2, 2, 3, 0};
+        std::shared_ptr<IndexBuffer> squareIB;
+        squareIB.reset(IndexBuffer::create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
+        m_squareVA->setIndexBuffer(squareIB);
 
         std::string vertexSrc = R"(
             #version 330 core
             
             layout(location = 0) in vec3 a_position;
+            layout(location = 1) in vec4 a_color;
+
             out vec3 v_position;
+            out vec4 v_color;
 
             void main(){
                 v_position = a_position;
+                v_color = a_color;
                 gl_Position = vec4(a_position, 1.0);
             }
         )";
@@ -55,14 +87,43 @@ namespace Confuse{
             #version 330 core
             
             layout(location = 0) out vec4 color;
+
             in vec3 v_position;
+            in vec4 v_color;
 
             void main(){
                 color = vec4(v_position * 0.5 + 0.5, 1.0);
+                color = v_color;
             }
         )";
 
         m_shader.reset(new Shader(vertexSrc, fragmentSrc));
+
+        std::string blueShaderVertexSrc = R"(
+            #version 330 core
+            
+            layout(location = 0) in vec3 a_position;
+
+            out vec3 v_position;
+
+            void main(){
+                v_position = a_position;
+                gl_Position = vec4(a_position, 1.0);
+            }
+        )";
+
+        std::string blueShaderFragmentSrc = R"(
+            #version 330 core
+            
+            layout(location = 0) out vec4 color;
+
+            in vec3 v_position;
+
+            void main(){
+                color = vec4(0.2, 0.3, 0.8, 1.0);
+            }
+        )";
+        m_blueShader.reset(new Shader(blueShaderVertexSrc, blueShaderFragmentSrc));
     }
 
     Application::~Application(){}
@@ -92,9 +153,13 @@ namespace Confuse{
             glClearColor(0.06, 0.06, 0.06, 1);
             glClear(GL_COLOR_BUFFER_BIT);
 
+            m_blueShader->bind();
+            m_squareVA->bind();
+            glDrawElements(GL_TRIANGLES, m_squareVA->getIndexBuffers()->getCount(), GL_UNSIGNED_INT, nullptr);
+
             m_shader->bind();
-            glBindVertexArray(m_vertexArray);
-            glDrawElements(GL_TRIANGLES, m_indexBuffer->getCount(), GL_UNSIGNED_INT, nullptr);
+            m_vertexArray->bind();
+            glDrawElements(GL_TRIANGLES, m_vertexArray->getIndexBuffers()->getCount(), GL_UNSIGNED_INT, nullptr);
 
             for(Layer* layer: m_layerStack)
                 layer->onUpdate();

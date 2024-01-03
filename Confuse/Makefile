@@ -113,8 +113,10 @@ OBJECTS := \
 	$(OBJDIR)/Buffer.o \
 	$(OBJDIR)/Renderer.o \
 	$(OBJDIR)/Shader.o \
+	$(OBJDIR)/VertexArray.o \
 	$(OBJDIR)/OpenGLBuffer.o \
 	$(OBJDIR)/OpenGLContext.o \
+	$(OBJDIR)/OpenGLVertexArray.o \
 	$(OBJDIR)/LinuxInput.o \
 	$(OBJDIR)/LinuxWindow.o \
 
@@ -202,10 +204,16 @@ $(OBJDIR)/Renderer.o: src/Confuse/Renderer/Renderer.cpp
 $(OBJDIR)/Shader.o: src/Confuse/Renderer/Shader.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/VertexArray.o: src/Confuse/Renderer/VertexArray.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/OpenGLBuffer.o: src/Platform/OpenGL/OpenGLBuffer.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/OpenGLContext.o: src/Platform/OpenGL/OpenGLContext.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/OpenGLVertexArray.o: src/Platform/OpenGL/OpenGLVertexArray.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/LinuxInput.o: src/Platform/linux/LinuxInput.cpp

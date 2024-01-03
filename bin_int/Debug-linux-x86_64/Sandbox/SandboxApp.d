@@ -343,8 +343,9 @@
  ../Confuse/src/Confuse/Events/KeyEvent.h \
  ../Confuse/src/Confuse/Events/MouseEvent.h \
  ../Confuse/src/Confuse/Renderer/Shader.h \
- ../Confuse/src/Confuse/Renderer/Buffer.h ../Confuse/src/Confuse/Input.h \
- ../Confuse/src/Confuse/MouseButtonCode.h \
+ ../Confuse/src/Confuse/Renderer/Buffer.h \
+ ../Confuse/src/Confuse/Renderer/VertexArray.h \
+ ../Confuse/src/Confuse/Input.h ../Confuse/src/Confuse/MouseButtonCode.h \
  ../Confuse/src/Confuse/KeyCode.h ../Confuse/src/Confuse/EntryPoint.h \
  ../Confuse/vendor/imgui/imgui.h ../Confuse/vendor/imgui/imconfig.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h
@@ -762,6 +763,7 @@
 ../Confuse/src/Confuse/Events/MouseEvent.h:
 ../Confuse/src/Confuse/Renderer/Shader.h:
 ../Confuse/src/Confuse/Renderer/Buffer.h:
+../Confuse/src/Confuse/Renderer/VertexArray.h:
 ../Confuse/src/Confuse/Input.h:
 ../Confuse/src/Confuse/MouseButtonCode.h:
 ../Confuse/src/Confuse/KeyCode.h:
