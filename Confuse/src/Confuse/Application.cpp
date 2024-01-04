@@ -1,7 +1,7 @@
 #include "CEpch.h"
 #include "Application.h"
 
-#include <glad/glad.h>
+#include "Confuse/Renderer/Renderer.h"
 
 #include "Confuse/Log.h"
 #include "Confuse/Input.h"
@@ -150,16 +150,18 @@ namespace Confuse{
 
     void Application::run(){
         while(m_running){
-            glClearColor(0.06, 0.06, 0.06, 1);
-            glClear(GL_COLOR_BUFFER_BIT);
+            RenderCommand::setClearColor({0.06f, 0.06f, 0.06f, 1});
+            RenderCommand::clear();
 
+            Renderer::beginScene();
+            
             m_blueShader->bind();
-            m_squareVA->bind();
-            glDrawElements(GL_TRIANGLES, m_squareVA->getIndexBuffers()->getCount(), GL_UNSIGNED_INT, nullptr);
+            Renderer::submit(m_squareVA);
 
             m_shader->bind();
-            m_vertexArray->bind();
-            glDrawElements(GL_TRIANGLES, m_vertexArray->getIndexBuffers()->getCount(), GL_UNSIGNED_INT, nullptr);
+            Renderer::submit(m_vertexArray);
+
+            Renderer::endScene();
 
             for(Layer* layer: m_layerStack)
                 layer->onUpdate();
