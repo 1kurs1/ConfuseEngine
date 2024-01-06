@@ -12,6 +12,7 @@
 #include "Confuse/Renderer/Shader.h"
 #include "Confuse/Renderer/Buffer.h"
 #include "Confuse/Renderer/VertexArray.h"
+#include "Confuse/Renderer/OrthographicCamera.h"
 
 namespace Confuse{
     class Application{
@@ -41,6 +42,8 @@ namespace Confuse{
 
         std::shared_ptr<Shader> m_blueShader;
         std::shared_ptr<VertexArray> m_squareVA;
+
+        OrthographicCamera m_mainCamera;
 
     private:
         static Application* s_instance;

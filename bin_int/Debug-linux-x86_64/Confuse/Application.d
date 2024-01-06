@@ -6,10 +6,7 @@
  src/Confuse/Events/ApplicationEvent.h src/Confuse/ImGui/ImGuiLayer.h \
  src/Confuse/Events/KeyEvent.h src/Confuse/Events/MouseEvent.h \
  src/Confuse/Renderer/Shader.h /usr/include/c++/13/string \
- /usr/include/c++/13/cstdint src/Confuse/Renderer/Buffer.h \
- src/Confuse/Renderer/VertexArray.h /usr/include/c++/13/memory \
- src/Confuse/Renderer/Renderer.h src/Confuse/Renderer/RenderCommand.h \
- src/Confuse/Renderer/RendererAPI.h vendor/glm/glm/glm.hpp \
+ /usr/include/c++/13/cstdint vendor/glm/glm/glm.hpp \
  vendor/glm/glm/detail/_fixes.hpp /usr/include/c++/13/cmath \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -152,7 +149,10 @@
  vendor/glm/glm/detail/func_packing.inl \
  vendor/glm/glm/detail/type_half.hpp vendor/glm/glm/detail/type_half.inl \
  vendor/glm/glm/integer.hpp vendor/glm/glm/detail/func_integer.inl \
- src/Confuse/Input.h
+ src/Confuse/Renderer/Buffer.h src/Confuse/Renderer/VertexArray.h \
+ /usr/include/c++/13/memory src/Confuse/Renderer/OrthographicCamera.h \
+ src/Confuse/Renderer/Renderer.h src/Confuse/Renderer/RenderCommand.h \
+ src/Confuse/Renderer/RendererAPI.h src/Confuse/Input.h
 /usr/include/stdc-predef.h:
 src/Confuse/Application.h:
 src/Confuse/Window.h:
@@ -167,12 +167,6 @@ src/Confuse/Events/MouseEvent.h:
 src/Confuse/Renderer/Shader.h:
 /usr/include/c++/13/string:
 /usr/include/c++/13/cstdint:
-src/Confuse/Renderer/Buffer.h:
-src/Confuse/Renderer/VertexArray.h:
-/usr/include/c++/13/memory:
-src/Confuse/Renderer/Renderer.h:
-src/Confuse/Renderer/RenderCommand.h:
-src/Confuse/Renderer/RendererAPI.h:
 vendor/glm/glm/glm.hpp:
 vendor/glm/glm/detail/_fixes.hpp:
 /usr/include/c++/13/cmath:
@@ -331,4 +325,11 @@ vendor/glm/glm/detail/type_half.hpp:
 vendor/glm/glm/detail/type_half.inl:
 vendor/glm/glm/integer.hpp:
 vendor/glm/glm/detail/func_integer.inl:
+src/Confuse/Renderer/Buffer.h:
+src/Confuse/Renderer/VertexArray.h:
+/usr/include/c++/13/memory:
+src/Confuse/Renderer/OrthographicCamera.h:
+src/Confuse/Renderer/Renderer.h:
+src/Confuse/Renderer/RenderCommand.h:
+src/Confuse/Renderer/RendererAPI.h:
 src/Confuse/Input.h:

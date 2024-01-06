@@ -111,6 +111,7 @@ OBJECTS := \
 	$(OBJDIR)/LayerStack.o \
 	$(OBJDIR)/Log.o \
 	$(OBJDIR)/Buffer.o \
+	$(OBJDIR)/OrthographicCamera.o \
 	$(OBJDIR)/RenderCommand.o \
 	$(OBJDIR)/Renderer.o \
 	$(OBJDIR)/RendererAPI.o \
@@ -199,6 +200,9 @@ $(OBJDIR)/Log.o: src/Confuse/Log.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/Buffer.o: src/Confuse/Renderer/Buffer.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/OrthographicCamera.o: src/Confuse/Renderer/OrthographicCamera.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/RenderCommand.o: src/Confuse/Renderer/RenderCommand.cpp

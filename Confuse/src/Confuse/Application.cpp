@@ -12,7 +12,7 @@ namespace Confuse{
 
     Application* Application::s_instance = nullptr;
 
-    Application::Application(){
+    Application::Application() : m_mainCamera(-1.6f, 1.6f, -0.9f, 0.9f){
         CE_CORE_ASSERT(!s_instance, "application already exists!");
         s_instance = this;
 
@@ -73,13 +73,15 @@ namespace Confuse{
             layout(location = 0) in vec3 a_position;
             layout(location = 1) in vec4 a_color;
 
+            uniform mat4 u_viewProjection;
+
             out vec3 v_position;
             out vec4 v_color;
 
             void main(){
                 v_position = a_position;
                 v_color = a_color;
-                gl_Position = vec4(a_position, 1.0);
+                gl_Position = u_viewProjection * vec4(a_position, 1.0);
             }
         )";
 
@@ -104,11 +106,13 @@ namespace Confuse{
             
             layout(location = 0) in vec3 a_position;
 
+            uniform mat4 u_viewProjection;
+
             out vec3 v_position;
 
             void main(){
                 v_position = a_position;
-                gl_Position = vec4(a_position, 1.0);
+                gl_Position = u_viewProjection * vec4(a_position, 1.0);
             }
         )";
 
@@ -149,17 +153,19 @@ namespace Confuse{
     }
 
     void Application::run(){
+        float angle = 0.0f;
         while(m_running){
             RenderCommand::setClearColor({0.06f, 0.06f, 0.06f, 1});
             RenderCommand::clear();
 
-            Renderer::beginScene();
-            
-            m_blueShader->bind();
-            Renderer::submit(m_squareVA);
+            angle += 2.0f;
+            m_mainCamera.setPosition({0.2f, 0.2f, 0.0f});
+            m_mainCamera.setRotation(angle);
 
-            m_shader->bind();
-            Renderer::submit(m_vertexArray);
+            Renderer::beginScene(m_mainCamera);
+        
+            Renderer::submit(m_blueShader, m_squareVA);
+            Renderer::submit(m_shader, m_vertexArray);
 
             Renderer::endScene();
 
