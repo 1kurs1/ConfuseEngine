@@ -11,6 +11,17 @@
 
 #include "Confuse/ImGui/ImGuiLayer.h"
 
+//-----------Renderer----------------
+#include "Confuse/Renderer/Renderer.h"
+#include "Confuse/Renderer/RenderCommand.h"
+
+#include "Confuse/Renderer/Buffer.h"
+#include "Confuse/Renderer/Shader.h"
+#include "Confuse/Renderer/VertexArray.h"
+
+#include "Confuse/Renderer/OrthographicCamera.h"
+//-----------------------------------
+
 //-----------Entry point-------------
 #include "Confuse/EntryPoint.h"
 //-----------------------------------

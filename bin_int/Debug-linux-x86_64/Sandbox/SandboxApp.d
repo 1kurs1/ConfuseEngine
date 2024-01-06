@@ -490,8 +490,12 @@
  ../Confuse/src/Confuse/Renderer/VertexArray.h \
  ../Confuse/src/Confuse/Renderer/OrthographicCamera.h \
  ../Confuse/src/Confuse/Input.h ../Confuse/src/Confuse/MouseButtonCode.h \
- ../Confuse/src/Confuse/KeyCode.h ../Confuse/src/Confuse/EntryPoint.h \
- ../Confuse/vendor/imgui/imgui.h ../Confuse/vendor/imgui/imconfig.h
+ ../Confuse/src/Confuse/KeyCode.h \
+ ../Confuse/src/Confuse/Renderer/Renderer.h \
+ ../Confuse/src/Confuse/Renderer/RenderCommand.h \
+ ../Confuse/src/Confuse/Renderer/RendererAPI.h \
+ ../Confuse/src/Confuse/EntryPoint.h ../Confuse/vendor/imgui/imgui.h \
+ ../Confuse/vendor/imgui/imconfig.h
 /usr/include/stdc-predef.h:
 ../Confuse/src/Confuse.h:
 ../Confuse/src/Confuse/Application.h:
@@ -1054,6 +1058,9 @@
 ../Confuse/src/Confuse/Input.h:
 ../Confuse/src/Confuse/MouseButtonCode.h:
 ../Confuse/src/Confuse/KeyCode.h:
+../Confuse/src/Confuse/Renderer/Renderer.h:
+../Confuse/src/Confuse/Renderer/RenderCommand.h:
+../Confuse/src/Confuse/Renderer/RendererAPI.h:
 ../Confuse/src/Confuse/EntryPoint.h:
 ../Confuse/vendor/imgui/imgui.h:
 ../Confuse/vendor/imgui/imconfig.h:
