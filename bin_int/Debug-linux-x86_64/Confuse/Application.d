@@ -3,10 +3,13 @@
  src/Confuse/Application.h src/Confuse/Window.h \
  src/Confuse/Events/Event.h src/Confuse/LayerStack.h \
  /usr/include/c++/13/vector src/Confuse/Layer.h \
- src/Confuse/Events/ApplicationEvent.h src/Confuse/ImGui/ImGuiLayer.h \
- src/Confuse/Events/KeyEvent.h src/Confuse/Events/MouseEvent.h \
- src/Confuse/Renderer/Shader.h /usr/include/c++/13/string \
- /usr/include/c++/13/cstdint vendor/glm/glm/glm.hpp \
+ src/Confuse/Core/Timestep.h src/Confuse/Events/ApplicationEvent.h \
+ src/Confuse/ImGui/ImGuiLayer.h src/Confuse/Events/KeyEvent.h \
+ src/Confuse/Events/MouseEvent.h vendor/GLFW/include/GLFW/glfw3.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h \
+ src/Confuse/Renderer/Renderer.h src/Confuse/Renderer/RenderCommand.h \
+ src/Confuse/Renderer/RendererAPI.h vendor/glm/glm/glm.hpp \
  vendor/glm/glm/detail/_fixes.hpp /usr/include/c++/13/cmath \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -15,8 +18,8 @@
  /usr/include/c++/13/bits/std_abs.h vendor/glm/glm/detail/setup.hpp \
  /usr/include/c++/13/cassert /usr/include/assert.h \
  /usr/include/features.h /usr/include/c++/13/cstddef \
- vendor/glm/glm/detail/../simd/platform.h /usr/include/c++/13/type_traits \
- /usr/include/c++/13/climits \
+ vendor/glm/glm/detail/../simd/platform.h /usr/include/c++/13/cstdint \
+ /usr/include/c++/13/type_traits /usr/include/c++/13/climits \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
  /usr/include/c++/13/cfloat \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
@@ -149,10 +152,10 @@
  vendor/glm/glm/detail/func_packing.inl \
  vendor/glm/glm/detail/type_half.hpp vendor/glm/glm/detail/type_half.inl \
  vendor/glm/glm/integer.hpp vendor/glm/glm/detail/func_integer.inl \
- src/Confuse/Renderer/Buffer.h src/Confuse/Renderer/VertexArray.h \
- /usr/include/c++/13/memory src/Confuse/Renderer/OrthographicCamera.h \
- src/Confuse/Renderer/Renderer.h src/Confuse/Renderer/RenderCommand.h \
- src/Confuse/Renderer/RendererAPI.h src/Confuse/Input.h
+ src/Confuse/Renderer/VertexArray.h /usr/include/c++/13/memory \
+ src/Confuse/Renderer/Buffer.h src/Confuse/Renderer/OrthographicCamera.h \
+ src/Confuse/Renderer/Shader.h /usr/include/c++/13/string \
+ src/Confuse/Input.h
 /usr/include/stdc-predef.h:
 src/Confuse/Application.h:
 src/Confuse/Window.h:
@@ -160,13 +163,17 @@ src/Confuse/Events/Event.h:
 src/Confuse/LayerStack.h:
 /usr/include/c++/13/vector:
 src/Confuse/Layer.h:
+src/Confuse/Core/Timestep.h:
 src/Confuse/Events/ApplicationEvent.h:
 src/Confuse/ImGui/ImGuiLayer.h:
 src/Confuse/Events/KeyEvent.h:
 src/Confuse/Events/MouseEvent.h:
-src/Confuse/Renderer/Shader.h:
-/usr/include/c++/13/string:
-/usr/include/c++/13/cstdint:
+vendor/GLFW/include/GLFW/glfw3.h:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h:
+src/Confuse/Renderer/Renderer.h:
+src/Confuse/Renderer/RenderCommand.h:
+src/Confuse/Renderer/RendererAPI.h:
 vendor/glm/glm/glm.hpp:
 vendor/glm/glm/detail/_fixes.hpp:
 /usr/include/c++/13/cmath:
@@ -182,6 +189,7 @@ vendor/glm/glm/detail/setup.hpp:
 /usr/include/features.h:
 /usr/include/c++/13/cstddef:
 vendor/glm/glm/detail/../simd/platform.h:
+/usr/include/c++/13/cstdint:
 /usr/include/c++/13/type_traits:
 /usr/include/c++/13/climits:
 /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h:
@@ -325,11 +333,10 @@ vendor/glm/glm/detail/type_half.hpp:
 vendor/glm/glm/detail/type_half.inl:
 vendor/glm/glm/integer.hpp:
 vendor/glm/glm/detail/func_integer.inl:
-src/Confuse/Renderer/Buffer.h:
 src/Confuse/Renderer/VertexArray.h:
 /usr/include/c++/13/memory:
+src/Confuse/Renderer/Buffer.h:
 src/Confuse/Renderer/OrthographicCamera.h:
-src/Confuse/Renderer/Renderer.h:
-src/Confuse/Renderer/RenderCommand.h:
-src/Confuse/Renderer/RendererAPI.h:
+src/Confuse/Renderer/Shader.h:
+/usr/include/c++/13/string:
 src/Confuse/Input.h:

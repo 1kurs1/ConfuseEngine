@@ -1,6 +1,8 @@
 #include "CEpch.h"
 #include "Application.h"
 
+#include <GLFW/glfw3.h>
+
 #include "Confuse/Renderer/Renderer.h"
 
 #include "Confuse/Log.h"
@@ -47,8 +49,12 @@ namespace Confuse{
 
     void Application::run(){
         while(m_running){
+            float time = (float)glfwGetTime();
+            Timestep timestep = time - m_lastFrameTime;
+            m_lastFrameTime = time;
+
             for(Layer* layer: m_layerStack)
-                layer->onUpdate();
+                layer->onUpdate(timestep);
 
             m_imGuiLayer->begin();
             for(Layer* layer: m_layerStack)

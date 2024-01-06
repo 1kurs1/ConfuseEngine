@@ -2,6 +2,7 @@
 
 #include "Confuse/Core.h"
 #include "Confuse/Events/Event.h"
+#include "Confuse/Core/Timestep.h"
 
 namespace Confuse{
     class Layer{
@@ -11,7 +12,7 @@ namespace Confuse{
 
         virtual void onAttach(){}
         virtual void onDetach(){}
-        virtual void onUpdate() {}
+        virtual void onUpdate(Timestep ts) {}
         virtual void onImGuiRender(){}
         virtual void onEvent(Event& event){}
 

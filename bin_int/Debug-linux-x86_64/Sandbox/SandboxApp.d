@@ -338,11 +338,16 @@
  /usr/include/c++/13/bits/fstream.tcc \
  ../Confuse/src/Confuse/Events/Event.h \
  ../Confuse/src/Confuse/LayerStack.h ../Confuse/src/Confuse/Layer.h \
+ ../Confuse/src/Confuse/Core/Timestep.h \
  ../Confuse/src/Confuse/Events/ApplicationEvent.h \
  ../Confuse/src/Confuse/ImGui/ImGuiLayer.h \
  ../Confuse/src/Confuse/Events/KeyEvent.h \
  ../Confuse/src/Confuse/Events/MouseEvent.h \
- ../Confuse/src/Confuse/Renderer/Shader.h \
+ ../Confuse/src/Confuse/Input.h ../Confuse/src/Confuse/MouseButtonCode.h \
+ ../Confuse/src/Confuse/KeyCode.h \
+ ../Confuse/src/Confuse/Renderer/Renderer.h \
+ ../Confuse/src/Confuse/Renderer/RenderCommand.h \
+ ../Confuse/src/Confuse/Renderer/RendererAPI.h \
  ../Confuse/vendor/glm/glm/glm.hpp \
  ../Confuse/vendor/glm/glm/detail/_fixes.hpp \
  ../Confuse/vendor/glm/glm/detail/setup.hpp \
@@ -486,14 +491,10 @@
  ../Confuse/vendor/glm/glm/detail/type_half.inl \
  ../Confuse/vendor/glm/glm/integer.hpp \
  ../Confuse/vendor/glm/glm/detail/func_integer.inl \
- ../Confuse/src/Confuse/Renderer/Buffer.h \
  ../Confuse/src/Confuse/Renderer/VertexArray.h \
+ ../Confuse/src/Confuse/Renderer/Buffer.h \
  ../Confuse/src/Confuse/Renderer/OrthographicCamera.h \
- ../Confuse/src/Confuse/Input.h ../Confuse/src/Confuse/MouseButtonCode.h \
- ../Confuse/src/Confuse/KeyCode.h \
- ../Confuse/src/Confuse/Renderer/Renderer.h \
- ../Confuse/src/Confuse/Renderer/RenderCommand.h \
- ../Confuse/src/Confuse/Renderer/RendererAPI.h \
+ ../Confuse/src/Confuse/Renderer/Shader.h \
  ../Confuse/src/Confuse/EntryPoint.h ../Confuse/vendor/imgui/imgui.h \
  ../Confuse/vendor/imgui/imconfig.h
 /usr/include/stdc-predef.h:
@@ -904,11 +905,17 @@
 ../Confuse/src/Confuse/Events/Event.h:
 ../Confuse/src/Confuse/LayerStack.h:
 ../Confuse/src/Confuse/Layer.h:
+../Confuse/src/Confuse/Core/Timestep.h:
 ../Confuse/src/Confuse/Events/ApplicationEvent.h:
 ../Confuse/src/Confuse/ImGui/ImGuiLayer.h:
 ../Confuse/src/Confuse/Events/KeyEvent.h:
 ../Confuse/src/Confuse/Events/MouseEvent.h:
-../Confuse/src/Confuse/Renderer/Shader.h:
+../Confuse/src/Confuse/Input.h:
+../Confuse/src/Confuse/MouseButtonCode.h:
+../Confuse/src/Confuse/KeyCode.h:
+../Confuse/src/Confuse/Renderer/Renderer.h:
+../Confuse/src/Confuse/Renderer/RenderCommand.h:
+../Confuse/src/Confuse/Renderer/RendererAPI.h:
 ../Confuse/vendor/glm/glm/glm.hpp:
 ../Confuse/vendor/glm/glm/detail/_fixes.hpp:
 ../Confuse/vendor/glm/glm/detail/setup.hpp:
@@ -1052,15 +1059,10 @@
 ../Confuse/vendor/glm/glm/detail/type_half.inl:
 ../Confuse/vendor/glm/glm/integer.hpp:
 ../Confuse/vendor/glm/glm/detail/func_integer.inl:
-../Confuse/src/Confuse/Renderer/Buffer.h:
 ../Confuse/src/Confuse/Renderer/VertexArray.h:
+../Confuse/src/Confuse/Renderer/Buffer.h:
 ../Confuse/src/Confuse/Renderer/OrthographicCamera.h:
-../Confuse/src/Confuse/Input.h:
-../Confuse/src/Confuse/MouseButtonCode.h:
-../Confuse/src/Confuse/KeyCode.h:
-../Confuse/src/Confuse/Renderer/Renderer.h:
-../Confuse/src/Confuse/Renderer/RenderCommand.h:
-../Confuse/src/Confuse/Renderer/RendererAPI.h:
+../Confuse/src/Confuse/Renderer/Shader.h:
 ../Confuse/src/Confuse/EntryPoint.h:
 ../Confuse/vendor/imgui/imgui.h:
 ../Confuse/vendor/imgui/imconfig.h:

@@ -113,20 +113,20 @@ public:
         m_blueShader.reset(new Confuse::Shader(blueShaderVertexSrc, blueShaderFragmentSrc));
     }
 
-    void onUpdate() override{
+    void onUpdate(Confuse::Timestep ts) override{
         if(Confuse::Input::isKeyPressed(CE_KEY_A))
-            m_cameraPosition.x -= m_cameraMoveSpeed;
+            m_cameraPosition.x -= m_cameraMoveSpeed * ts;
         else if(Confuse::Input::isKeyPressed(CE_KEY_D))
-            m_cameraPosition.x += m_cameraMoveSpeed;
+            m_cameraPosition.x += m_cameraMoveSpeed * ts;
         if(Confuse::Input::isKeyPressed(CE_KEY_W))
-            m_cameraPosition.y += m_cameraMoveSpeed;
+            m_cameraPosition.y += m_cameraMoveSpeed * ts;
         else if(Confuse::Input::isKeyPressed(CE_KEY_S))
-            m_cameraPosition.y -= m_cameraMoveSpeed;
+            m_cameraPosition.y -= m_cameraMoveSpeed * ts;
 
         if(Confuse::Input::isKeyPressed(CE_KEY_LEFT))
-            m_cameraRotation += m_cameraRotationSpeed;
+            m_cameraRotation += m_cameraRotationSpeed * ts;
         else if(Confuse::Input::isKeyPressed(CE_KEY_RIGHT))
-            m_cameraRotation -= m_cameraRotationSpeed;
+            m_cameraRotation -= m_cameraRotationSpeed * ts;
 
 
         Confuse::RenderCommand::setClearColor({0.06f, 0.06f, 0.06f, 1});
@@ -162,8 +162,8 @@ private:
     glm::vec3 m_cameraPosition;
     float m_cameraRotation = 0.0f;
 
-    float m_cameraMoveSpeed = 0.1f;
-    float m_cameraRotationSpeed = 2.0f;
+    float m_cameraMoveSpeed = 5.0f;
+    float m_cameraRotationSpeed = 180.0f;
 };
 
 class Sandbox : public Confuse::Application{

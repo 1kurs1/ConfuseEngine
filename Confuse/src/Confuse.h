@@ -5,6 +5,8 @@
 #include "Confuse/Layer.h"
 #include "Confuse/Log.h"
 
+#include "Confuse/Core/Timestep.h"
+
 #include "Confuse/Input.h"
 #include "Confuse/MouseButtonCode.h"
 #include "Confuse/KeyCode.h"
