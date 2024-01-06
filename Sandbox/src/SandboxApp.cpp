@@ -2,6 +2,8 @@
 
 #include "imgui/imgui.h"
 
+#include <glm/gtc/matrix_transform.hpp>
+
 class ExampleLayer : public Confuse::Layer{
 public:
     ExampleLayer() : Layer("example"), m_mainCamera(-1.6f, 1.6f, -0.9f, 0.9f), m_cameraPosition(0.0f){
@@ -32,10 +34,10 @@ public:
         m_squareVA.reset(Confuse::VertexArray::create());
 
         float squareVertices[3 * 4] = {
-            -0.75f, -0.75f, 0.0f,
-            0.75f, -0.75f, 0.0f,
-            0.75f, 0.75f, 0.0f,
-            -0.75f, 0.75f, 0.0f
+            -0.5f, -0.5f, 0.0f,
+            0.5f, -0.5f, 0.0f,
+            0.5f, 0.5f, 0.0f,
+            -0.5f, 0.5f, 0.0f
         };
 
         std::shared_ptr<Confuse::VertexBuffer> squareVB;
@@ -57,6 +59,7 @@ public:
             layout(location = 1) in vec4 a_color;
 
             uniform mat4 u_viewProjection;
+            uniform mat4 u_transform;
 
             out vec3 v_position;
             out vec4 v_color;
@@ -64,7 +67,7 @@ public:
             void main(){
                 v_position = a_position;
                 v_color = a_color;
-                gl_Position = u_viewProjection * vec4(a_position, 1.0);
+                gl_Position = u_viewProjection * u_transform * vec4(a_position, 1.0);
             }
         )";
 
@@ -90,12 +93,13 @@ public:
             layout(location = 0) in vec3 a_position;
 
             uniform mat4 u_viewProjection;
+            uniform mat4 u_transform;
 
             out vec3 v_position;
 
             void main(){
                 v_position = a_position;
-                gl_Position = u_viewProjection * vec4(a_position, 1.0);
+                gl_Position = u_viewProjection * u_transform * vec4(a_position, 1.0);
             }
         )";
 
@@ -136,9 +140,20 @@ public:
         m_mainCamera.setRotation(m_cameraRotation);
 
         Confuse::Renderer::beginScene(m_mainCamera);
+
+        glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
     
-        Confuse::Renderer::submit(m_blueShader, m_squareVA);
-        Confuse::Renderer::submit(m_shader, m_vertexArray);
+        for(int y = 0; y < 20; y++){
+            for(int x = 0; x < 20; x++){
+                glm::vec3 pos(x * 0.11f, y * 0.11f, 0.0f);
+                glm::mat4 transform = glm::translate(glm::mat4(1.0f), pos) * scale;
+                Confuse::Renderer::submit(m_blueShader, m_squareVA, transform);
+            }
+        }
+
+        glm::vec3 pos(0.0f, 0.0f, 0.0f);
+        glm::mat4 transform = glm::translate(glm::mat4(1.0f), pos) * scale;
+        Confuse::Renderer::submit(m_shader, m_vertexArray, transform);
 
         Confuse::Renderer::endScene();
     }

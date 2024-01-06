@@ -496,7 +496,20 @@
  ../Confuse/src/Confuse/Renderer/OrthographicCamera.h \
  ../Confuse/src/Confuse/Renderer/Shader.h \
  ../Confuse/src/Confuse/EntryPoint.h ../Confuse/vendor/imgui/imgui.h \
- ../Confuse/vendor/imgui/imconfig.h
+ ../Confuse/vendor/imgui/imconfig.h \
+ ../Confuse/vendor/glm/glm/gtc/matrix_transform.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../ext/matrix_projection.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../ext/../gtc/constants.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../ext/../gtc/../ext/scalar_constants.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../ext/../gtc/../ext/../detail/setup.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../ext/../gtc/../ext/scalar_constants.inl \
+ ../Confuse/vendor/glm/glm/gtc/../ext/../gtc/constants.inl \
+ ../Confuse/vendor/glm/glm/gtc/../ext/matrix_projection.inl \
+ ../Confuse/vendor/glm/glm/gtc/../ext/matrix_clip_space.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../ext/matrix_clip_space.inl \
+ ../Confuse/vendor/glm/glm/gtc/../ext/matrix_transform.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../ext/matrix_transform.inl \
+ ../Confuse/vendor/glm/glm/gtc/matrix_transform.inl
 /usr/include/stdc-predef.h:
 ../Confuse/src/Confuse.h:
 ../Confuse/src/Confuse/Application.h:
@@ -1066,3 +1079,16 @@
 ../Confuse/src/Confuse/EntryPoint.h:
 ../Confuse/vendor/imgui/imgui.h:
 ../Confuse/vendor/imgui/imconfig.h:
+../Confuse/vendor/glm/glm/gtc/matrix_transform.hpp:
+../Confuse/vendor/glm/glm/gtc/../ext/matrix_projection.hpp:
+../Confuse/vendor/glm/glm/gtc/../ext/../gtc/constants.hpp:
+../Confuse/vendor/glm/glm/gtc/../ext/../gtc/../ext/scalar_constants.hpp:
+../Confuse/vendor/glm/glm/gtc/../ext/../gtc/../ext/../detail/setup.hpp:
+../Confuse/vendor/glm/glm/gtc/../ext/../gtc/../ext/scalar_constants.inl:
+../Confuse/vendor/glm/glm/gtc/../ext/../gtc/constants.inl:
+../Confuse/vendor/glm/glm/gtc/../ext/matrix_projection.inl:
+../Confuse/vendor/glm/glm/gtc/../ext/matrix_clip_space.hpp:
+../Confuse/vendor/glm/glm/gtc/../ext/matrix_clip_space.inl:
+../Confuse/vendor/glm/glm/gtc/../ext/matrix_transform.hpp:
+../Confuse/vendor/glm/glm/gtc/../ext/matrix_transform.inl:
+../Confuse/vendor/glm/glm/gtc/matrix_transform.inl:
