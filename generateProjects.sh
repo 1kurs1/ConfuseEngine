@@ -1,4 +1,4 @@
-vendor/bin/premake/premake5 gmake
+vendor/bin/premake5 gmake
 
 printf 'press [ENTER] to continue...'
 read _

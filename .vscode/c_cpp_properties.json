@@ -3,21 +3,16 @@
         {
             "name": "Linux",
             "includePath": [
-                "${default}",
+                "${workspaceFolder}",
+                "${workspaceFolder}/vendor/imgui",
+                "${workspaceFolder}/vendor/glfw/include",
                 "${workspaceFolder}/Confuse/src",
-                "${workspaceFolder}/Confuse/vendor/spdlog/include/",
-                "${workspaceFolder}/Confuse/vendor/",
-                "${workspaceFolder}/Confuse/vendor/Glad/include",
-                "${workspaceFolder}/Confuse/vendor/imgui"
-            ],
-            "defines": [
-                "CE_PLATFORM_LINUX",
-                "CE_BUILD_LIB"
+                "${workspaceFolder}/vendor/stb_image"
             ],
             "cStandard": "c17",
             "cppStandard": "c++17",
-            "intelliSenseMode": "linux-gcc-x64",
-            "compilerPath": "/usr/bin/g++"
+            "intelliSenseMode": "linux-clang-x64",
+            "compilerPath": "/usr/bin/clang++"
         }
     ],
     "version": 4

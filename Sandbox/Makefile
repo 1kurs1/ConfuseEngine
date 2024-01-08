@@ -14,17 +14,17 @@ ifeq ($(config),debug)
   RESCOMP = windres
   TARGETDIR = ../bin/Debug-linux-x86_64/Sandbox
   TARGET = $(TARGETDIR)/Sandbox
-  OBJDIR = ../bin_int/Debug-linux-x86_64/Sandbox
+  OBJDIR = ../bin-int/Debug-linux-x86_64/Sandbox
   DEFINES += -DCE_PLATFORM_LINUX -DCE_DEBUG
-  INCLUDES += -I../Confuse/vendor/spdlog/include -I../Confuse/src -I../Confuse/vendor -I../Confuse/vendor/glm
+  INCLUDES += -I../vendor/imgui -I../vendor/glfw/include -I../Confuse/src -IInclude -I../vendor/glm
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
-  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -fPIC -g -pipe
-  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -fPIC -g -std=c++17 -pipe
+  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -fPIC -g
+  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -fPIC -g -std=c++17
   ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  LIBS += ../bin/Debug-linux-x86_64/Confuse/libConfuse.so
-  LDDEPS += ../bin/Debug-linux-x86_64/Confuse/libConfuse.so
-  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -Wl,-rpath,'$$ORIGIN/../Confuse' -m64
+  LIBS += ../Confuse/bin/Debug-linux-x86_64/Confuse/libConfuse.so
+  LDDEPS += ../Confuse/bin/Debug-linux-x86_64/Confuse/libConfuse.so
+  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -Wl,-rpath,'$$ORIGIN/../../../Confuse/bin/Debug-linux-x86_64/Confuse' -m64
   LINKCMD = $(CXX) -o "$@" $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
   define PREBUILDCMDS
   endef
@@ -41,17 +41,17 @@ ifeq ($(config),release)
   RESCOMP = windres
   TARGETDIR = ../bin/Release-linux-x86_64/Sandbox
   TARGET = $(TARGETDIR)/Sandbox
-  OBJDIR = ../bin_int/Release-linux-x86_64/Sandbox
+  OBJDIR = ../bin-int/Release-linux-x86_64/Sandbox
   DEFINES += -DCE_PLATFORM_LINUX -DCE_RELEASE
-  INCLUDES += -I../Confuse/vendor/spdlog/include -I../Confuse/src -I../Confuse/vendor -I../Confuse/vendor/glm
+  INCLUDES += -I../vendor/imgui -I../vendor/glfw/include -I../Confuse/src -IInclude -I../vendor/glm
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
-  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -pipe
-  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -std=c++17 -pipe
+  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -g
+  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -g -std=c++17
   ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  LIBS += ../bin/Release-linux-x86_64/Confuse/libConfuse.so
-  LDDEPS += ../bin/Release-linux-x86_64/Confuse/libConfuse.so
-  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -Wl,-rpath,'$$ORIGIN/../Confuse' -m64 -s
+  LIBS += ../Confuse/bin/Release-linux-x86_64/Confuse/libConfuse.so
+  LDDEPS += ../Confuse/bin/Release-linux-x86_64/Confuse/libConfuse.so
+  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -Wl,-rpath,'$$ORIGIN/../../../Confuse/bin/Release-linux-x86_64/Confuse' -m64
   LINKCMD = $(CXX) -o "$@" $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
   define PREBUILDCMDS
   endef
@@ -68,17 +68,17 @@ ifeq ($(config),dist)
   RESCOMP = windres
   TARGETDIR = ../bin/Dist-linux-x86_64/Sandbox
   TARGET = $(TARGETDIR)/Sandbox
-  OBJDIR = ../bin_int/Dist-linux-x86_64/Sandbox
+  OBJDIR = ../bin-int/Dist-linux-x86_64/Sandbox
   DEFINES += -DCE_PLATFORM_LINUX -DCE_DIST
-  INCLUDES += -I../Confuse/vendor/spdlog/include -I../Confuse/src -I../Confuse/vendor -I../Confuse/vendor/glm
+  INCLUDES += -I../vendor/imgui -I../vendor/glfw/include -I../Confuse/src -IInclude -I../vendor/glm
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
-  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -pipe
-  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -std=c++17 -pipe
+  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC
+  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -fPIC -std=c++17
   ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  LIBS += ../bin/Dist-linux-x86_64/Confuse/libConfuse.so
-  LDDEPS += ../bin/Dist-linux-x86_64/Confuse/libConfuse.so
-  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -Wl,-rpath,'$$ORIGIN/../Confuse' -m64 -s
+  LIBS += ../Confuse/bin/Dist-linux-x86_64/Confuse/libConfuse.so
+  LDDEPS += ../Confuse/bin/Dist-linux-x86_64/Confuse/libConfuse.so
+  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -Wl,-rpath,'$$ORIGIN/../../../Confuse/bin/Dist-linux-x86_64/Confuse' -m64 -s
   LINKCMD = $(CXX) -o "$@" $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
   define PREBUILDCMDS
   endef
@@ -92,7 +92,8 @@ all: prebuild prelink $(TARGET)
 endif
 
 OBJECTS := \
-	$(OBJDIR)/SandboxApp.o \
+	$(OBJDIR)/Renderer.o \
+	$(OBJDIR)/Sandbox.o \
 
 RESOURCES := \
 
@@ -151,7 +152,10 @@ else
 $(OBJECTS): | $(OBJDIR)
 endif
 
-$(OBJDIR)/SandboxApp.o: src/SandboxApp.cpp
+$(OBJDIR)/Renderer.o: src/Renderer.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/Sandbox.o: src/Sandbox.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 

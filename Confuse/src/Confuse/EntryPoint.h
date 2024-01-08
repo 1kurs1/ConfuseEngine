@@ -1,16 +1,32 @@
+#pragma once
+
+#include "Application.h"
+
 #ifdef CE_PLATFORM_LINUX
-#include "Log.h"
 
 extern Confuse::Application* Confuse::createApplication();
+bool g_applicationRunning = true;
 
-int main(int argc, char** argv){
-    Confuse::Log::init();
-    CE_CORE_INFO("initialization core");
-    CE_INFO("init application");
+namespace Confuse {
 
-    auto app = Confuse::createApplication();
-    app->run();
-    delete app;
+	int Main(){
+		while (g_applicationRunning){
+			Confuse::Application* app = Confuse::createApplication();
+			app->run();
+			delete app;
+		}
+
+		return 0;
+	}
+
 }
 
+#ifdef CE_DIST
+#else
+
+int main(){
+	return Confuse::Main();
+}
+
+#endif
 #endif

@@ -1,72 +1,672 @@
-#include "CEpch.h"
 #include "Application.h"
 
+#include <iostream>
+
+#include <stdio.h>
+#include <stdlib.h>
+#define GLFW_INCLUDE_NONE
+#define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
+#include <vulkan/vulkan.h>
+#include <glm/glm.hpp>
+#include "backends/imgui_impl_glfw.h"
+#include "backends/imgui_impl_vulkan.h"
 
-#include "Confuse/Renderer/Renderer.h"
+// emedded font
+#include "ImGui/Roboto-Regular.embed"
 
-#include "Confuse/Log.h"
-#include "Confuse/Input.h"
+extern bool g_applicationRunning;
 
-namespace Confuse{
+//#define IMGUI_UNLIMITED_FRAME_RATE
+#ifdef CE_DEBUG
+#define IMGUI_VULKAN_DEBUG_REPORT
+#endif
 
-    #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
+static VkAllocationCallbacks* g_allocator = NULL;
+static VkInstance g_instance = VK_NULL_HANDLE;
+static VkPhysicalDevice g_physicalDevice = VK_NULL_HANDLE;
+static VkDevice g_device = VK_NULL_HANDLE;
+static uint32_t g_queueFamily = (uint32_t)-1;
+static VkQueue g_queue = VK_NULL_HANDLE;
+static VkDebugReportCallbackEXT g_debugReport = VK_NULL_HANDLE;
+static VkPipelineCache g_pipelineCache = VK_NULL_HANDLE;
+static VkDescriptorPool g_descriptorPool = VK_NULL_HANDLE;
 
-    Application* Application::s_instance = nullptr;
+static ImGui_ImplVulkanH_Window g_mainWindowData;
+static int g_minImageCount = 2;
+static bool g_swapChainRebuild = false;
 
-    Application::Application(){
-        CE_CORE_ASSERT(!s_instance, "application already exists!");
-        s_instance = this;
+static std::vector<std::vector<VkCommandBuffer>> s_allocatedCommandBuffers;
+static std::vector<std::vector<std::function<void()>>> s_resourceFreeQueue;
 
-        m_window = std::unique_ptr<Window>(Window::create());
-        m_window->setEventCallback(BIND_EVENT_FN(onEvent));
+static uint32_t s_currentFrameIndex = 0;
 
-        m_imGuiLayer = new ImGuiLayer();
-        pushOverlay(m_imGuiLayer);
-    }
+static Confuse::Application* s_instance = nullptr;
 
-    Application::~Application(){}
+void check_vk_result(VkResult err){
+	if (err == 0)
+		return;
+	fprintf(stderr, "[vulkan] error: VkResult = %d\n", err);
+	if (err < 0)
+		abort();
+}
 
-    void Application::pushLayer(Layer* layer){
-        m_layerStack.pushLayer(layer);
-        layer->onAttach();
-    }
+#ifdef IMGUI_VULKAN_DEBUG_REPORT
+static VKAPI_ATTR VkBool32 VKAPI_CALL debug_report(VkDebugReportFlagsEXT flags, VkDebugReportObjectTypeEXT objectType, uint64_t object, size_t location, int32_t messageCode, const char* pLayerPrefix, const char* pMessage, void* pUserData)
+{
+	(void)flags; (void)object; (void)location; (void)messageCode; (void)pUserData; (void)pLayerPrefix; // Unused arguments
+	fprintf(stderr, "[vulkan] debug report from ObjectType: %i\nmessage: %s\n\n", objectType, pMessage);
+	return VK_FALSE;
+}
+#endif
 
-    void Application::pushOverlay(Layer* overlay){
-        m_layerStack.pushOverlay(overlay);
-        overlay->onAttach();
-    }
+static void setupVulkan(const char** extensions, uint32_t extensions_count){
+	VkResult err;
 
-    void Application::onEvent(Event& e){
-        EventDispatcher dispatcher(e);
-        dispatcher.dispatch<WindowCloseEvent>(BIND_EVENT_FN(onWindowClose));
+	{
+		VkInstanceCreateInfo create_info = {};
+		create_info.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
+		create_info.enabledExtensionCount = extensions_count;
+		create_info.ppEnabledExtensionNames = extensions;
+#ifdef IMGUI_VULKAN_DEBUG_REPORT
+		const char* layers[] = { "VK_LAYER_KHRONOS_validation" };
+		create_info.enabledLayerCount = 1;
+		create_info.ppEnabledLayerNames = layers;
+
+        const char** extensions_ext = (const char**)malloc(sizeof(const char*) * (extensions_count + 1));
+		memcpy(extensions_ext, extensions, extensions_count * sizeof(const char*));
+		extensions_ext[extensions_count] = "VK_EXT_debug_report";
+		create_info.enabledExtensionCount = extensions_count + 1;
+		create_info.ppEnabledExtensionNames = extensions_ext;
+
+		// Create Vulkan Instance
+		err = vkCreateInstance(&create_info, g_allocator, &g_instance);
+		check_vk_result(err);
+		free(extensions_ext);
+
+		// Get the function pointer (required for any extensions)
+		auto vkCreateDebugReportCallbackEXT = (PFN_vkCreateDebugReportCallbackEXT)vkGetInstanceProcAddr(g_instance, "vkCreateDebugReportCallbackEXT");
+		IM_ASSERT(vkCreateDebugReportCallbackEXT != NULL);
+
+		// Setup the debug report callback
+		VkDebugReportCallbackCreateInfoEXT debug_report_ci = {};
+		debug_report_ci.sType = VK_STRUCTURE_TYPE_DEBUG_REPORT_CALLBACK_CREATE_INFO_EXT;
+		debug_report_ci.flags = VK_DEBUG_REPORT_ERROR_BIT_EXT | VK_DEBUG_REPORT_WARNING_BIT_EXT | VK_DEBUG_REPORT_PERFORMANCE_WARNING_BIT_EXT;
+		debug_report_ci.pfnCallback = debug_report;
+		debug_report_ci.pUserData = NULL;
+		err = vkCreateDebugReportCallbackEXT(g_instance, &debug_report_ci, g_allocator, &g_debugReport);
+		check_vk_result(err);
+#else
+		err = vkCreateInstance(&create_info, g_allocator, &g_instance);
+		check_vk_result(err);
+		IM_UNUSED(g_debugReport);
+#endif
+	}
+
+	// select GPU
+	{
+		uint32_t gpu_count;
+		err = vkEnumeratePhysicalDevices(g_instance, &gpu_count, NULL);
+		check_vk_result(err);
+		IM_ASSERT(gpu_count > 0);
+
+		VkPhysicalDevice* gpus = (VkPhysicalDevice*)malloc(sizeof(VkPhysicalDevice) * gpu_count);
+		err = vkEnumeratePhysicalDevices(g_instance, &gpu_count, gpus);
+		check_vk_result(err);
+
+		int use_gpu = 0;
+		for (int i = 0; i < (int)gpu_count; i++){
+			VkPhysicalDeviceProperties properties;
+			vkGetPhysicalDeviceProperties(gpus[i], &properties);
+			if (properties.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU){
+				use_gpu = i;
+				break;
+			}
+		}
+
+		g_physicalDevice = gpus[use_gpu];
+		free(gpus);
+	}
+
+	{
+		uint32_t count;
+		vkGetPhysicalDeviceQueueFamilyProperties(g_physicalDevice, &count, NULL);
+		VkQueueFamilyProperties* queues = (VkQueueFamilyProperties*)malloc(sizeof(VkQueueFamilyProperties) * count);
+		vkGetPhysicalDeviceQueueFamilyProperties(g_physicalDevice, &count, queues);
+		for (uint32_t i = 0; i < count; i++)
+			if (queues[i].queueFlags & VK_QUEUE_GRAPHICS_BIT){
+				g_queueFamily = i;
+				break;
+			}
+		free(queues);
+		IM_ASSERT(g_queueFamily != (uint32_t)-1);
+	}
+
+	// create logical device
+	{
+		int device_extension_count = 1;
+		const char* device_extensions[] = { "VK_KHR_swapchain" };
+		const float queue_priority[] = { 1.0f };
+		VkDeviceQueueCreateInfo queue_info[1] = {};
+		queue_info[0].sType = VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO;
+		queue_info[0].queueFamilyIndex = g_queueFamily;
+		queue_info[0].queueCount = 1;
+		queue_info[0].pQueuePriorities = queue_priority;
+		VkDeviceCreateInfo create_info = {};
+		create_info.sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;
+		create_info.queueCreateInfoCount = sizeof(queue_info) / sizeof(queue_info[0]);
+		create_info.pQueueCreateInfos = queue_info;
+		create_info.enabledExtensionCount = device_extension_count;
+		create_info.ppEnabledExtensionNames = device_extensions;
+		err = vkCreateDevice(g_physicalDevice, &create_info, g_allocator, &g_device);
+		check_vk_result(err);
+		vkGetDeviceQueue(g_device, g_queueFamily, 0, &g_queue);
+	}
+
+	// create descriptor pool
+	{
+		VkDescriptorPoolSize pool_sizes[] =
+		{
+			{ VK_DESCRIPTOR_TYPE_SAMPLER, 1000 },
+			{ VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, 1000 },
+			{ VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE, 1000 },
+			{ VK_DESCRIPTOR_TYPE_STORAGE_IMAGE, 1000 },
+			{ VK_DESCRIPTOR_TYPE_UNIFORM_TEXEL_BUFFER, 1000 },
+			{ VK_DESCRIPTOR_TYPE_STORAGE_TEXEL_BUFFER, 1000 },
+			{ VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, 1000 },
+			{ VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, 1000 },
+			{ VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC, 1000 },
+			{ VK_DESCRIPTOR_TYPE_STORAGE_BUFFER_DYNAMIC, 1000 },
+			{ VK_DESCRIPTOR_TYPE_INPUT_ATTACHMENT, 1000 }
+		};
+		VkDescriptorPoolCreateInfo pool_info = {};
+		pool_info.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;
+		pool_info.flags = VK_DESCRIPTOR_POOL_CREATE_FREE_DESCRIPTOR_SET_BIT;
+		pool_info.maxSets = 1000 * IM_ARRAYSIZE(pool_sizes);
+		pool_info.poolSizeCount = (uint32_t)IM_ARRAYSIZE(pool_sizes);
+		pool_info.pPoolSizes = pool_sizes;
+		err = vkCreateDescriptorPool(g_device, &pool_info, g_allocator, &g_descriptorPool);
+		check_vk_result(err);
+	}
+}
+
+// необязательно
+static void setupVulkanWindow(ImGui_ImplVulkanH_Window* wd, VkSurfaceKHR surface, int width, int height)
+{
+	wd->Surface = surface;
+
+	VkBool32 res;
+	vkGetPhysicalDeviceSurfaceSupportKHR(g_physicalDevice, g_queueFamily, wd->Surface, &res);
+	if (res != VK_TRUE){
+		fprintf(stderr, "error no WSI support on physical device 0\n");
+		exit(-1);
+	}
+
+	const VkFormat requestSurfaceImageFormat[] = { VK_FORMAT_B8G8R8A8_UNORM, VK_FORMAT_R8G8B8A8_UNORM, VK_FORMAT_B8G8R8_UNORM, VK_FORMAT_R8G8B8_UNORM };
+	const VkColorSpaceKHR requestSurfaceColorSpace = VK_COLORSPACE_SRGB_NONLINEAR_KHR;
+	wd->SurfaceFormat = ImGui_ImplVulkanH_SelectSurfaceFormat(g_physicalDevice, wd->Surface, requestSurfaceImageFormat, (size_t)IM_ARRAYSIZE(requestSurfaceImageFormat), requestSurfaceColorSpace);
+
+#ifdef IMGUI_UNLIMITED_FRAME_RATE
+	VkPresentModeKHR present_modes[] = { VK_PRESENT_MODE_MAILBOX_KHR, VK_PRESENT_MODE_IMMEDIATE_KHR, VK_PRESENT_MODE_FIFO_KHR };
+#else
+	VkPresentModeKHR present_modes[] = { VK_PRESENT_MODE_FIFO_KHR };
+#endif
+	wd->PresentMode = ImGui_ImplVulkanH_SelectPresentMode(g_physicalDevice, wd->Surface, &present_modes[0], IM_ARRAYSIZE(present_modes));
+	//printf("[vulkan] selected PresentMode = %d\n", wd->PresentMode);
+    
+	IM_ASSERT(g_minImageCount >= 2);
+	ImGui_ImplVulkanH_CreateOrResizeWindow(g_instance, g_physicalDevice, g_device, wd, g_queueFamily, g_allocator, width, height, g_minImageCount);
+}
+
+static void cleanupVulkan()
+{
+	vkDestroyDescriptorPool(g_device, g_descriptorPool, g_allocator);
+
+#ifdef IMGUI_VULKAN_DEBUG_REPORT
+	auto vkDestroyDebugReportCallbackEXT = (PFN_vkDestroyDebugReportCallbackEXT)vkGetInstanceProcAddr(g_instance, "vkDestroyDebugReportCallbackEXT");
+	vkDestroyDebugReportCallbackEXT(g_instance, g_debugReport, g_allocator);
+#endif
+
+	vkDestroyDevice(g_device, g_allocator);
+	vkDestroyInstance(g_instance, g_allocator);
+}
+
+static void cleanupVulkanWindow()
+{
+	ImGui_ImplVulkanH_DestroyWindow(g_instance, g_device, &g_mainWindowData, g_allocator);
+}
+
+static void frameRender(ImGui_ImplVulkanH_Window* wd, ImDrawData* draw_data)
+{
+	VkResult err;
+
+	VkSemaphore image_acquired_semaphore = wd->FrameSemaphores[wd->SemaphoreIndex].ImageAcquiredSemaphore;
+	VkSemaphore render_complete_semaphore = wd->FrameSemaphores[wd->SemaphoreIndex].RenderCompleteSemaphore;
+	err = vkAcquireNextImageKHR(g_device, wd->Swapchain, UINT64_MAX, image_acquired_semaphore, VK_NULL_HANDLE, &wd->FrameIndex);
+	if (err == VK_ERROR_OUT_OF_DATE_KHR || err == VK_SUBOPTIMAL_KHR){
+		g_swapChainRebuild = true;
+		return;
+	}
+	check_vk_result(err);
+
+	s_currentFrameIndex = (s_currentFrameIndex + 1) % g_mainWindowData.ImageCount;
+
+	ImGui_ImplVulkanH_Frame* fd = &wd->Frames[wd->FrameIndex];
+    {
+		err = vkWaitForFences(g_device, 1, &fd->Fence, VK_TRUE, UINT64_MAX);
+		check_vk_result(err);
+
+		err = vkResetFences(g_device, 1, &fd->Fence);
+		check_vk_result(err);
+	}
+	
+	{
+		for (auto& func : s_resourceFreeQueue[s_currentFrameIndex])
+			func();
+		s_resourceFreeQueue[s_currentFrameIndex].clear();
+	}
+	{
+        auto& allocatedCommandBuffers = s_allocatedCommandBuffers[wd->FrameIndex];
+		if (allocatedCommandBuffers.size() > 0)
+		{
+			vkFreeCommandBuffers(g_device, fd->CommandPool, (uint32_t)allocatedCommandBuffers.size(), allocatedCommandBuffers.data());
+			allocatedCommandBuffers.clear();
+		}
+
+		err = vkResetCommandPool(g_device, fd->CommandPool, 0);
+		check_vk_result(err);
+		VkCommandBufferBeginInfo info = {};
+		info.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
+		info.flags |= VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT;
+		err = vkBeginCommandBuffer(fd->CommandBuffer, &info);
+		check_vk_result(err);
+	}
+	{
+		VkRenderPassBeginInfo info = {};
+		info.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
+		info.renderPass = wd->RenderPass;
+		info.framebuffer = fd->Framebuffer;
+		info.renderArea.extent.width = wd->Width;
+		info.renderArea.extent.height = wd->Height;
+		info.clearValueCount = 1;
+		info.pClearValues = &wd->ClearValue;
+		vkCmdBeginRenderPass(fd->CommandBuffer, &info, VK_SUBPASS_CONTENTS_INLINE);
+	}
+
+	ImGui_ImplVulkan_RenderDrawData(draw_data, fd->CommandBuffer);
+
+	vkCmdEndRenderPass(fd->CommandBuffer);
+	{
+		VkPipelineStageFlags wait_stage = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
+		VkSubmitInfo info = {};
+		info.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
+		info.waitSemaphoreCount = 1;
+		info.pWaitSemaphores = &image_acquired_semaphore;
+		info.pWaitDstStageMask = &wait_stage;
+		info.commandBufferCount = 1;
+		info.pCommandBuffers = &fd->CommandBuffer;
+		info.signalSemaphoreCount = 1;
+		info.pSignalSemaphores = &render_complete_semaphore;
+
+		err = vkEndCommandBuffer(fd->CommandBuffer);
+		check_vk_result(err);
+		err = vkQueueSubmit(g_queue, 1, &info, fd->Fence);
+		check_vk_result(err);
+	}
+}
+
+static void framePresent(ImGui_ImplVulkanH_Window* wd)
+{
+	if (g_swapChainRebuild)
+		return;
+	VkSemaphore render_complete_semaphore = wd->FrameSemaphores[wd->SemaphoreIndex].RenderCompleteSemaphore;
+	VkPresentInfoKHR info = {};
+	info.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
+	info.waitSemaphoreCount = 1;
+	info.pWaitSemaphores = &render_complete_semaphore;
+	info.swapchainCount = 1;
+	info.pSwapchains = &wd->Swapchain;
+	info.pImageIndices = &wd->FrameIndex;
+	VkResult err = vkQueuePresentKHR(g_queue, &info);
+	if (err == VK_ERROR_OUT_OF_DATE_KHR || err == VK_SUBOPTIMAL_KHR){
+		g_swapChainRebuild = true;
+		return;
+	}
+	check_vk_result(err);
+	wd->SemaphoreIndex = (wd->SemaphoreIndex + 1) % wd->ImageCount;
+}
+
+static void glfw_error_callback(int error, const char* description)
+{
+	fprintf(stderr, "glfw error %d: %s\n", error, description);
+}
+
+namespace Confuse {
+
+	Application::Application(const ApplicationSpecification& specification) : m_specification(specification){
+		s_instance = this;
+		init();
+	}
+
+	Application::~Application(){
+		shutdown();
+		s_instance = nullptr;
+	}
+
+	Application& Application::get()
+	{
+		return *s_instance;
+	}
+
+	void Application::init(){
+		glfwSetErrorCallback(glfw_error_callback);
+		if (!glfwInit()){
+			std::cerr << "could not initalize GLFW!\n";
+			return;
+		}
+
+		glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+		m_windowHandle = glfwCreateWindow(m_specification.width, m_specification.height, m_specification.name.c_str(), NULL, NULL);
+
+		if (!glfwVulkanSupported()){
+			std::cerr << "glfw: vulkan not supported!\n";
+			return;
+		}
+		uint32_t extensions_count = 0;
+		const char** extensions = glfwGetRequiredInstanceExtensions(&extensions_count);
+		setupVulkan(extensions, extensions_count);
+
+		VkSurfaceKHR surface;
+		VkResult err = glfwCreateWindowSurface(g_instance, m_windowHandle, g_allocator, &surface);
+		check_vk_result(err);
+
+		int w, h;
+		glfwGetFramebufferSize(m_windowHandle, &w, &h);
+		ImGui_ImplVulkanH_Window* wd = &g_mainWindowData;
+		setupVulkanWindow(wd, surface, w, h);
+
+		s_allocatedCommandBuffers.resize(wd->ImageCount);
+		s_resourceFreeQueue.resize(wd->ImageCount);
+
+		IMGUI_CHECKVERSION();
+		ImGui::CreateContext();
+		ImGuiIO& io = ImGui::GetIO(); (void)io;
+		io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
+		//io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;
+		io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+		io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
+		//io.ConfigViewportsNoAutoMerge = true;
+		//io.ConfigViewportsNoTaskBarIcon = true;
+
+		ImGui::StyleColorsDark();
         
-        for(auto it = m_layerStack.end(); it != m_layerStack.begin();){
-            (*--it)->onEvent(e);
-            if(e.handled) break;
-        }
-    }
+        ImGuiStyle& style = ImGui::GetStyle();
+		if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable){
+			style.WindowRounding = 0.0f;
+			style.Colors[ImGuiCol_WindowBg].w = 1.0f;
+		}
 
-    void Application::run(){
-        while(m_running){
-            float time = (float)glfwGetTime();
-            Timestep timestep = time - m_lastFrameTime;
-            m_lastFrameTime = time;
+		ImGui_ImplGlfw_InitForVulkan(m_windowHandle, true);
+		ImGui_ImplVulkan_InitInfo init_info = {};
+		init_info.Instance = g_instance;
+		init_info.PhysicalDevice = g_physicalDevice;
+		init_info.Device = g_device;
+		init_info.QueueFamily = g_queueFamily;
+		init_info.Queue = g_queue;
+		init_info.PipelineCache = g_pipelineCache;
+		init_info.DescriptorPool = g_descriptorPool;
+		init_info.Subpass = 0;
+		init_info.MinImageCount = g_minImageCount;
+		init_info.ImageCount = wd->ImageCount;
+		init_info.MSAASamples = VK_SAMPLE_COUNT_1_BIT;
+		init_info.Allocator = g_allocator;
+		init_info.CheckVkResultFn = check_vk_result;
+		ImGui_ImplVulkan_Init(&init_info, wd->RenderPass);
 
-            for(Layer* layer: m_layerStack)
-                layer->onUpdate(timestep);
+		ImFontConfig fontConfig;
+		fontConfig.FontDataOwnedByAtlas = false;
+		ImFont* robotoFont = io.Fonts->AddFontFromMemoryTTF((void*)g_RobotoRegular, sizeof(g_RobotoRegular), 20.0f, &fontConfig);
+		io.FontDefault = robotoFont;
 
-            m_imGuiLayer->begin();
-            for(Layer* layer: m_layerStack)
-                layer->onImGuiRender();
-            m_imGuiLayer->end();
+		// upload fonts
+		{
+			VkCommandPool command_pool = wd->Frames[wd->FrameIndex].CommandPool;
+			VkCommandBuffer command_buffer = wd->Frames[wd->FrameIndex].CommandBuffer;
 
-            m_window->onUpdate();
-        }
-    }
+			err = vkResetCommandPool(g_device, command_pool, 0);
+			check_vk_result(err);
+			VkCommandBufferBeginInfo begin_info = {};
+			begin_info.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
+			begin_info.flags |= VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT;
+			err = vkBeginCommandBuffer(command_buffer, &begin_info);
+			check_vk_result(err);
 
-    bool Application::onWindowClose(WindowCloseEvent& e){
-        m_running = false;
-        return true;
-    }
+			ImGui_ImplVulkan_CreateFontsTexture(command_buffer);
+
+			VkSubmitInfo end_info = {};
+			end_info.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
+			end_info.commandBufferCount = 1;
+			end_info.pCommandBuffers = &command_buffer;
+			err = vkEndCommandBuffer(command_buffer);
+			check_vk_result(err);
+			err = vkQueueSubmit(g_queue, 1, &end_info, VK_NULL_HANDLE);
+			check_vk_result(err);
+
+			err = vkDeviceWaitIdle(g_device);
+			check_vk_result(err);
+			ImGui_ImplVulkan_DestroyFontUploadObjects();
+		}
+	}
+
+	void Application::shutdown()
+	{
+		for (auto& layer : m_layerStack)
+			layer->onDetach();
+
+		m_layerStack.clear();
+
+		VkResult err = vkDeviceWaitIdle(g_device);
+		check_vk_result(err);
+
+		for (auto& queue : s_resourceFreeQueue){
+			for (auto& func : queue)
+				func();
+		}
+		s_resourceFreeQueue.clear();
+
+		ImGui_ImplVulkan_Shutdown();
+		ImGui_ImplGlfw_Shutdown();
+		ImGui::DestroyContext();
+
+		cleanupVulkanWindow();
+		cleanupVulkan();
+
+		glfwDestroyWindow(m_windowHandle);
+		glfwTerminate();
+
+		g_applicationRunning = false;
+	}
+
+	void Application::run()
+	{
+		m_running = true;
+
+		ImGui_ImplVulkanH_Window* wd = &g_mainWindowData;
+		ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
+		ImGuiIO& io = ImGui::GetIO();
+
+		// Main loop
+		while (!glfwWindowShouldClose(m_windowHandle) && m_running){
+            glfwPollEvents();
+
+			for (auto& layer : m_layerStack)
+				layer->onUpdate(m_timeStep);
+
+			if (g_swapChainRebuild)
+			{
+				int width, height;
+				glfwGetFramebufferSize(m_windowHandle, &width, &height);
+				if (width > 0 && height > 0){
+					ImGui_ImplVulkan_SetMinImageCount(g_minImageCount);
+					ImGui_ImplVulkanH_CreateOrResizeWindow(g_instance, g_physicalDevice, g_device, &g_mainWindowData, g_queueFamily, g_allocator, width, height, g_minImageCount);
+					g_mainWindowData.FrameIndex = 0;
+
+					s_allocatedCommandBuffers.clear();
+					s_allocatedCommandBuffers.resize(g_mainWindowData.ImageCount);
+
+					g_swapChainRebuild = false;
+				}
+			}
+
+			ImGui_ImplVulkan_NewFrame();
+			ImGui_ImplGlfw_NewFrame();
+			ImGui::NewFrame();
+
+			{
+				static ImGuiDockNodeFlags dockspace_flags = ImGuiDockNodeFlags_None;
+
+				ImGuiWindowFlags window_flags = ImGuiWindowFlags_NoDocking;
+				if (m_menubarCallback)
+					window_flags |= ImGuiWindowFlags_MenuBar;
+
+				const ImGuiViewport* viewport = ImGui::GetMainViewport();
+				ImGui::SetNextWindowPos(viewport->WorkPos);
+				ImGui::SetNextWindowSize(viewport->WorkSize);
+				ImGui::SetNextWindowViewport(viewport->ID);
+				ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
+				ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
+				window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove;
+				window_flags |= ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;
+
+				if (dockspace_flags & ImGuiDockNodeFlags_PassthruCentralNode)
+					window_flags |= ImGuiWindowFlags_NoBackground;
+
+                ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));
+				ImGui::Begin("Confuse Demo", nullptr, window_flags);
+				ImGui::PopStyleVar();
+
+				ImGui::PopStyleVar(2);
+
+				ImGuiIO& io = ImGui::GetIO();
+				if (io.ConfigFlags & ImGuiConfigFlags_DockingEnable){
+					ImGuiID dockspace_id = ImGui::GetID("VulkanAppDockspace");
+					ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f), dockspace_flags);
+				}
+
+				if (m_menubarCallback){
+					if (ImGui::BeginMenuBar()){
+						m_menubarCallback();
+						ImGui::EndMenuBar();
+					}
+				}
+
+				for (auto& layer : m_layerStack)
+					layer->onUIRender();
+
+				ImGui::End();
+			}
+
+			// rendering
+			ImGui::Render();
+			ImDrawData* main_draw_data = ImGui::GetDrawData();
+			const bool main_is_minimized = (main_draw_data->DisplaySize.x <= 0.0f || main_draw_data->DisplaySize.y <= 0.0f);
+			wd->ClearValue.color.float32[0] = clear_color.x * clear_color.w;
+			wd->ClearValue.color.float32[1] = clear_color.y * clear_color.w;
+			wd->ClearValue.color.float32[2] = clear_color.z * clear_color.w;
+			wd->ClearValue.color.float32[3] = clear_color.w;
+			if (!main_is_minimized)
+				frameRender(wd, main_draw_data);
+
+			if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable){
+				ImGui::UpdatePlatformWindows();
+				ImGui::RenderPlatformWindowsDefault();
+			}
+
+			// present main platform window
+			if (!main_is_minimized)
+				framePresent(wd);
+
+			float time = getTime();
+			m_frameTime = time - m_lastFrameTime;
+			m_timeStep = glm::min<float>(m_frameTime, 0.0333f);
+			m_lastFrameTime = time;
+		}
+
+	}
+
+	void Application::close(){
+		m_running = false;
+	}
+
+	float Application::getTime(){
+		return (float)glfwGetTime();
+	}
+
+	VkInstance Application::getInstance(){
+		return g_instance;
+	}
+
+	VkPhysicalDevice Application::getPhysicalDevice(){
+		return g_physicalDevice;
+	}
+
+	VkDevice Application::getDevice(){
+		return g_device;
+	}
+
+	VkCommandBuffer Application::getCommandBuffer(bool begin){
+		ImGui_ImplVulkanH_Window* wd = &g_mainWindowData;
+
+		VkCommandPool command_pool = wd->Frames[wd->FrameIndex].CommandPool;
+
+		VkCommandBufferAllocateInfo cmdBufAllocateInfo = {};
+		cmdBufAllocateInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
+		cmdBufAllocateInfo.commandPool = command_pool;
+		cmdBufAllocateInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
+		cmdBufAllocateInfo.commandBufferCount = 1;
+
+		VkCommandBuffer& command_buffer = s_allocatedCommandBuffers[wd->FrameIndex].emplace_back();
+		auto err = vkAllocateCommandBuffers(g_device, &cmdBufAllocateInfo, &command_buffer);
+
+		VkCommandBufferBeginInfo begin_info = {};
+		begin_info.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
+		begin_info.flags |= VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT;
+		err = vkBeginCommandBuffer(command_buffer, &begin_info);
+		check_vk_result(err);
+
+		return command_buffer;
+	}
+
+	void Application::flushCommandBuffer(VkCommandBuffer commandBuffer)
+	{
+		const uint64_t DEFAULT_FENCE_TIMEOUT = 100000000000;
+
+		VkSubmitInfo end_info = {};
+		end_info.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
+		end_info.commandBufferCount = 1;
+		end_info.pCommandBuffers = &commandBuffer;
+		auto err = vkEndCommandBuffer(commandBuffer);
+		check_vk_result(err);
+
+		VkFenceCreateInfo fenceCreateInfo = {};
+		fenceCreateInfo.sType = VK_STRUCTURE_TYPE_FENCE_CREATE_INFO;
+		fenceCreateInfo.flags = 0;
+		VkFence fence;
+		err = vkCreateFence(g_device, &fenceCreateInfo, nullptr, &fence);
+		check_vk_result(err);
+
+		err = vkQueueSubmit(g_queue, 1, &end_info, fence);
+		check_vk_result(err);
+
+		err = vkWaitForFences(g_device, 1, &fence, VK_TRUE, DEFAULT_FENCE_TIMEOUT);
+		check_vk_result(err);
+
+		vkDestroyFence(g_device, fence, nullptr);
+	}
+
+
+	void Application::submitResourceFree(std::function<void()>&& func){
+		s_resourceFreeQueue[s_currentFrameIndex].emplace_back(func);
+	}
+
 }
