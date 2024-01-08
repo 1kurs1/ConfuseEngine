@@ -120,6 +120,7 @@ OBJECTS := \
 	$(OBJDIR)/OpenGLBuffer.o \
 	$(OBJDIR)/OpenGLContext.o \
 	$(OBJDIR)/OpenGLRendererAPI.o \
+	$(OBJDIR)/OpenGLShader.o \
 	$(OBJDIR)/OpenGLVertexArray.o \
 	$(OBJDIR)/LinuxInput.o \
 	$(OBJDIR)/LinuxWindow.o \
@@ -227,6 +228,9 @@ $(OBJDIR)/OpenGLContext.o: src/Platform/OpenGL/OpenGLContext.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/OpenGLRendererAPI.o: src/Platform/OpenGL/OpenGLRendererAPI.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/OpenGLShader.o: src/Platform/OpenGL/OpenGLShader.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/OpenGLVertexArray.o: src/Platform/OpenGL/OpenGLVertexArray.cpp

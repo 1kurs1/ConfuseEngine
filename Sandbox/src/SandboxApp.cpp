@@ -1,8 +1,10 @@
 #include <Confuse.h>
 
 #include "imgui/imgui.h"
-
 #include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
+#include "Platform/OpenGL/OpenGLShader.h"
 
 class ExampleLayer : public Confuse::Layer{
 public:
@@ -85,16 +87,16 @@ public:
             }
         )";
 
-        m_shader.reset(new Confuse::Shader(vertexSrc, fragmentSrc));
+        m_shader.reset(Confuse::Shader::create(vertexSrc, fragmentSrc));
 
-        std::string blueShaderVertexSrc = R"(
+        std::string flatColorVertexSrc = R"(
             #version 330 core
             
             layout(location = 0) in vec3 a_position;
 
             uniform mat4 u_viewProjection;
             uniform mat4 u_transform;
-
+            
             out vec3 v_position;
 
             void main(){
@@ -103,18 +105,20 @@ public:
             }
         )";
 
-        std::string blueShaderFragmentSrc = R"(
+        std::string flatColorFragmentSrc = R"(
             #version 330 core
             
             layout(location = 0) out vec4 color;
 
             in vec3 v_position;
 
+            uniform vec3 u_color;
+
             void main(){
-                color = vec4(0.2, 0.3, 0.8, 1.0);
+                color = vec4(u_color, 1.0);
             }
         )";
-        m_blueShader.reset(new Confuse::Shader(blueShaderVertexSrc, blueShaderFragmentSrc));
+        m_flatColorShader.reset(Confuse::Shader::create(flatColorVertexSrc, flatColorFragmentSrc));
     }
 
     void onUpdate(Confuse::Timestep ts) override{
@@ -142,24 +146,27 @@ public:
         Confuse::Renderer::beginScene(m_mainCamera);
 
         glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
-    
+
+        std::dynamic_pointer_cast<Confuse::OpenGLShader>(m_flatColorShader)->bind();
+        std::dynamic_pointer_cast<Confuse::OpenGLShader>(m_flatColorShader)->uploadUniformFloat3("u_color", m_squareColor);
+
         for(int y = 0; y < 20; y++){
             for(int x = 0; x < 20; x++){
                 glm::vec3 pos(x * 0.11f, y * 0.11f, 0.0f);
                 glm::mat4 transform = glm::translate(glm::mat4(1.0f), pos) * scale;
-                Confuse::Renderer::submit(m_blueShader, m_squareVA, transform);
+                Confuse::Renderer::submit(m_flatColorShader, m_squareVA, transform);
             }
         }
 
-        glm::vec3 pos(0.0f, 0.0f, 0.0f);
-        glm::mat4 transform = glm::translate(glm::mat4(1.0f), pos) * scale;
-        Confuse::Renderer::submit(m_shader, m_vertexArray, transform);
+        Confuse::Renderer::submit(m_shader, m_vertexArray);
 
         Confuse::Renderer::endScene();
     }
 
     virtual void onImGuiRender() override{
-        
+        ImGui::Begin("Settings");
+        ImGui::ColorEdit3("square color", glm::value_ptr(m_squareColor));
+        ImGui::End();
     }
 
     void onEvent(Confuse::Event& event) override{
@@ -170,7 +177,7 @@ private:
     std::shared_ptr<Confuse::Shader> m_shader;
     std::shared_ptr<Confuse::VertexArray> m_vertexArray;
 
-    std::shared_ptr<Confuse::Shader> m_blueShader;
+    std::shared_ptr<Confuse::Shader> m_flatColorShader;
     std::shared_ptr<Confuse::VertexArray> m_squareVA;
 
     Confuse::OrthographicCamera m_mainCamera;
@@ -179,6 +186,8 @@ private:
 
     float m_cameraMoveSpeed = 5.0f;
     float m_cameraRotationSpeed = 180.0f;
+
+    glm::vec3 m_squareColor = {0.2f, 0.3f, 0.8f};
 };
 
 class Sandbox : public Confuse::Application{

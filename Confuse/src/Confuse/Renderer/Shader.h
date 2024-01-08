@@ -2,19 +2,15 @@
 
 #include <string>
 #include <cstdint>
-#include <glm/glm.hpp>
 
 namespace Confuse{
     class Shader{
     public:
-        Shader(const std::string& vertexSrc, const std::string& fragmentSrc);
-        ~Shader();
-        void bind() const;
-        void unbind() const;
+        virtual ~Shader() = default;
 
-        void uploadUniformMat4(const std::string& name, const glm::mat4& matrix);
+        virtual void bind() const = 0;
+        virtual void unbind() const = 0;
 
-    private:
-        uint32_t m_rendererID;
+        static Shader* create(const std::string& vertexSrc, const std::string& fragmentSrc);
     };
 }

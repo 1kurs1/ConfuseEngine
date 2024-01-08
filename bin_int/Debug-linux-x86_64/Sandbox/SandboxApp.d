@@ -509,7 +509,46 @@
  ../Confuse/vendor/glm/glm/gtc/../ext/matrix_clip_space.inl \
  ../Confuse/vendor/glm/glm/gtc/../ext/matrix_transform.hpp \
  ../Confuse/vendor/glm/glm/gtc/../ext/matrix_transform.inl \
- ../Confuse/vendor/glm/glm/gtc/matrix_transform.inl
+ ../Confuse/vendor/glm/glm/gtc/matrix_transform.inl \
+ ../Confuse/vendor/glm/glm/gtc/type_ptr.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/quaternion.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_relational.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_relational.inl \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/../detail/type_float.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/../detail/setup.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/quaternion_common.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/../ext/quaternion_geometric.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/../ext/quaternion_geometric.inl \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/quaternion_common.inl \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/quaternion_float.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/../detail/type_quat.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/../detail/../ext/quaternion_relational.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/../detail/../ext/quaternion_relational.inl \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/../detail/type_quat.inl \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/quaternion_float_precision.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/quaternion_double.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/quaternion_double_precision.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/quaternion_trigonometric.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/quaternion_trigonometric.inl \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/quaternion_transform.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/quaternion_transform.inl \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/quaternion.inl \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/epsilon.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../detail/setup.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/epsilon.inl \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/vec1.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_bool1.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_bool1_precision.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_float1.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_float1_precision.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_double1.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_double1_precision.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_int1.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_int1_sized.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_uint1.hpp \
+ ../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_uint1_sized.hpp \
+ ../Confuse/vendor/glm/glm/gtc/type_ptr.inl \
+ ../Confuse/src/Platform/OpenGL/OpenGLShader.h
 /usr/include/stdc-predef.h:
 ../Confuse/src/Confuse.h:
 ../Confuse/src/Confuse/Application.h:
@@ -1092,3 +1131,42 @@
 ../Confuse/vendor/glm/glm/gtc/../ext/matrix_transform.hpp:
 ../Confuse/vendor/glm/glm/gtc/../ext/matrix_transform.inl:
 ../Confuse/vendor/glm/glm/gtc/matrix_transform.inl:
+../Confuse/vendor/glm/glm/gtc/type_ptr.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/quaternion.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_relational.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_relational.inl:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/../detail/type_float.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/../detail/setup.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/quaternion_common.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/../ext/quaternion_geometric.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/../ext/quaternion_geometric.inl:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/quaternion_common.inl:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/quaternion_float.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/../detail/type_quat.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/../detail/../ext/quaternion_relational.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/../detail/../ext/quaternion_relational.inl:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/../detail/type_quat.inl:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/quaternion_float_precision.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/quaternion_double.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/quaternion_double_precision.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/quaternion_trigonometric.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/quaternion_trigonometric.inl:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/quaternion_transform.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/quaternion_transform.inl:
+../Confuse/vendor/glm/glm/gtc/../gtc/quaternion.inl:
+../Confuse/vendor/glm/glm/gtc/../gtc/epsilon.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../detail/setup.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/epsilon.inl:
+../Confuse/vendor/glm/glm/gtc/../gtc/vec1.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_bool1.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_bool1_precision.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_float1.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_float1_precision.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_double1.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_double1_precision.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_int1.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_int1_sized.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_uint1.hpp:
+../Confuse/vendor/glm/glm/gtc/../gtc/../ext/vector_uint1_sized.hpp:
+../Confuse/vendor/glm/glm/gtc/type_ptr.inl:
+../Confuse/src/Platform/OpenGL/OpenGLShader.h:
