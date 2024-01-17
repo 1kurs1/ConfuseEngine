@@ -178,32 +178,134 @@
  /usr/include/vk_video/vulkan_video_codec_h265std.h \
  /usr/include/vk_video/vulkan_video_codec_h265std_decode.h \
  /usr/include/vk_video/vulkan_video_codec_h265std.h \
- ../Confuse/src/Confuse/Layer.h ../Confuse/src/Confuse/EntryPoint.h \
- ../Confuse/src/Confuse/Image.h ../Confuse/src/Confuse/Timer.h \
- /usr/include/c++/13/iostream /usr/include/c++/13/ostream \
- /usr/include/c++/13/ios /usr/include/c++/13/bits/ios_base.h \
- /usr/include/c++/13/bits/locale_classes.h \
- /usr/include/c++/13/bits/locale_classes.tcc \
- /usr/include/c++/13/system_error \
- /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
- /usr/include/c++/13/stdexcept /usr/include/c++/13/streambuf \
- /usr/include/c++/13/bits/streambuf.tcc \
- /usr/include/c++/13/bits/basic_ios.h \
- /usr/include/c++/13/bits/locale_facets.h /usr/include/c++/13/cwctype \
- /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
- /usr/include/c++/13/bits/streambuf_iterator.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h \
- /usr/include/c++/13/bits/locale_facets.tcc \
- /usr/include/c++/13/bits/basic_ios.tcc \
- /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
- /usr/include/c++/13/bits/istream.tcc /usr/include/c++/13/chrono \
- /usr/include/c++/13/bits/chrono.h /usr/include/c++/13/ratio \
- /usr/include/c++/13/cstdint /usr/include/c++/13/limits \
- /usr/include/c++/13/ctime /usr/include/c++/13/bits/parse_numbers.h \
- src/Renderer.h ../vendor/glm/glm/glm.hpp \
- ../vendor/glm/glm/detail/_fixes.hpp /usr/include/c++/13/cmath \
- /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ ../Confuse/src/Confuse/Layer.h ../vendor/glm/glm/gtc/type_ptr.hpp \
+ ../vendor/glm/glm/gtc/../gtc/quaternion.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/constants.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/../ext/scalar_constants.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/../ext/../detail/setup.hpp \
+ /usr/include/c++/13/cassert \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/../ext/../detail/../simd/platform.h \
+ /usr/include/c++/13/cstdint \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/../ext/scalar_constants.inl \
+ /usr/include/c++/13/limits \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/constants.inl \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/matrix_transform.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/../mat4x4.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/matrix_double4x4.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/type_mat4x4.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/type_vec4.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/qualifier.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/setup.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/type_vec4.inl \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/compute_vector_relational.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/type_mat4x4.inl \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../matrix.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/setup.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../vec2.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_bool2.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_vec2.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_vec2.inl \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_bool2_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_float2.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_float2_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_double2.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_double2_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_int2.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_int2_sized.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../ext/scalar_int_sized.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../ext/../detail/setup.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_uint2.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_uint2_sized.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../ext/scalar_uint_sized.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../vec3.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_bool3.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_vec3.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_vec3.inl \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_bool3_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_float3.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_float3_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_double3.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_double3_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_int3.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_int3_sized.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_uint3.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_uint3_sized.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../vec4.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_bool4.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_bool4_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_float4.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_float4_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_double4.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_double4_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/setup.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_int4.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_int4_sized.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_uint4.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_uint4_sized.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../mat2x2.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double2x2.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat2x2.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat2x2.inl \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double2x2_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float2x2.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float2x2_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../mat2x3.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double2x3.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat2x3.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat2x3.inl \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double2x3_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float2x3.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float2x3_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../mat2x4.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double2x4.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat2x4.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat2x4.inl \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double2x4_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float2x4.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float2x4_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../mat3x2.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double3x2.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat3x2.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat3x2.inl \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double3x2_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float3x2.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float3x2_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../mat3x3.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double3x3.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat3x3.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat3x3.inl \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double3x3_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float3x3.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float3x3_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../mat3x4.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double3x4.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat3x4.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat3x4.inl \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double3x4_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float3x4.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float3x4_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../mat4x2.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double4x2.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat4x2.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat4x2.inl \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double4x2_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float4x2.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float4x2_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../mat4x3.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double4x3.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat4x3.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat4x3.inl \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double4x3_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float4x3.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float4x3_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/func_matrix.inl \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../geometric.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/func_geometric.inl \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../exponential.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../detail/type_vec1.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../detail/type_vec1.inl \
+ /usr/include/c++/13/cmath /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
@@ -224,8 +326,90 @@
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc \
- ../vendor/glm/glm/detail/setup.hpp /usr/include/c++/13/cassert \
- ../vendor/glm/glm/detail/../simd/platform.h /usr/include/c++/13/climits \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../detail/func_exponential.inl \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../detail/../vector_relational.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../detail/../detail/setup.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../detail/../detail/func_vector_relational.inl \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../detail/_vectorize.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../common.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../detail/_fixes.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../detail/func_common.inl \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../detail/compute_common.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../detail/setup.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/matrix_double4x4_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/matrix_float4x4.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/matrix_float4x4_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/../ext/matrix_projection.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/../ext/../trigonometric.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/../ext/../detail/setup.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/../ext/../detail/func_trigonometric.inl \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/../ext/matrix_projection.inl \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/../ext/matrix_clip_space.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/../ext/matrix_clip_space.inl \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/../ext/matrix_transform.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/../ext/matrix_transform.inl \
+ ../vendor/glm/glm/gtc/../gtc/../gtc/matrix_transform.inl \
+ ../vendor/glm/glm/gtc/../gtc/../ext/vector_relational.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/vector_relational.inl \
+ ../vendor/glm/glm/gtc/../gtc/../ext/../detail/type_float.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/../detail/setup.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/quaternion_common.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/../ext/quaternion_geometric.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/../ext/quaternion_geometric.inl \
+ ../vendor/glm/glm/gtc/../gtc/../ext/quaternion_common.inl \
+ ../vendor/glm/glm/gtc/../gtc/../ext/quaternion_float.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/../detail/type_quat.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/../detail/../ext/quaternion_relational.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/../detail/../ext/quaternion_relational.inl \
+ ../vendor/glm/glm/gtc/../gtc/../ext/../detail/type_quat.inl \
+ ../vendor/glm/glm/gtc/../gtc/../ext/quaternion_float_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/quaternion_double.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/quaternion_double_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/quaternion_trigonometric.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/quaternion_trigonometric.inl \
+ ../vendor/glm/glm/gtc/../gtc/../ext/quaternion_transform.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/quaternion_transform.inl \
+ ../vendor/glm/glm/gtc/../gtc/quaternion.inl \
+ ../vendor/glm/glm/gtc/../gtc/epsilon.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../detail/setup.hpp \
+ ../vendor/glm/glm/gtc/../gtc/epsilon.inl \
+ ../vendor/glm/glm/gtc/../gtc/vec1.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/vector_bool1.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/vector_bool1_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/vector_float1.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/vector_float1_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/vector_double1.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/vector_double1_precision.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/vector_int1.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/vector_int1_sized.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/vector_uint1.hpp \
+ ../vendor/glm/glm/gtc/../gtc/../ext/vector_uint1_sized.hpp \
+ /usr/include/c++/13/cstring ../vendor/glm/glm/gtc/type_ptr.inl \
+ ../Confuse/src/Confuse/EntryPoint.h ../Confuse/src/Confuse/Image.h \
+ ../Confuse/src/Confuse/Timer.h /usr/include/c++/13/iostream \
+ /usr/include/c++/13/ostream /usr/include/c++/13/ios \
+ /usr/include/c++/13/bits/ios_base.h \
+ /usr/include/c++/13/bits/locale_classes.h \
+ /usr/include/c++/13/bits/locale_classes.tcc \
+ /usr/include/c++/13/system_error \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
+ /usr/include/c++/13/stdexcept /usr/include/c++/13/streambuf \
+ /usr/include/c++/13/bits/streambuf.tcc \
+ /usr/include/c++/13/bits/basic_ios.h \
+ /usr/include/c++/13/bits/locale_facets.h /usr/include/c++/13/cwctype \
+ /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
+ /usr/include/c++/13/bits/streambuf_iterator.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h \
+ /usr/include/c++/13/bits/locale_facets.tcc \
+ /usr/include/c++/13/bits/basic_ios.tcc \
+ /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
+ /usr/include/c++/13/bits/istream.tcc /usr/include/c++/13/chrono \
+ /usr/include/c++/13/bits/chrono.h /usr/include/c++/13/ratio \
+ /usr/include/c++/13/ctime /usr/include/c++/13/bits/parse_numbers.h \
+ src/Renderer.h ../vendor/glm/glm/glm.hpp \
+ ../vendor/glm/glm/detail/_fixes.hpp ../vendor/glm/glm/detail/setup.hpp \
+ /usr/include/c++/13/climits \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
@@ -234,135 +418,10 @@
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
  /usr/include/x86_64-linux-gnu/bits/uio_lim.h /usr/include/c++/13/cfloat \
- ../vendor/glm/glm/fwd.hpp ../vendor/glm/glm/detail/qualifier.hpp \
- ../vendor/glm/glm/detail/setup.hpp ../vendor/glm/glm/vec2.hpp \
- ../vendor/glm/glm/./ext/vector_bool2.hpp \
- ../vendor/glm/glm/./ext/../detail/type_vec2.hpp \
- ../vendor/glm/glm/./ext/../detail/type_vec2.inl \
- ../vendor/glm/glm/./ext/../detail/./compute_vector_relational.hpp \
- ../vendor/glm/glm/./ext/../detail/./setup.hpp \
- ../vendor/glm/glm/./ext/vector_bool2_precision.hpp \
- ../vendor/glm/glm/./ext/vector_float2.hpp \
- ../vendor/glm/glm/./ext/vector_float2_precision.hpp \
- ../vendor/glm/glm/./ext/vector_double2.hpp \
- ../vendor/glm/glm/./ext/vector_double2_precision.hpp \
- ../vendor/glm/glm/./ext/vector_int2.hpp \
- ../vendor/glm/glm/./ext/vector_int2_sized.hpp \
- ../vendor/glm/glm/./ext/../ext/scalar_int_sized.hpp \
- ../vendor/glm/glm/./ext/../ext/../detail/setup.hpp \
- ../vendor/glm/glm/./ext/vector_uint2.hpp \
- ../vendor/glm/glm/./ext/vector_uint2_sized.hpp \
- ../vendor/glm/glm/./ext/../ext/scalar_uint_sized.hpp \
- ../vendor/glm/glm/vec3.hpp ../vendor/glm/glm/./ext/vector_bool3.hpp \
- ../vendor/glm/glm/./ext/../detail/type_vec3.hpp \
- ../vendor/glm/glm/./ext/../detail/type_vec3.inl \
- ../vendor/glm/glm/./ext/vector_bool3_precision.hpp \
- ../vendor/glm/glm/./ext/vector_float3.hpp \
- ../vendor/glm/glm/./ext/vector_float3_precision.hpp \
- ../vendor/glm/glm/./ext/vector_double3.hpp \
- ../vendor/glm/glm/./ext/vector_double3_precision.hpp \
- ../vendor/glm/glm/./ext/vector_int3.hpp \
- ../vendor/glm/glm/./ext/vector_int3_sized.hpp \
- ../vendor/glm/glm/./ext/vector_uint3.hpp \
- ../vendor/glm/glm/./ext/vector_uint3_sized.hpp \
- ../vendor/glm/glm/vec4.hpp ../vendor/glm/glm/./ext/vector_bool4.hpp \
- ../vendor/glm/glm/./ext/../detail/type_vec4.hpp \
- ../vendor/glm/glm/./ext/../detail/type_vec4.inl \
- ../vendor/glm/glm/./ext/vector_bool4_precision.hpp \
- ../vendor/glm/glm/./ext/vector_float4.hpp \
- ../vendor/glm/glm/./ext/vector_float4_precision.hpp \
- ../vendor/glm/glm/./ext/vector_double4.hpp \
- ../vendor/glm/glm/./ext/vector_double4_precision.hpp \
- ../vendor/glm/glm/./ext/../detail/setup.hpp \
- ../vendor/glm/glm/./ext/vector_int4.hpp \
- ../vendor/glm/glm/./ext/vector_int4_sized.hpp \
- ../vendor/glm/glm/./ext/vector_uint4.hpp \
- ../vendor/glm/glm/./ext/vector_uint4_sized.hpp \
- ../vendor/glm/glm/mat2x2.hpp \
- ../vendor/glm/glm/./ext/matrix_double2x2.hpp \
- ../vendor/glm/glm/./ext/../detail/type_mat2x2.hpp \
- ../vendor/glm/glm/./ext/../detail/type_mat2x2.inl \
- ../vendor/glm/glm/./ext/../detail/../matrix.hpp \
- ../vendor/glm/glm/./ext/../detail/../detail/setup.hpp \
- ../vendor/glm/glm/./ext/../detail/../mat2x3.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_double2x3.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat2x3.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat2x3.inl \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_double2x3_precision.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_float2x3.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_float2x3_precision.hpp \
- ../vendor/glm/glm/./ext/../detail/../mat2x4.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_double2x4.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat2x4.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat2x4.inl \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_double2x4_precision.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_float2x4.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_float2x4_precision.hpp \
- ../vendor/glm/glm/./ext/../detail/../mat3x2.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_double3x2.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat3x2.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat3x2.inl \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_double3x2_precision.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_float3x2.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_float3x2_precision.hpp \
- ../vendor/glm/glm/./ext/../detail/../mat3x3.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_double3x3.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat3x3.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat3x3.inl \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_double3x3_precision.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_float3x3.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_float3x3_precision.hpp \
- ../vendor/glm/glm/./ext/../detail/../mat3x4.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_double3x4.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat3x4.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat3x4.inl \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_double3x4_precision.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_float3x4.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_float3x4_precision.hpp \
- ../vendor/glm/glm/./ext/../detail/../mat4x2.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_double4x2.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat4x2.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat4x2.inl \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_double4x2_precision.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_float4x2.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_float4x2_precision.hpp \
- ../vendor/glm/glm/./ext/../detail/../mat4x3.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_double4x3.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat4x3.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat4x3.inl \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_double4x3_precision.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_float4x3.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_float4x3_precision.hpp \
- ../vendor/glm/glm/./ext/../detail/../mat4x4.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_double4x4.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat4x4.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat4x4.inl \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_double4x4_precision.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_float4x4.hpp \
- ../vendor/glm/glm/./ext/../detail/.././ext/matrix_float4x4_precision.hpp \
- ../vendor/glm/glm/./ext/../detail/../detail/func_matrix.inl \
- ../vendor/glm/glm/./ext/../detail/../detail/../geometric.hpp \
- ../vendor/glm/glm/./ext/../detail/../detail/../detail/func_geometric.inl \
- ../vendor/glm/glm/./ext/../detail/../detail/../detail/../exponential.hpp \
- ../vendor/glm/glm/./ext/../detail/../detail/../detail/../detail/type_vec1.hpp \
- ../vendor/glm/glm/./ext/../detail/../detail/../detail/../detail/type_vec1.inl \
- ../vendor/glm/glm/./ext/../detail/../detail/../detail/../detail/func_exponential.inl \
- ../vendor/glm/glm/./ext/../detail/../detail/../detail/../detail/../vector_relational.hpp \
- ../vendor/glm/glm/./ext/../detail/../detail/../detail/../detail/../detail/setup.hpp \
- ../vendor/glm/glm/./ext/../detail/../detail/../detail/../detail/../detail/func_vector_relational.inl \
- ../vendor/glm/glm/./ext/../detail/../detail/../detail/../detail/_vectorize.hpp \
- ../vendor/glm/glm/./ext/../detail/../detail/../detail/../common.hpp \
- ../vendor/glm/glm/./ext/../detail/../detail/../detail/../detail/_fixes.hpp \
- ../vendor/glm/glm/./ext/../detail/../detail/../detail/../detail/func_common.inl \
- ../vendor/glm/glm/./ext/../detail/../detail/../detail/../detail/compute_common.hpp \
- ../vendor/glm/glm/./ext/../detail/../detail/../detail/../detail/setup.hpp \
- ../vendor/glm/glm/./ext/matrix_double2x2_precision.hpp \
- ../vendor/glm/glm/./ext/matrix_float2x2.hpp \
- ../vendor/glm/glm/./ext/matrix_float2x2_precision.hpp \
- ../vendor/glm/glm/trigonometric.hpp \
- ../vendor/glm/glm/detail/func_trigonometric.inl \
- ../vendor/glm/glm/packing.hpp ../vendor/glm/glm/detail/func_packing.inl \
+ ../vendor/glm/glm/fwd.hpp ../vendor/glm/glm/packing.hpp \
+ ../vendor/glm/glm/detail/func_packing.inl \
  ../vendor/glm/glm/detail/type_half.hpp \
+ ../vendor/glm/glm/detail/setup.hpp \
  ../vendor/glm/glm/detail/type_half.inl ../vendor/glm/glm/integer.hpp \
  ../vendor/glm/glm/detail/func_integer.inl \
  ../Confuse/src/Confuse/Random.h /usr/include/c++/13/random \
@@ -370,7 +429,8 @@
  /usr/include/x86_64-linux-gnu/c++/13/bits/opt_random.h \
  /usr/include/c++/13/bits/random.tcc /usr/include/c++/13/numeric \
  /usr/include/c++/13/bits/stl_numeric.h \
- /usr/include/c++/13/pstl/glue_numeric_defs.h
+ /usr/include/c++/13/pstl/glue_numeric_defs.h src/Camera.h src/Ray.h \
+ src/Scene.h
 /usr/include/stdc-predef.h:
 ../Confuse/src/Confuse/Application.h:
 /usr/include/c++/13/string:
@@ -589,6 +649,216 @@
 /usr/include/vk_video/vulkan_video_codec_h265std_decode.h:
 /usr/include/vk_video/vulkan_video_codec_h265std.h:
 ../Confuse/src/Confuse/Layer.h:
+../vendor/glm/glm/gtc/type_ptr.hpp:
+../vendor/glm/glm/gtc/../gtc/quaternion.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/constants.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/../ext/scalar_constants.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/../ext/../detail/setup.hpp:
+/usr/include/c++/13/cassert:
+../vendor/glm/glm/gtc/../gtc/../gtc/../ext/../detail/../simd/platform.h:
+/usr/include/c++/13/cstdint:
+../vendor/glm/glm/gtc/../gtc/../gtc/../ext/scalar_constants.inl:
+/usr/include/c++/13/limits:
+../vendor/glm/glm/gtc/../gtc/../gtc/constants.inl:
+../vendor/glm/glm/gtc/../gtc/../gtc/matrix_transform.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/../mat4x4.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/matrix_double4x4.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/type_mat4x4.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/type_vec4.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/qualifier.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/setup.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/type_vec4.inl:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/compute_vector_relational.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/type_mat4x4.inl:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../matrix.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/setup.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../vec2.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_bool2.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_vec2.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_vec2.inl:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_bool2_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_float2.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_float2_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_double2.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_double2_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_int2.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_int2_sized.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../ext/scalar_int_sized.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../ext/../detail/setup.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_uint2.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_uint2_sized.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../ext/scalar_uint_sized.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../vec3.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_bool3.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_vec3.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_vec3.inl:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_bool3_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_float3.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_float3_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_double3.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_double3_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_int3.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_int3_sized.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_uint3.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_uint3_sized.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../vec4.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_bool4.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_bool4_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_float4.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_float4_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_double4.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_double4_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/setup.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_int4.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_int4_sized.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_uint4.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/vector_uint4_sized.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../mat2x2.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double2x2.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat2x2.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat2x2.inl:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double2x2_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float2x2.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float2x2_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../mat2x3.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double2x3.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat2x3.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat2x3.inl:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double2x3_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float2x3.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float2x3_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../mat2x4.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double2x4.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat2x4.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat2x4.inl:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double2x4_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float2x4.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float2x4_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../mat3x2.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double3x2.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat3x2.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat3x2.inl:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double3x2_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float3x2.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float3x2_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../mat3x3.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double3x3.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat3x3.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat3x3.inl:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double3x3_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float3x3.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float3x3_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../mat3x4.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double3x4.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat3x4.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat3x4.inl:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double3x4_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float3x4.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float3x4_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../mat4x2.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double4x2.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat4x2.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat4x2.inl:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double4x2_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float4x2.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float4x2_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../mat4x3.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double4x3.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat4x3.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/../detail/type_mat4x3.inl:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_double4x3_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float4x3.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/.././ext/matrix_float4x3_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/func_matrix.inl:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../geometric.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/func_geometric.inl:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../exponential.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../detail/type_vec1.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../detail/type_vec1.inl:
+/usr/include/c++/13/cmath:
+/usr/include/math.h:
+/usr/include/x86_64-linux-gnu/bits/math-vector.h:
+/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
+/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
+/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
+/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
+/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
+/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
+/usr/include/c++/13/bits/specfun.h:
+/usr/include/c++/13/tr1/gamma.tcc:
+/usr/include/c++/13/tr1/special_function_util.h:
+/usr/include/c++/13/tr1/bessel_function.tcc:
+/usr/include/c++/13/tr1/beta_function.tcc:
+/usr/include/c++/13/tr1/ell_integral.tcc:
+/usr/include/c++/13/tr1/exp_integral.tcc:
+/usr/include/c++/13/tr1/hypergeometric.tcc:
+/usr/include/c++/13/tr1/legendre_function.tcc:
+/usr/include/c++/13/tr1/modified_bessel_func.tcc:
+/usr/include/c++/13/tr1/poly_hermite.tcc:
+/usr/include/c++/13/tr1/poly_laguerre.tcc:
+/usr/include/c++/13/tr1/riemann_zeta.tcc:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../detail/func_exponential.inl:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../detail/../vector_relational.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../detail/../detail/setup.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../detail/../detail/func_vector_relational.inl:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../detail/_vectorize.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../common.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../detail/_fixes.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../detail/func_common.inl:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../detail/compute_common.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/../detail/../detail/../detail/../detail/setup.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/matrix_double4x4_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/matrix_float4x4.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/.././ext/matrix_float4x4_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/../ext/matrix_projection.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/../ext/../trigonometric.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/../ext/../detail/setup.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/../ext/../detail/func_trigonometric.inl:
+../vendor/glm/glm/gtc/../gtc/../gtc/../ext/matrix_projection.inl:
+../vendor/glm/glm/gtc/../gtc/../gtc/../ext/matrix_clip_space.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/../ext/matrix_clip_space.inl:
+../vendor/glm/glm/gtc/../gtc/../gtc/../ext/matrix_transform.hpp:
+../vendor/glm/glm/gtc/../gtc/../gtc/../ext/matrix_transform.inl:
+../vendor/glm/glm/gtc/../gtc/../gtc/matrix_transform.inl:
+../vendor/glm/glm/gtc/../gtc/../ext/vector_relational.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/vector_relational.inl:
+../vendor/glm/glm/gtc/../gtc/../ext/../detail/type_float.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/../detail/setup.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/quaternion_common.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/../ext/quaternion_geometric.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/../ext/quaternion_geometric.inl:
+../vendor/glm/glm/gtc/../gtc/../ext/quaternion_common.inl:
+../vendor/glm/glm/gtc/../gtc/../ext/quaternion_float.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/../detail/type_quat.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/../detail/../ext/quaternion_relational.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/../detail/../ext/quaternion_relational.inl:
+../vendor/glm/glm/gtc/../gtc/../ext/../detail/type_quat.inl:
+../vendor/glm/glm/gtc/../gtc/../ext/quaternion_float_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/quaternion_double.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/quaternion_double_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/quaternion_trigonometric.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/quaternion_trigonometric.inl:
+../vendor/glm/glm/gtc/../gtc/../ext/quaternion_transform.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/quaternion_transform.inl:
+../vendor/glm/glm/gtc/../gtc/quaternion.inl:
+../vendor/glm/glm/gtc/../gtc/epsilon.hpp:
+../vendor/glm/glm/gtc/../gtc/../detail/setup.hpp:
+../vendor/glm/glm/gtc/../gtc/epsilon.inl:
+../vendor/glm/glm/gtc/../gtc/vec1.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/vector_bool1.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/vector_bool1_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/vector_float1.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/vector_float1_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/vector_double1.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/vector_double1_precision.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/vector_int1.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/vector_int1_sized.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/vector_uint1.hpp:
+../vendor/glm/glm/gtc/../gtc/../ext/vector_uint1_sized.hpp:
+/usr/include/c++/13/cstring:
+../vendor/glm/glm/gtc/type_ptr.inl:
 ../Confuse/src/Confuse/EntryPoint.h:
 ../Confuse/src/Confuse/Image.h:
 ../Confuse/src/Confuse/Timer.h:
@@ -619,40 +889,12 @@
 /usr/include/c++/13/chrono:
 /usr/include/c++/13/bits/chrono.h:
 /usr/include/c++/13/ratio:
-/usr/include/c++/13/cstdint:
-/usr/include/c++/13/limits:
 /usr/include/c++/13/ctime:
 /usr/include/c++/13/bits/parse_numbers.h:
 src/Renderer.h:
 ../vendor/glm/glm/glm.hpp:
 ../vendor/glm/glm/detail/_fixes.hpp:
-/usr/include/c++/13/cmath:
-/usr/include/math.h:
-/usr/include/x86_64-linux-gnu/bits/math-vector.h:
-/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
-/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
-/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
-/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
-/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
-/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
-/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
-/usr/include/c++/13/bits/specfun.h:
-/usr/include/c++/13/tr1/gamma.tcc:
-/usr/include/c++/13/tr1/special_function_util.h:
-/usr/include/c++/13/tr1/bessel_function.tcc:
-/usr/include/c++/13/tr1/beta_function.tcc:
-/usr/include/c++/13/tr1/ell_integral.tcc:
-/usr/include/c++/13/tr1/exp_integral.tcc:
-/usr/include/c++/13/tr1/hypergeometric.tcc:
-/usr/include/c++/13/tr1/legendre_function.tcc:
-/usr/include/c++/13/tr1/modified_bessel_func.tcc:
-/usr/include/c++/13/tr1/poly_hermite.tcc:
-/usr/include/c++/13/tr1/poly_laguerre.tcc:
-/usr/include/c++/13/tr1/riemann_zeta.tcc:
 ../vendor/glm/glm/detail/setup.hpp:
-/usr/include/c++/13/cassert:
-../vendor/glm/glm/detail/../simd/platform.h:
 /usr/include/c++/13/climits:
 /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h:
 /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h:
@@ -665,139 +907,10 @@ src/Renderer.h:
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 /usr/include/c++/13/cfloat:
 ../vendor/glm/glm/fwd.hpp:
-../vendor/glm/glm/detail/qualifier.hpp:
-../vendor/glm/glm/detail/setup.hpp:
-../vendor/glm/glm/vec2.hpp:
-../vendor/glm/glm/./ext/vector_bool2.hpp:
-../vendor/glm/glm/./ext/../detail/type_vec2.hpp:
-../vendor/glm/glm/./ext/../detail/type_vec2.inl:
-../vendor/glm/glm/./ext/../detail/./compute_vector_relational.hpp:
-../vendor/glm/glm/./ext/../detail/./setup.hpp:
-../vendor/glm/glm/./ext/vector_bool2_precision.hpp:
-../vendor/glm/glm/./ext/vector_float2.hpp:
-../vendor/glm/glm/./ext/vector_float2_precision.hpp:
-../vendor/glm/glm/./ext/vector_double2.hpp:
-../vendor/glm/glm/./ext/vector_double2_precision.hpp:
-../vendor/glm/glm/./ext/vector_int2.hpp:
-../vendor/glm/glm/./ext/vector_int2_sized.hpp:
-../vendor/glm/glm/./ext/../ext/scalar_int_sized.hpp:
-../vendor/glm/glm/./ext/../ext/../detail/setup.hpp:
-../vendor/glm/glm/./ext/vector_uint2.hpp:
-../vendor/glm/glm/./ext/vector_uint2_sized.hpp:
-../vendor/glm/glm/./ext/../ext/scalar_uint_sized.hpp:
-../vendor/glm/glm/vec3.hpp:
-../vendor/glm/glm/./ext/vector_bool3.hpp:
-../vendor/glm/glm/./ext/../detail/type_vec3.hpp:
-../vendor/glm/glm/./ext/../detail/type_vec3.inl:
-../vendor/glm/glm/./ext/vector_bool3_precision.hpp:
-../vendor/glm/glm/./ext/vector_float3.hpp:
-../vendor/glm/glm/./ext/vector_float3_precision.hpp:
-../vendor/glm/glm/./ext/vector_double3.hpp:
-../vendor/glm/glm/./ext/vector_double3_precision.hpp:
-../vendor/glm/glm/./ext/vector_int3.hpp:
-../vendor/glm/glm/./ext/vector_int3_sized.hpp:
-../vendor/glm/glm/./ext/vector_uint3.hpp:
-../vendor/glm/glm/./ext/vector_uint3_sized.hpp:
-../vendor/glm/glm/vec4.hpp:
-../vendor/glm/glm/./ext/vector_bool4.hpp:
-../vendor/glm/glm/./ext/../detail/type_vec4.hpp:
-../vendor/glm/glm/./ext/../detail/type_vec4.inl:
-../vendor/glm/glm/./ext/vector_bool4_precision.hpp:
-../vendor/glm/glm/./ext/vector_float4.hpp:
-../vendor/glm/glm/./ext/vector_float4_precision.hpp:
-../vendor/glm/glm/./ext/vector_double4.hpp:
-../vendor/glm/glm/./ext/vector_double4_precision.hpp:
-../vendor/glm/glm/./ext/../detail/setup.hpp:
-../vendor/glm/glm/./ext/vector_int4.hpp:
-../vendor/glm/glm/./ext/vector_int4_sized.hpp:
-../vendor/glm/glm/./ext/vector_uint4.hpp:
-../vendor/glm/glm/./ext/vector_uint4_sized.hpp:
-../vendor/glm/glm/mat2x2.hpp:
-../vendor/glm/glm/./ext/matrix_double2x2.hpp:
-../vendor/glm/glm/./ext/../detail/type_mat2x2.hpp:
-../vendor/glm/glm/./ext/../detail/type_mat2x2.inl:
-../vendor/glm/glm/./ext/../detail/../matrix.hpp:
-../vendor/glm/glm/./ext/../detail/../detail/setup.hpp:
-../vendor/glm/glm/./ext/../detail/../mat2x3.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_double2x3.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat2x3.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat2x3.inl:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_double2x3_precision.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_float2x3.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_float2x3_precision.hpp:
-../vendor/glm/glm/./ext/../detail/../mat2x4.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_double2x4.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat2x4.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat2x4.inl:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_double2x4_precision.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_float2x4.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_float2x4_precision.hpp:
-../vendor/glm/glm/./ext/../detail/../mat3x2.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_double3x2.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat3x2.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat3x2.inl:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_double3x2_precision.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_float3x2.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_float3x2_precision.hpp:
-../vendor/glm/glm/./ext/../detail/../mat3x3.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_double3x3.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat3x3.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat3x3.inl:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_double3x3_precision.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_float3x3.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_float3x3_precision.hpp:
-../vendor/glm/glm/./ext/../detail/../mat3x4.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_double3x4.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat3x4.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat3x4.inl:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_double3x4_precision.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_float3x4.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_float3x4_precision.hpp:
-../vendor/glm/glm/./ext/../detail/../mat4x2.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_double4x2.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat4x2.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat4x2.inl:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_double4x2_precision.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_float4x2.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_float4x2_precision.hpp:
-../vendor/glm/glm/./ext/../detail/../mat4x3.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_double4x3.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat4x3.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat4x3.inl:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_double4x3_precision.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_float4x3.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_float4x3_precision.hpp:
-../vendor/glm/glm/./ext/../detail/../mat4x4.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_double4x4.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat4x4.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/../detail/type_mat4x4.inl:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_double4x4_precision.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_float4x4.hpp:
-../vendor/glm/glm/./ext/../detail/.././ext/matrix_float4x4_precision.hpp:
-../vendor/glm/glm/./ext/../detail/../detail/func_matrix.inl:
-../vendor/glm/glm/./ext/../detail/../detail/../geometric.hpp:
-../vendor/glm/glm/./ext/../detail/../detail/../detail/func_geometric.inl:
-../vendor/glm/glm/./ext/../detail/../detail/../detail/../exponential.hpp:
-../vendor/glm/glm/./ext/../detail/../detail/../detail/../detail/type_vec1.hpp:
-../vendor/glm/glm/./ext/../detail/../detail/../detail/../detail/type_vec1.inl:
-../vendor/glm/glm/./ext/../detail/../detail/../detail/../detail/func_exponential.inl:
-../vendor/glm/glm/./ext/../detail/../detail/../detail/../detail/../vector_relational.hpp:
-../vendor/glm/glm/./ext/../detail/../detail/../detail/../detail/../detail/setup.hpp:
-../vendor/glm/glm/./ext/../detail/../detail/../detail/../detail/../detail/func_vector_relational.inl:
-../vendor/glm/glm/./ext/../detail/../detail/../detail/../detail/_vectorize.hpp:
-../vendor/glm/glm/./ext/../detail/../detail/../detail/../common.hpp:
-../vendor/glm/glm/./ext/../detail/../detail/../detail/../detail/_fixes.hpp:
-../vendor/glm/glm/./ext/../detail/../detail/../detail/../detail/func_common.inl:
-../vendor/glm/glm/./ext/../detail/../detail/../detail/../detail/compute_common.hpp:
-../vendor/glm/glm/./ext/../detail/../detail/../detail/../detail/setup.hpp:
-../vendor/glm/glm/./ext/matrix_double2x2_precision.hpp:
-../vendor/glm/glm/./ext/matrix_float2x2.hpp:
-../vendor/glm/glm/./ext/matrix_float2x2_precision.hpp:
-../vendor/glm/glm/trigonometric.hpp:
-../vendor/glm/glm/detail/func_trigonometric.inl:
 ../vendor/glm/glm/packing.hpp:
 ../vendor/glm/glm/detail/func_packing.inl:
 ../vendor/glm/glm/detail/type_half.hpp:
+../vendor/glm/glm/detail/setup.hpp:
 ../vendor/glm/glm/detail/type_half.inl:
 ../vendor/glm/glm/integer.hpp:
 ../vendor/glm/glm/detail/func_integer.inl:
@@ -809,3 +922,6 @@ src/Renderer.h:
 /usr/include/c++/13/numeric:
 /usr/include/c++/13/bits/stl_numeric.h:
 /usr/include/c++/13/pstl/glue_numeric_defs.h:
+src/Camera.h:
+src/Ray.h:
+src/Scene.h:

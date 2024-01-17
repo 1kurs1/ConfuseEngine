@@ -1,20 +1,63 @@
 #include "Confuse/Application.h"
+
+#include <glm/gtc/type_ptr.hpp>
+
 #include "Confuse/EntryPoint.h"
 
 #include "Confuse/Image.h"
 #include "Confuse/Timer.h"
 
 #include "Renderer.h"
+#include "Camera.h"
 
 using namespace Confuse;
 
 class ExampleLayer : public Confuse::Layer{
 public:
+    ExampleLayer() : m_camera(45.0f, 0.1f, 100.0f){
+        {
+            Sphere sphere;
+            sphere.position = {0.0f, 0.0f, 0.0f};
+            sphere.radius = 0.5f;
+            sphere.albedo = {1.0f, 0.0f, 1.0f};
+
+            m_scene.spheres.push_back(sphere);
+        }
+
+        {
+            Sphere sphere;
+            sphere.position = {1.0f, 0.0f, -5.0f};
+            sphere.radius = 1.5f;
+            sphere.albedo = {0.2f, 0.3f, 1.0f};
+
+            m_scene.spheres.push_back(sphere);
+        }
+    }
+
+    virtual void onUpdate(float ts) override{
+        m_camera.onUpdate(ts);
+    }
+
     virtual void onUIRender() override{
         ImGui::Begin("Settings");
         ImGui::Text("last render: %.3fms", m_lastRenderTime);
         if(ImGui::Button("Render")){
             render();
+        }
+        ImGui::End();
+
+        ImGui::Begin("Scene");
+        for(size_t i = 0; i < m_scene.spheres.size(); i++){
+            ImGui::PushID(i);
+
+            Sphere& sphere = m_scene.spheres[i];
+            ImGui::DragFloat3("position", glm::value_ptr(sphere.position), 0.1f);
+            ImGui::DragFloat("radius", &sphere.radius, 0.1f);
+            ImGui::ColorEdit3("albedo", glm::value_ptr(sphere.albedo));
+
+            ImGui::Separator();
+
+            ImGui::PopID();
         }
         ImGui::End();
 
@@ -38,13 +81,16 @@ public:
         Timer timer;
 
         m_renderer.onResize(m_viewportWidth, m_viewportHeight);
-        m_renderer.render();
+        m_camera.onResize(m_viewportWidth, m_viewportHeight);
+        m_renderer.render(m_scene, m_camera);
 
         m_lastRenderTime = timer.elapsedMilis();
     }
 
 private:
     Renderer m_renderer;
+    Camera m_camera;
+    Scene m_scene;
     uint32_t m_viewportWidth = 0, m_viewportHeight = 0;
 
     float m_lastRenderTime = 0.0f;
