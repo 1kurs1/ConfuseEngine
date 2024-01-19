@@ -15,35 +15,50 @@ using namespace Confuse;
 class ExampleLayer : public Confuse::Layer{
 public:
     ExampleLayer() : m_camera(45.0f, 0.1f, 100.0f){
+        Material& redSphere = m_scene.materials.emplace_back();
+        redSphere.albedo = {1.0f, 0.0f, 1.0f};
+        redSphere.roughness = 0.0f;
+
+        Material& blueSphere = m_scene.materials.emplace_back();
+        blueSphere.albedo = {0.2f, 0.3f, 1.0f};
+        blueSphere.roughness = 0.1f;
+
         {
             Sphere sphere;
             sphere.position = {0.0f, 0.0f, 0.0f};
-            sphere.radius = 0.5f;
-            sphere.albedo = {1.0f, 0.0f, 1.0f};
+            sphere.radius = 1.0f;
+            sphere.materialIndex = 0;
 
             m_scene.spheres.push_back(sphere);
         }
 
         {
             Sphere sphere;
-            sphere.position = {1.0f, 0.0f, -5.0f};
-            sphere.radius = 1.5f;
-            sphere.albedo = {0.2f, 0.3f, 1.0f};
+            sphere.position = {0.0f, -101.0f, 0.0f};
+            sphere.radius = 100.0f;
+            sphere.materialIndex = 1;
 
             m_scene.spheres.push_back(sphere);
         }
     }
 
     virtual void onUpdate(float ts) override{
-        m_camera.onUpdate(ts);
+        if(m_camera.onUpdate(ts))
+            m_renderer.resetFrameIndex();
     }
 
     virtual void onUIRender() override{
         ImGui::Begin("Settings");
         ImGui::Text("last render: %.3fms", m_lastRenderTime);
-        if(ImGui::Button("Render")){
+        if(ImGui::Button("render")){
             render();
         }
+
+        ImGui::Checkbox("accumulate", &m_renderer.getSettings().accumulate);
+
+        if(ImGui::Button("reset"))
+            m_renderer.resetFrameIndex();
+
         ImGui::End();
 
         ImGui::Begin("Scene");
@@ -53,12 +68,26 @@ public:
             Sphere& sphere = m_scene.spheres[i];
             ImGui::DragFloat3("position", glm::value_ptr(sphere.position), 0.1f);
             ImGui::DragFloat("radius", &sphere.radius, 0.1f);
-            ImGui::ColorEdit3("albedo", glm::value_ptr(sphere.albedo));
+            ImGui::DragInt("material", &sphere.materialIndex, 1.0f, 0, (int)m_scene.materials.size() - 1);
 
             ImGui::Separator();
 
             ImGui::PopID();
         }
+
+        for(size_t i = 0; i < m_scene.materials.size(); i++){
+            ImGui::PushID(i);
+
+            Material& material = m_scene.materials[i];
+            ImGui::ColorEdit3("albedo", glm::value_ptr(material.albedo));
+            ImGui::DragFloat("roughness", &material.roughness, 0.05f, 0.0f, 1.0f);
+            ImGui::DragFloat("metallic", &material.metallic, 0.05f, 0.0f, 1.0f);
+
+            ImGui::Separator();
+
+            ImGui::PopID();
+        }
+
         ImGui::End();
 
         ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));

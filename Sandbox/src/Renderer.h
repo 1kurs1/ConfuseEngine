@@ -13,6 +13,11 @@
 
 class Renderer{
 public:
+    struct Settings{
+        bool accumulate = true;
+    };
+
+public:
     Renderer() = default;
 
     void onResize(uint32_t width, uint32_t height);
@@ -20,10 +25,32 @@ public:
 
     std::shared_ptr<Confuse::Image> getFinalImage() const {return m_finalImage;}
 
+    void resetFrameIndex() {m_frameIndex = 1;}
+    Settings& getSettings() {return m_settings;}
+
 private:
-    glm::vec4 traceRay(const Scene& scene, const Ray& ray);
+    struct HitPayload{
+        float hitDistance;
+        glm::vec3 worldPosition;
+        glm::vec3 worldNormal;
+
+        int objectIndex; 
+    };
+
+    glm::vec4 perPixel(uint32_t x, uint32_t y);
+    HitPayload traceRay(const Ray& ray);
+    HitPayload closestHit(const Ray& ray, float hitDistance, int objectIndex);
+    HitPayload miss(const Ray& ray);
 
 private:
     std::shared_ptr<Confuse::Image> m_finalImage;
+    Settings m_settings;
+
+    const Scene* m_activeScene = nullptr;
+    const Camera* m_activeCamera = nullptr;
+
     uint32_t* m_imageData = nullptr;
+    glm::vec4* m_accumulationData = nullptr;
+
+    uint32_t m_frameIndex = 1;
 };

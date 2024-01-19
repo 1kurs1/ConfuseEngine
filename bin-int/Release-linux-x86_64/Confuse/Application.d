@@ -184,13 +184,16 @@
  /usr/include/vulkan/vk_platform.h /usr/include/vulkan/vulkan_core.h \
  /usr/include/vk_video/vulkan_video_codec_h264std.h \
  /usr/include/vk_video/vulkan_video_codecs_common.h \
- /usr/include/vk_video/vulkan_video_codec_h264std_decode.h \
+ /usr/include/vk_video/vulkan_video_codec_h264std_encode.h \
  /usr/include/vk_video/vulkan_video_codec_h264std.h \
  /usr/include/vk_video/vulkan_video_codec_h265std.h \
+ /usr/include/vk_video/vulkan_video_codec_h265std_encode.h \
+ /usr/include/vk_video/vulkan_video_codec_h265std.h \
+ /usr/include/vk_video/vulkan_video_codec_h264std_decode.h \
  /usr/include/vk_video/vulkan_video_codec_h265std_decode.h \
- /usr/include/vk_video/vulkan_video_codec_h265std.h src/Confuse/Layer.h \
- /usr/include/c++/13/iostream /usr/include/c++/13/ostream \
- /usr/include/c++/13/ios /usr/include/c++/13/bits/ios_base.h \
+ src/Confuse/Layer.h /usr/include/c++/13/iostream \
+ /usr/include/c++/13/ostream /usr/include/c++/13/ios \
+ /usr/include/c++/13/bits/ios_base.h \
  /usr/include/c++/13/bits/locale_classes.h \
  /usr/include/c++/13/bits/locale_classes.tcc \
  /usr/include/c++/13/system_error \
@@ -599,11 +602,13 @@ src/Confuse/Application.h:
 /usr/include/vulkan/vulkan_core.h:
 /usr/include/vk_video/vulkan_video_codec_h264std.h:
 /usr/include/vk_video/vulkan_video_codecs_common.h:
-/usr/include/vk_video/vulkan_video_codec_h264std_decode.h:
+/usr/include/vk_video/vulkan_video_codec_h264std_encode.h:
 /usr/include/vk_video/vulkan_video_codec_h264std.h:
 /usr/include/vk_video/vulkan_video_codec_h265std.h:
-/usr/include/vk_video/vulkan_video_codec_h265std_decode.h:
+/usr/include/vk_video/vulkan_video_codec_h265std_encode.h:
 /usr/include/vk_video/vulkan_video_codec_h265std.h:
+/usr/include/vk_video/vulkan_video_codec_h264std_decode.h:
+/usr/include/vk_video/vulkan_video_codec_h265std_decode.h:
 src/Confuse/Layer.h:
 /usr/include/c++/13/iostream:
 /usr/include/c++/13/ostream:

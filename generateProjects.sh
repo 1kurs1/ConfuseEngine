@@ -5,4 +5,4 @@ read _
 
 make
 
-./bin/Debug-linux-x86_64/Sandbox/Sandbox
+./bin/Release-linux-x86_64/Sandbox/Sandbox

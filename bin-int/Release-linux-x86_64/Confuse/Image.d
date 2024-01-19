@@ -128,11 +128,13 @@
  /usr/include/vulkan/vulkan_core.h \
  /usr/include/vk_video/vulkan_video_codec_h264std.h \
  /usr/include/vk_video/vulkan_video_codecs_common.h \
- /usr/include/vk_video/vulkan_video_codec_h264std_decode.h \
+ /usr/include/vk_video/vulkan_video_codec_h264std_encode.h \
  /usr/include/vk_video/vulkan_video_codec_h264std.h \
  /usr/include/vk_video/vulkan_video_codec_h265std.h \
- /usr/include/vk_video/vulkan_video_codec_h265std_decode.h \
+ /usr/include/vk_video/vulkan_video_codec_h265std_encode.h \
  /usr/include/vk_video/vulkan_video_codec_h265std.h \
+ /usr/include/vk_video/vulkan_video_codec_h264std_decode.h \
+ /usr/include/vk_video/vulkan_video_codec_h265std_decode.h \
  ../vendor/imgui/imgui.h ../vendor/imgui/imconfig.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h /usr/include/string.h \
  /usr/include/strings.h \
@@ -381,11 +383,13 @@ src/Confuse/Image.h:
 /usr/include/vulkan/vulkan_core.h:
 /usr/include/vk_video/vulkan_video_codec_h264std.h:
 /usr/include/vk_video/vulkan_video_codecs_common.h:
-/usr/include/vk_video/vulkan_video_codec_h264std_decode.h:
+/usr/include/vk_video/vulkan_video_codec_h264std_encode.h:
 /usr/include/vk_video/vulkan_video_codec_h264std.h:
 /usr/include/vk_video/vulkan_video_codec_h265std.h:
-/usr/include/vk_video/vulkan_video_codec_h265std_decode.h:
+/usr/include/vk_video/vulkan_video_codec_h265std_encode.h:
 /usr/include/vk_video/vulkan_video_codec_h265std.h:
+/usr/include/vk_video/vulkan_video_codec_h264std_decode.h:
+/usr/include/vk_video/vulkan_video_codec_h265std_decode.h:
 ../vendor/imgui/imgui.h:
 ../vendor/imgui/imconfig.h:
 /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h:
