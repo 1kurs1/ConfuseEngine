@@ -1,4 +1,6 @@
 #include <string.h>
+#include <execution>
+
 #include "Renderer.h"
 
 namespace Utils{
@@ -10,6 +12,21 @@ namespace Utils{
 
         uint32_t result = (a << 24) | (b << 16) | (g << 8) | r;
         return result;
+    }
+
+    static uint32_t pcgHash(uint32_t input){
+        uint32_t state = input * 747796305u + 2891336453u;
+        uint32_t word = ((state >> ((state >> 28u) + 4u)) ^ state) * 277803737u;
+        return (word >> 22u) ^ word;
+    }
+
+    static float randomFloat(uint32_t& seed){
+        seed = pcgHash(seed);
+        return (float)seed / (float)std::numeric_limits<uint32_t>::max();
+    }
+
+    static glm::vec3 inUnitSphere(uint32_t& seed){
+        return glm::normalize(glm::vec3(randomFloat(seed) * 2.0f - 1.0f, randomFloat(seed) * 2.0f - 1.0f, randomFloat(seed) * 2.0f - 1.0f));
     }
 }
 
@@ -26,6 +43,14 @@ void Renderer::onResize(uint32_t width, uint32_t height){
     m_imageData = new uint32_t[width * height];
     delete[] m_accumulationData;
     m_accumulationData = new glm::vec4[width * height];
+
+    m_imageHorizontalIter.resize(width);
+    m_imageVerticalIter.resize(height);
+
+    for(uint32_t i = 0; i < width; i++)
+        m_imageHorizontalIter[i] = i;
+    for(uint32_t i = 0; i < height; i++)
+        m_imageVerticalIter[i] = i;
 }
 
 void Renderer::render(const Scene& scene, const Camera& camera){
@@ -35,6 +60,22 @@ void Renderer::render(const Scene& scene, const Camera& camera){
     if(m_frameIndex == 1)
         memset(m_accumulationData, 0, m_finalImage->getWidth() * m_finalImage->getHeight() * sizeof(glm::vec4));
 
+#define MULTI_THREAD 1
+#if MULTI_THREAD
+    std::for_each(std::execution::par, m_imageVerticalIter.begin(), m_imageVerticalIter.end(), [this](uint32_t y){
+        std::for_each(std::execution::par, m_imageHorizontalIter.begin(), m_imageHorizontalIter.end(), [this, y](uint32_t x){
+            glm::vec4 color = perPixel(x, y);
+            m_accumulationData[x + y * m_finalImage->getWidth()] += color;
+
+            glm::vec4 accumulatedColor = m_accumulationData[x + y * m_finalImage->getWidth()];
+            accumulatedColor /= (float)m_frameIndex;
+
+            accumulatedColor = glm::clamp(accumulatedColor, glm::vec4(0.0f), glm::vec4(1.0f));
+            m_imageData[x + y * m_finalImage->getWidth()] = Utils::convertToRGBA(accumulatedColor);
+        });
+    });
+
+#else
     for(uint32_t y = 0; y < m_finalImage->getHeight(); y++){
         for(uint32_t x = 0; x < m_finalImage->getWidth(); x++){
 			glm::vec4 color = perPixel(x, y);
@@ -47,6 +88,7 @@ void Renderer::render(const Scene& scene, const Camera& camera){
             m_imageData[x + y * m_finalImage->getWidth()] = Utils::convertToRGBA(accumulatedColor);
         }
     }
+#endif
 
     m_finalImage->setData(m_imageData);
 
@@ -61,34 +103,36 @@ glm::vec4 Renderer::perPixel(uint32_t x, uint32_t y){
 	ray.origin = m_activeCamera->getPosition();
     ray.direction = m_activeCamera->getRayDirections()[x + y * m_finalImage->getWidth()];
 
-    glm::vec3 color(0.0f);
-    float multiplier = 1.0f;
+    glm::vec3 light(0.0f);
+    glm::vec3 contribution(1.0f);
 
-    int bounces = 20;
+    uint32_t seed = x + y * m_finalImage->getWidth();
+    seed *= m_frameIndex;
+
+    int bounces = 5;
     for(int i = 0; i < bounces; i++){
+        seed += i;
         Renderer::HitPayload payload = traceRay(ray);
         if(payload.hitDistance < 0.0f){
             glm::vec3 skyColor = glm::vec3(0.6f, 0.7f, 0.9f);
-            color += skyColor * multiplier;
+            light += skyColor * contribution;
             break;
         }
-
-        glm::vec3 lightDir = glm::normalize(glm::vec3(1, -1, -1));
-        float lightIntensity = glm::max(glm::dot(payload.worldNormal, -lightDir), 0.0f);     // == cos(angle)
 
         const Sphere& sphere = m_activeScene->spheres[payload.objectIndex];
         const Material& material = m_activeScene->materials[sphere.materialIndex];
 
-        glm::vec3 sphereColor = material.albedo;
-        sphereColor *= lightIntensity;
-        color += sphereColor * multiplier;
-        multiplier *= 0.5f;
+        contribution *= material.albedo;
+        light += material.getEmission();
 
         ray.origin = payload.worldPosition + payload.worldNormal * 0.0001f;
-        ray.direction = glm::reflect(ray.direction, payload.worldNormal + material.roughness * Confuse::Random::Vec3(-0.5f, 0.5f));
+        if(m_settings.slowRandom)
+            ray.direction = glm::normalize(payload.worldNormal + Confuse::Random::InUnitSphere());
+        else
+            ray.direction = glm::normalize(payload.worldNormal + Utils::inUnitSphere(seed));
     }
 
-    return glm::vec4(color, 1.0f);
+    return glm::vec4(light, 1.0f);
 }
 
 Renderer::HitPayload Renderer::traceRay(const Ray& ray){

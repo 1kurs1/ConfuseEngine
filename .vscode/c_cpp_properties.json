@@ -9,8 +9,8 @@
                 "${workspaceFolder}/Confuse/src",
                 "${workspaceFolder}/vendor/stb_image"
             ],
-            "cStandard": "c17",
-            "cppStandard": "c++17",
+            "cStandard": "c23",
+            "cppStandard": "c++23",
             "intelliSenseMode": "linux-clang-x64",
             "compilerPath": "/usr/bin/clang++"
         }

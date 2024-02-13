@@ -15,6 +15,7 @@ class Renderer{
 public:
     struct Settings{
         bool accumulate = true;
+        bool slowRandom = true;
     };
 
 public:
@@ -45,6 +46,8 @@ private:
 private:
     std::shared_ptr<Confuse::Image> m_finalImage;
     Settings m_settings;
+
+    std::vector<uint32_t> m_imageHorizontalIter, m_imageVerticalIter;
 
     const Scene* m_activeScene = nullptr;
     const Camera* m_activeCamera = nullptr;

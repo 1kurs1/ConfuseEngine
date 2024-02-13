@@ -23,11 +23,26 @@ public:
         blueSphere.albedo = {0.2f, 0.3f, 1.0f};
         blueSphere.roughness = 0.1f;
 
+        Material& orangeSphere = m_scene.materials.emplace_back();
+        orangeSphere.albedo = {0.8f, 0.5f, 0.2f};
+        orangeSphere.roughness = 0.1f;
+        orangeSphere.emissionColor = orangeSphere.albedo;
+        orangeSphere.emissionPower = 2.0f;
+
         {
             Sphere sphere;
             sphere.position = {0.0f, 0.0f, 0.0f};
             sphere.radius = 1.0f;
             sphere.materialIndex = 0;
+
+            m_scene.spheres.push_back(sphere);
+        }
+
+        {
+            Sphere sphere;
+            sphere.position = {2.0f, 0.0f, 0.0f};
+            sphere.radius = 1.0f;
+            sphere.materialIndex = 2;
 
             m_scene.spheres.push_back(sphere);
         }
@@ -55,6 +70,7 @@ public:
         }
 
         ImGui::Checkbox("accumulate", &m_renderer.getSettings().accumulate);
+        ImGui::Checkbox("slow random", &m_renderer.getSettings().slowRandom);
 
         if(ImGui::Button("reset"))
             m_renderer.resetFrameIndex();
@@ -82,6 +98,8 @@ public:
             ImGui::ColorEdit3("albedo", glm::value_ptr(material.albedo));
             ImGui::DragFloat("roughness", &material.roughness, 0.05f, 0.0f, 1.0f);
             ImGui::DragFloat("metallic", &material.metallic, 0.05f, 0.0f, 1.0f);
+            ImGui::ColorEdit3("emission color", glm::value_ptr(material.emissionColor));
+            ImGui::DragFloat("emission power", &material.emissionPower, 0.05f, 0.0f, FLT_MAX);
 
             ImGui::Separator();
 
