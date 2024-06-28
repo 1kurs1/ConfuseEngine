@@ -7,5 +7,6 @@ public:
 };
 
 Confuse::Application* Confuse::createApplication() {
+	CE_WARN("sandbox app was created");
 	return new Sandbox();
 }
