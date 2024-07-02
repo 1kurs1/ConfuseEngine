@@ -3,6 +3,7 @@
 #pragma once
 
 #include "Confuse/Application.h"
+#include "Confuse/Layer.h"
 #include "Confuse/Log.h"
 
 //-------------- entry point -------------

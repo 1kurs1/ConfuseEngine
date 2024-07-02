@@ -17,13 +17,31 @@ project "Confuse"
 	targetdir("bin/" .. outputdir .. "/%{prj.name}")
 	objdir("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "cepch.h"
+	pchsource "Confuse/src/cepch.cpp"
+
 	files{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
 	}
 
 	includedirs{
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/src",
+		"%{prj.name}/vendor/spdlog/include",
+		"%{prj.name}/vendor/GLFW/include",
+		"%{prj.name}/vendor/GLEW/include"
+	}
+
+	libdirs{
+		"%{prj.name}/vendor/GLFW/lib-vc2022"
+	}
+
+	links{
+		"glfw3_mt.lib",
+		"opengl32.lib",
+		"user32.lib",
+		"gdi32.lib",
+		"shell32.lib"
 	}
 
 	filter "system:windows"
@@ -33,7 +51,8 @@ project "Confuse"
 
 		defines{
 			"CE_PLATFORM_WINDOWS",
-			"CE_BUILD_DLL"
+			"CE_BUILD_DLL",
+			"CE_ENABLE_ASSERTS"
 		}
 
 		postbuildcommands{
@@ -42,12 +61,15 @@ project "Confuse"
 
 	filter "configurations:Debug"
 		defines "CE_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 	filter "configurations:Release"
 		defines "CE_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 	filter "configurations:Dist"
 		defines "CE_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "Sandbox"
@@ -83,10 +105,13 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "CE_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 	filter "configurations:Release"
 		defines "CE_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 	filter "configurations:Dist"
 		defines "CE_DIST"
+		buildoptions "/MD"
 		optimize "On"

@@ -4,6 +4,15 @@
     <Filter Include="Confuse">
       <UniqueIdentifier>{B8982A34-2478-A9CF-2D90-34A699EE0F31}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Confuse\Events">
+      <UniqueIdentifier>{9C451652-8813-0A58-71A7-7A7E5D14E6BC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Confuse\Application.h">
@@ -15,17 +24,52 @@
     <ClInclude Include="src\Confuse\EntryPoint.h">
       <Filter>Confuse</Filter>
     </ClInclude>
+    <ClInclude Include="src\Confuse\Events\ApplicationEvent.h">
+      <Filter>Confuse\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Events\Event.h">
+      <Filter>Confuse\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Events\KeyEvent.h">
+      <Filter>Confuse\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Events\MouseEvent.h">
+      <Filter>Confuse\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Layer.h">
+      <Filter>Confuse</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\LayerStack.h">
+      <Filter>Confuse</Filter>
+    </ClInclude>
     <ClInclude Include="src\Confuse\Log.h">
       <Filter>Confuse</Filter>
     </ClInclude>
+    <ClInclude Include="src\Confuse\Window.h">
+      <Filter>Confuse</Filter>
+    </ClInclude>
     <ClInclude Include="src\ConfuseEngine.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cepch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Confuse\Application.cpp">
       <Filter>Confuse</Filter>
     </ClCompile>
+    <ClCompile Include="src\Confuse\Layer.cpp">
+      <Filter>Confuse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Confuse\LayerStack.cpp">
+      <Filter>Confuse</Filter>
+    </ClCompile>
     <ClCompile Include="src\Confuse\Log.cpp">
       <Filter>Confuse</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cepch.cpp" />
   </ItemGroup>
 </Project>

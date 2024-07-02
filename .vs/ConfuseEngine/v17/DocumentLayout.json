@@ -1,7 +1,48 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Projects\\Nicromis\\ConfuseEngine\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F4C124E3-60A1-A37E-69B9-2E55D5170AE0}|Sandbox\\Sandbox.vcxproj|D:\\Projects\\Nicromis\\ConfuseEngine\\Sandbox\\SandboxApp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F4C124E3-60A1-A37E-69B9-2E55D5170AE0}|Sandbox\\Sandbox.vcxproj|solutionrelative:Sandbox\\SandboxApp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8982A34-2478-A9CF-2D90-34A699EE0F31}|Confuse\\Confuse.vcxproj|D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Confuse\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8982A34-2478-A9CF-2D90-34A699EE0F31}|Confuse\\Confuse.vcxproj|solutionrelative:Confuse\\src\\Confuse\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8982A34-2478-A9CF-2D90-34A699EE0F31}|Confuse\\Confuse.vcxproj|D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Confuse\\Application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8982A34-2478-A9CF-2D90-34A699EE0F31}|Confuse\\Confuse.vcxproj|solutionrelative:Confuse\\src\\Confuse\\Application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8982A34-2478-A9CF-2D90-34A699EE0F31}|Confuse\\Confuse.vcxproj|D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\ConfuseEngine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8982A34-2478-A9CF-2D90-34A699EE0F31}|Confuse\\Confuse.vcxproj|solutionrelative:Confuse\\src\\ConfuseEngine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8982A34-2478-A9CF-2D90-34A699EE0F31}|Confuse\\Confuse.vcxproj|D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Confuse\\Events\\Event.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8982A34-2478-A9CF-2D90-34A699EE0F31}|Confuse\\Confuse.vcxproj|solutionrelative:Confuse\\src\\Confuse\\Events\\Event.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8982A34-2478-A9CF-2D90-34A699EE0F31}|Confuse\\Confuse.vcxproj|D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Confuse\\Layer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8982A34-2478-A9CF-2D90-34A699EE0F31}|Confuse\\Confuse.vcxproj|solutionrelative:Confuse\\src\\Confuse\\Layer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8982A34-2478-A9CF-2D90-34A699EE0F31}|Confuse\\Confuse.vcxproj|D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Confuse\\LayerStack.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8982A34-2478-A9CF-2D90-34A699EE0F31}|Confuse\\Confuse.vcxproj|solutionrelative:Confuse\\src\\Confuse\\LayerStack.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8982A34-2478-A9CF-2D90-34A699EE0F31}|Confuse\\Confuse.vcxproj|D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Confuse\\LayerStack.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8982A34-2478-A9CF-2D90-34A699EE0F31}|Confuse\\Confuse.vcxproj|solutionrelative:Confuse\\src\\Confuse\\LayerStack.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8982A34-2478-A9CF-2D90-34A699EE0F31}|Confuse\\Confuse.vcxproj|D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Confuse\\Layer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8982A34-2478-A9CF-2D90-34A699EE0F31}|Confuse\\Confuse.vcxproj|solutionrelative:Confuse\\src\\Confuse\\Layer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8982A34-2478-A9CF-2D90-34A699EE0F31}|Confuse\\Confuse.vcxproj|D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Platform\\Windows\\WindowsWindow.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8982A34-2478-A9CF-2D90-34A699EE0F31}|Confuse\\Confuse.vcxproj|solutionrelative:Confuse\\src\\Platform\\Windows\\WindowsWindow.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,12 +50,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -26,6 +63,131 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SandboxApp.cpp",
+              "DocumentMoniker": "D:\\Projects\\Nicromis\\ConfuseEngine\\Sandbox\\SandboxApp.cpp",
+              "RelativeDocumentMoniker": "Sandbox\\SandboxApp.cpp",
+              "ToolTip": "D:\\Projects\\Nicromis\\ConfuseEngine\\Sandbox\\SandboxApp.cpp",
+              "RelativeToolTip": "Sandbox\\SandboxApp.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-07-02T16:29:40.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ConfuseEngine.h",
+              "DocumentMoniker": "D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\ConfuseEngine.h",
+              "RelativeDocumentMoniker": "Confuse\\src\\ConfuseEngine.h",
+              "ToolTip": "D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\ConfuseEngine.h",
+              "RelativeToolTip": "Confuse\\src\\ConfuseEngine.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-02T16:24:30.433Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Event.h",
+              "DocumentMoniker": "D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Confuse\\Events\\Event.h",
+              "RelativeDocumentMoniker": "Confuse\\src\\Confuse\\Events\\Event.h",
+              "ToolTip": "D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Confuse\\Events\\Event.h",
+              "RelativeToolTip": "Confuse\\src\\Confuse\\Events\\Event.h",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAADUAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-02T16:21:19.736Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LayerStack.cpp",
+              "DocumentMoniker": "D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Confuse\\LayerStack.cpp",
+              "RelativeDocumentMoniker": "Confuse\\src\\Confuse\\LayerStack.cpp",
+              "ToolTip": "D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Confuse\\LayerStack.cpp",
+              "RelativeToolTip": "Confuse\\src\\Confuse\\LayerStack.cpp",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACEAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-07-02T16:09:15.795Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LayerStack.h",
+              "DocumentMoniker": "D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Confuse\\LayerStack.h",
+              "RelativeDocumentMoniker": "Confuse\\src\\Confuse\\LayerStack.h",
+              "ToolTip": "D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Confuse\\LayerStack.h",
+              "RelativeToolTip": "Confuse\\src\\Confuse\\LayerStack.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-02T16:09:08.061Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Layer.cpp",
+              "DocumentMoniker": "D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Confuse\\Layer.cpp",
+              "RelativeDocumentMoniker": "Confuse\\src\\Confuse\\Layer.cpp",
+              "ToolTip": "D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Confuse\\Layer.cpp",
+              "RelativeToolTip": "Confuse\\src\\Confuse\\Layer.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-07-02T16:08:31.23Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Layer.h",
+              "DocumentMoniker": "D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Confuse\\Layer.h",
+              "RelativeDocumentMoniker": "Confuse\\src\\Confuse\\Layer.h",
+              "ToolTip": "D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Confuse\\Layer.h",
+              "RelativeToolTip": "Confuse\\src\\Confuse\\Layer.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-02T15:58:32.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Application.cpp",
+              "DocumentMoniker": "D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Confuse\\Application.cpp",
+              "RelativeDocumentMoniker": "Confuse\\src\\Confuse\\Application.cpp",
+              "ToolTip": "D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Confuse\\Application.cpp",
+              "RelativeToolTip": "Confuse\\src\\Confuse\\Application.cpp",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACwAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-07-02T14:58:42.838Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Application.h",
+              "DocumentMoniker": "D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Confuse\\Application.h",
+              "RelativeDocumentMoniker": "Confuse\\src\\Confuse\\Application.h",
+              "ToolTip": "D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Confuse\\Application.h",
+              "RelativeToolTip": "Confuse\\src\\Confuse\\Application.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-02T14:58:41.95Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "WindowsWindow.cpp",
+              "DocumentMoniker": "D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Platform\\Windows\\WindowsWindow.cpp",
+              "RelativeDocumentMoniker": "Confuse\\src\\Platform\\Windows\\WindowsWindow.cpp",
+              "ToolTip": "D:\\Projects\\Nicromis\\ConfuseEngine\\Confuse\\src\\Platform\\Windows\\WindowsWindow.cpp",
+              "RelativeToolTip": "Confuse\\src\\Platform\\Windows\\WindowsWindow.cpp",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAAAGwAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-07-02T15:00:14.303Z"
             }
           ]
         }
