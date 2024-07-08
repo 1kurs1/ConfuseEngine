@@ -1,0 +1,3 @@
+[submodule "Confuse/vendor/GLFW"]
+	path = Confuse/vendor/GLFW
+	url = https://github.com/glfw/glfw.git
