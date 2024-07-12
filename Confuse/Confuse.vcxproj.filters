@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Confuse">
+      <UniqueIdentifier>{CF98643D-3B4E-DD32-C442-D70930F7D336}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Confuse\Core">
+      <UniqueIdentifier>{879658B2-738F-7704-9CC1-5C8988195710}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Confuse\Core\Events">
+      <UniqueIdentifier>{8BC44094-F7FB-882B-0006-ED4E6CBCAF24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Confuse\ImGui">
+      <UniqueIdentifier>{392DD6FD-A543-D493-EEBA-5FB55A10A51B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Confuse\Platform">
+      <UniqueIdentifier>{032E49B4-EFBC-D27D-98DB-E6788449E323}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Confuse\Platform\OpenGL">
+      <UniqueIdentifier>{D7958B63-43A3-B949-CC89-B53438968500}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Confuse\Platform\Windows">
+      <UniqueIdentifier>{3D2B1A2D-29E6-09D9-D29D-8223BE375469}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Confuse\Renderer">
+      <UniqueIdentifier>{5535268F-41C4-AF58-EAE2-C353D650C0FE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Confuse\Core\Application.h">
+      <Filter>src\Confuse\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Core\Base.h">
+      <Filter>src\Confuse\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Core\Events\ApplicationEvent.h">
+      <Filter>src\Confuse\Core\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Core\Events\Event.h">
+      <Filter>src\Confuse\Core\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Core\Events\KeyEvent.h">
+      <Filter>src\Confuse\Core\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Core\Events\MouseEvent.h">
+      <Filter>src\Confuse\Core\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Core\Input.h">
+      <Filter>src\Confuse\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Core\Layer.h">
+      <Filter>src\Confuse\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Core\LayerStack.h">
+      <Filter>src\Confuse\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Core\Log.h">
+      <Filter>src\Confuse\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Core\Platform.h">
+      <Filter>src\Confuse\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Core\Window.h">
+      <Filter>src\Confuse\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\EntryPoint.h">
+      <Filter>src\Confuse</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\ImGui\ImGuiLayer.h">
+      <Filter>src\Confuse\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Platform\OpenGL\OpenGLFrameBuffer.h">
+      <Filter>src\Confuse\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Platform\OpenGL\OpenGLIndexBuffer.h">
+      <Filter>src\Confuse\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Platform\OpenGL\OpenGLShader.h">
+      <Filter>src\Confuse\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Platform\OpenGL\OpenGLTexture.h">
+      <Filter>src\Confuse\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Platform\OpenGL\OpenGLVertexBuffer.h">
+      <Filter>src\Confuse\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Platform\Windows\WindowsInput.h">
+      <Filter>src\Confuse\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Platform\Windows\WindowsWindow.h">
+      <Filter>src\Confuse\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Renderer\FrameBuffer.h">
+      <Filter>src\Confuse\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Renderer\IndexBuffer.h">
+      <Filter>src\Confuse\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Renderer\RenderCommandQueue.h">
+      <Filter>src\Confuse\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Renderer\Renderer.h">
+      <Filter>src\Confuse\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Renderer\RendererAPI.h">
+      <Filter>src\Confuse\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Renderer\Shader.h">
+      <Filter>src\Confuse\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Renderer\Texture.h">
+      <Filter>src\Confuse\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Confuse\Renderer\VertexBuffer.h">
+      <Filter>src\Confuse\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfuseEngine.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cepch.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Confuse\Core\Application.cpp">
+      <Filter>src\Confuse\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Confuse\Core\Base.cpp">
+      <Filter>src\Confuse\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Confuse\Core\Layer.cpp">
+      <Filter>src\Confuse\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Confuse\Core\LayerStack.cpp">
+      <Filter>src\Confuse\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Confuse\Core\Log.cpp">
+      <Filter>src\Confuse\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Confuse\Core\Window.cpp">
+      <Filter>src\Confuse\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Confuse\ImGui\ImGuiBuild.cpp">
+      <Filter>src\Confuse\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Confuse\ImGui\ImGuiLayer.cpp">
+      <Filter>src\Confuse\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Confuse\Platform\OpenGL\OpenGLFrameBuffer.cpp">
+      <Filter>src\Confuse\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Confuse\Platform\OpenGL\OpenGLIndexBuffer.cpp">
+      <Filter>src\Confuse\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Confuse\Platform\OpenGL\OpenGLRendererAPI.cpp">
+      <Filter>src\Confuse\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Confuse\Platform\OpenGL\OpenGLShader.cpp">
+      <Filter>src\Confuse\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Confuse\Platform\OpenGL\OpenGLTexture.cpp">
+      <Filter>src\Confuse\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Confuse\Platform\OpenGL\OpenGLVertexBuffer.cpp">
+      <Filter>src\Confuse\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Confuse\Platform\Windows\WindowsInput.cpp">
+      <Filter>src\Confuse\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Confuse\Platform\Windows\WindowsWindow.cpp">
+      <Filter>src\Confuse\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Confuse\Renderer\IndexBuffer.cpp">
+      <Filter>src\Confuse\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Confuse\Renderer\RenderCommandQueue.cpp">
+      <Filter>src\Confuse\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Confuse\Renderer\Renderer.cpp">
+      <Filter>src\Confuse\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Confuse\Renderer\Texture.cpp">
+      <Filter>src\Confuse\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Confuse\Renderer\VertexBuffer.cpp">
+      <Filter>src\Confuse\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cepch.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Confuse.def" />
+  </ItemGroup>
+</Project>

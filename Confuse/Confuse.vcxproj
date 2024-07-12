@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Dist|x64">
+      <Configuration>Dist</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B8982A34-2478-A9CF-2D90-34A699EE0F31}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Confuse</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\bin\Debug-windows-x86_64\Confuse\</OutDir>
+    <IntDir>..\bin-int\Debug-windows-x86_64\Confuse\</IntDir>
+    <TargetName>Confuse</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\bin\Release-windows-x86_64\Confuse\</OutDir>
+    <IntDir>..\bin-int\Release-windows-x86_64\Confuse\</IntDir>
+    <TargetName>Confuse</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\bin\Dist-windows-x86_64\Confuse\</OutDir>
+    <IntDir>..\bin-int\Dist-windows-x86_64\Confuse\</IntDir>
+    <TargetName>Confuse</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>cepch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>CE_PLATFORM_WINDOWS;CE_BUILD_DLL;CE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3_mt.lib;opengl32.lib;kernel32.lib;winspool.lib;comdlg32.lib;user32.lib;gdi32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;msvcrtd.lib;libcmt.lib;libcmtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>vendor\GLFW\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>..\bin\Debug-windows-x86_64\Confuse\Confuse.lib</ImportLibrary>
+      <ModuleDefinitionFile>Confuse.def</ModuleDefinitionFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Confuse\Confuse.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Confuse\Confuse.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Confuse\Confuse.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>cepch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>CE_PLATFORM_WINDOWS;CE_BUILD_DLL;CE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3_mt.lib;opengl32.lib;kernel32.lib;winspool.lib;comdlg32.lib;user32.lib;gdi32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;msvcrtd.lib;libcmt.lib;libcmtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>vendor\GLFW\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>..\bin\Release-windows-x86_64\Confuse\Confuse.lib</ImportLibrary>
+      <ModuleDefinitionFile>Confuse.def</ModuleDefinitionFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\Confuse\Confuse.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\Confuse\Confuse.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\Confuse\Confuse.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>cepch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>CE_PLATFORM_WINDOWS;CE_BUILD_DLL;CE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3_mt.lib;opengl32.lib;kernel32.lib;winspool.lib;comdlg32.lib;user32.lib;gdi32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;msvcrtd.lib;libcmt.lib;libcmtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>vendor\GLFW\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>..\bin\Dist-windows-x86_64\Confuse\Confuse.lib</ImportLibrary>
+      <ModuleDefinitionFile>Confuse.def</ModuleDefinitionFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST ..\bin\Dist-windows-x86_64\Confuse\Confuse.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\Confuse\Confuse.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\Confuse\Confuse.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Confuse\Core\Application.h" />
+    <ClInclude Include="src\Confuse\Core\Base.h" />
+    <ClInclude Include="src\Confuse\Core\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\Confuse\Core\Events\Event.h" />
+    <ClInclude Include="src\Confuse\Core\Events\KeyEvent.h" />
+    <ClInclude Include="src\Confuse\Core\Events\MouseEvent.h" />
+    <ClInclude Include="src\Confuse\Core\Input.h" />
+    <ClInclude Include="src\Confuse\Core\Layer.h" />
+    <ClInclude Include="src\Confuse\Core\LayerStack.h" />
+    <ClInclude Include="src\Confuse\Core\Log.h" />
+    <ClInclude Include="src\Confuse\Core\Platform.h" />
+    <ClInclude Include="src\Confuse\Core\Window.h" />
+    <ClInclude Include="src\Confuse\EntryPoint.h" />
+    <ClInclude Include="src\Confuse\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Confuse\Platform\OpenGL\OpenGLFrameBuffer.h" />
+    <ClInclude Include="src\Confuse\Platform\OpenGL\OpenGLIndexBuffer.h" />
+    <ClInclude Include="src\Confuse\Platform\OpenGL\OpenGLShader.h" />
+    <ClInclude Include="src\Confuse\Platform\OpenGL\OpenGLTexture.h" />
+    <ClInclude Include="src\Confuse\Platform\OpenGL\OpenGLVertexBuffer.h" />
+    <ClInclude Include="src\Confuse\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\Confuse\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\Confuse\Renderer\FrameBuffer.h" />
+    <ClInclude Include="src\Confuse\Renderer\IndexBuffer.h" />
+    <ClInclude Include="src\Confuse\Renderer\RenderCommandQueue.h" />
+    <ClInclude Include="src\Confuse\Renderer\Renderer.h" />
+    <ClInclude Include="src\Confuse\Renderer\RendererAPI.h" />
+    <ClInclude Include="src\Confuse\Renderer\Shader.h" />
+    <ClInclude Include="src\Confuse\Renderer\Texture.h" />
+    <ClInclude Include="src\Confuse\Renderer\VertexBuffer.h" />
+    <ClInclude Include="src\ConfuseEngine.h" />
+    <ClInclude Include="src\cepch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Confuse\Core\Application.cpp" />
+    <ClCompile Include="src\Confuse\Core\Base.cpp" />
+    <ClCompile Include="src\Confuse\Core\Layer.cpp" />
+    <ClCompile Include="src\Confuse\Core\LayerStack.cpp" />
+    <ClCompile Include="src\Confuse\Core\Log.cpp" />
+    <ClCompile Include="src\Confuse\Core\Window.cpp" />
+    <ClCompile Include="src\Confuse\ImGui\ImGuiBuild.cpp" />
+    <ClCompile Include="src\Confuse\ImGui\ImGuiLayer.cpp" />
+    <ClCompile Include="src\Confuse\Platform\OpenGL\OpenGLFrameBuffer.cpp" />
+    <ClCompile Include="src\Confuse\Platform\OpenGL\OpenGLIndexBuffer.cpp" />
+    <ClCompile Include="src\Confuse\Platform\OpenGL\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="src\Confuse\Platform\OpenGL\OpenGLShader.cpp" />
+    <ClCompile Include="src\Confuse\Platform\OpenGL\OpenGLTexture.cpp" />
+    <ClCompile Include="src\Confuse\Platform\OpenGL\OpenGLVertexBuffer.cpp" />
+    <ClCompile Include="src\Confuse\Platform\Windows\WindowsInput.cpp" />
+    <ClCompile Include="src\Confuse\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="src\Confuse\Renderer\IndexBuffer.cpp" />
+    <ClCompile Include="src\Confuse\Renderer\RenderCommandQueue.cpp" />
+    <ClCompile Include="src\Confuse\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\Confuse\Renderer\Texture.cpp" />
+    <ClCompile Include="src\Confuse\Renderer\VertexBuffer.cpp" />
+    <ClCompile Include="src\cepch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Confuse.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="vendor\Glad\Glad.vcxproj">
+      <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\imgui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
